@@ -40,6 +40,6 @@ class __TwigTemplate_8a1aa63f82c46ae5020e0b065065d1ef7a0593b6cf70fc5c2348a83d58b
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "@Framework/Form/reset_widget.html.php", "C:\\College\\College\\Third year\\Second Semester\\WFDassignment\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\FrameworkBundle\\Resources\\views\\Form\\reset_widget.html.php");
+        return new Twig_Source("", "@Framework/Form/reset_widget.html.php", "C:\\College\\College\\Third year\\Second Semester\\WFDassignment\\NURLmanager\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\FrameworkBundle\\Resources\\views\\Form\\reset_widget.html.php");
     }
 }

@@ -122,9 +122,11 @@ class __TwigTemplate_f3d0bd92449ec791d59390975387edcf10ab34f4cda9698976542c79ef6
         // line 75
         if ($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("ROLE_USER")) {
             // line 76
-            echo "        You are logged in as: ";
+            echo "        You are logged in as:  <a href=\"";
+            echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("account_index");
+            echo "\"><strong>";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["app"] ?? null), "user", array()), "username", array()), "html", null, true);
-            echo "
+            echo "</strong></a>
         <br>
         <li><a href=\"";
             // line 78
@@ -165,7 +167,7 @@ class __TwigTemplate_f3d0bd92449ec791d59390975387edcf10ab34f4cda9698976542c79ef6
     // line 15
     public function block_title($context, array $blocks = array())
     {
-        echo "NURL - ";
+        echo "NURL - Home ";
     }
 
     // line 22
@@ -201,7 +203,7 @@ class __TwigTemplate_f3d0bd92449ec791d59390975387edcf10ab34f4cda9698976542c79ef6
 
     public function getDebugInfo()
     {
-        return array (  189 => 94,  186 => 93,  182 => 91,  179 => 90,  175 => 23,  172 => 22,  166 => 15,  159 => 95,  157 => 93,  154 => 92,  152 => 90,  144 => 84,  137 => 81,  131 => 78,  125 => 76,  123 => 75,  115 => 69,  109 => 65,  107 => 64,  98 => 57,  92 => 53,  90 => 52,  81 => 45,  75 => 41,  73 => 40,  60 => 30,  55 => 27,  53 => 26,  50 => 24,  48 => 22,  38 => 15,  31 => 10,  27 => 4,  25 => 3,  23 => 1,);
+        return array (  191 => 94,  188 => 93,  184 => 91,  181 => 90,  177 => 23,  174 => 22,  168 => 15,  161 => 95,  159 => 93,  156 => 92,  154 => 90,  146 => 84,  139 => 81,  133 => 78,  125 => 76,  123 => 75,  115 => 69,  109 => 65,  107 => 64,  98 => 57,  92 => 53,  90 => 52,  81 => 45,  75 => 41,  73 => 40,  60 => 30,  55 => 27,  53 => 26,  50 => 24,  48 => 22,  38 => 15,  31 => 10,  27 => 4,  25 => 3,  23 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -214,6 +216,6 @@ class __TwigTemplate_f3d0bd92449ec791d59390975387edcf10ab34f4cda9698976542c79ef6
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "::base.html.twig", "C:\\College\\College\\Third year\\Second Semester\\WFDassignment\\app/Resources\\views/base.html.twig");
+        return new Twig_Source("", "::base.html.twig", "C:\\College\\College\\Third year\\Second Semester\\WFDassignment\\NURLmanager\\app/Resources\\views/base.html.twig");
     }
 }

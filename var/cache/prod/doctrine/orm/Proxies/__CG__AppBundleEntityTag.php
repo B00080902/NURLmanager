@@ -64,10 +64,10 @@ class Tag extends \AppBundle\Entity\Tag implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Tag' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Tag' . "\0" . 'tag', '' . "\0" . 'AppBundle\\Entity\\Tag' . "\0" . 'approved', '' . "\0" . 'AppBundle\\Entity\\Tag' . "\0" . 'upvote', '' . "\0" . 'AppBundle\\Entity\\Tag' . "\0" . 'downvote', '' . "\0" . 'AppBundle\\Entity\\Tag' . "\0" . 'nurlID'];
+            return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Tag' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Tag' . "\0" . 'tag', '' . "\0" . 'AppBundle\\Entity\\Tag' . "\0" . 'approved', '' . "\0" . 'AppBundle\\Entity\\Tag' . "\0" . 'upvote', '' . "\0" . 'AppBundle\\Entity\\Tag' . "\0" . 'downvote', '' . "\0" . 'AppBundle\\Entity\\Tag' . "\0" . 'user'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Tag' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Tag' . "\0" . 'tag', '' . "\0" . 'AppBundle\\Entity\\Tag' . "\0" . 'approved', '' . "\0" . 'AppBundle\\Entity\\Tag' . "\0" . 'upvote', '' . "\0" . 'AppBundle\\Entity\\Tag' . "\0" . 'downvote', '' . "\0" . 'AppBundle\\Entity\\Tag' . "\0" . 'nurlID'];
+        return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Tag' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Tag' . "\0" . 'tag', '' . "\0" . 'AppBundle\\Entity\\Tag' . "\0" . 'approved', '' . "\0" . 'AppBundle\\Entity\\Tag' . "\0" . 'upvote', '' . "\0" . 'AppBundle\\Entity\\Tag' . "\0" . 'downvote', '' . "\0" . 'AppBundle\\Entity\\Tag' . "\0" . 'user'];
     }
 
     /**
@@ -176,72 +176,6 @@ class Tag extends \AppBundle\Entity\Tag implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function getNurlID()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getNurlID', []);
-
-        return parent::getNurlID();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setNurlID($nurlID)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setNurlID', [$nurlID]);
-
-        return parent::setNurlID($nurlID);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getUpvote()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUpvote', []);
-
-        return parent::getUpvote();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setUpvote($upvote)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUpvote', [$upvote]);
-
-        return parent::setUpvote($upvote);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getDownvote()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDownvote', []);
-
-        return parent::getDownvote();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setDownvote($downvote)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDownvote', [$downvote]);
-
-        return parent::setDownvote($downvote);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function getId()
     {
         if ($this->__isInitialized__ === false) {
@@ -296,6 +230,105 @@ class Tag extends \AppBundle\Entity\Tag implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getApproved', []);
 
         return parent::getApproved();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setUpvote($upvote)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUpvote', [$upvote]);
+
+        return parent::setUpvote($upvote);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getUpvote()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUpvote', []);
+
+        return parent::getUpvote();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setDownvote($downvote)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDownvote', [$downvote]);
+
+        return parent::setDownvote($downvote);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getDownvote()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDownvote', []);
+
+        return parent::getDownvote();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addNurl(\AppBundle\Entity\Nurl $nurl)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addNurl', [$nurl]);
+
+        return parent::addNurl($nurl);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeNurl(\AppBundle\Entity\Nurl $nurl)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeNurl', [$nurl]);
+
+        return parent::removeNurl($nurl);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getNurl()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getNurl', []);
+
+        return parent::getNurl();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setUser(\AppBundle\Entity\User $user = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUser', [$user]);
+
+        return parent::setUser($user);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getUser()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUser', []);
+
+        return parent::getUser();
     }
 
 }

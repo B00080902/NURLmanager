@@ -1,6 +1,6 @@
 <?php
 
-/* @WebProfiler/Profiler/search.html.twig */
+/* @WebProfiler/Profiler/index.html.twig */
 class __TwigTemplate_18050a1eb75e46386d7c22557303b62a29816e232dadae36f5346c081ad2c962 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -16,10 +16,10 @@ class __TwigTemplate_18050a1eb75e46386d7c22557303b62a29816e232dadae36f5346c081ad
     protected function doDisplay(array $context, array $blocks = array())
     {
         $__internal_49fd73d6628b6efc50ebec789cdbf88e199e3b15e01f584506fd3fb70512f117 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_49fd73d6628b6efc50ebec789cdbf88e199e3b15e01f584506fd3fb70512f117->enter($__internal_49fd73d6628b6efc50ebec789cdbf88e199e3b15e01f584506fd3fb70512f117_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@WebProfiler/Profiler/search.html.twig"));
+        $__internal_49fd73d6628b6efc50ebec789cdbf88e199e3b15e01f584506fd3fb70512f117->enter($__internal_49fd73d6628b6efc50ebec789cdbf88e199e3b15e01f584506fd3fb70512f117_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@WebProfiler/Profiler/index.html.twig"));
 
         $__internal_9243274a162b4151884da68e4f830c3c80c7a9dacce6d0119265371acb9bd22b = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_9243274a162b4151884da68e4f830c3c80c7a9dacce6d0119265371acb9bd22b->enter($__internal_9243274a162b4151884da68e4f830c3c80c7a9dacce6d0119265371acb9bd22b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@WebProfiler/Profiler/search.html.twig"));
+        $__internal_9243274a162b4151884da68e4f830c3c80c7a9dacce6d0119265371acb9bd22b->enter($__internal_9243274a162b4151884da68e4f830c3c80c7a9dacce6d0119265371acb9bd22b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@WebProfiler/Profiler/index.html.twig"));
 
         // line 1
         echo "<div id=\"sidebar-search\">
@@ -138,7 +138,7 @@ class __TwigTemplate_18050a1eb75e46386d7c22557303b62a29816e232dadae36f5346c081ad
 
     public function getTemplateName()
     {
-        return "@WebProfiler/Profiler/search.html.twig";
+        return "@WebProfiler/Profiler/index.html.twig";
     }
 
     public function isTraitable()
@@ -217,6 +217,6 @@ class __TwigTemplate_18050a1eb75e46386d7c22557303b62a29816e232dadae36f5346c081ad
         </div>
     </form>
 </div>
-", "@WebProfiler/Profiler/search.html.twig", "C:\\College\\College\\Third year\\Second Semester\\WFDassignment\\NURLmanager\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\WebProfilerBundle\\Resources\\views\\Profiler\\search.html.twig");
+", "@WebProfiler/Profiler/index.html.twig", "C:\\College\\College\\Third year\\Second Semester\\WFDassignment\\NURLmanager\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\WebProfilerBundle\\Resources\\views\\Profiler\\index.html.twig");
     }
 }

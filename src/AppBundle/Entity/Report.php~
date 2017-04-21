@@ -42,26 +42,12 @@ class Report
      */
     private $timestamp;
 
-    /**
-     * @return string
-     */
-    public function getTimestamp()
-    {
-        return $this->timestamp;
-    }
 
-    /**
-     * @param string $timestamp
-     */
-    public function setTimestamp($timestamp)
-    {
-        $this->timestamp = $timestamp;
-    }
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -114,5 +100,29 @@ class Report
     public function getContent()
     {
         return $this->content;
+    }
+
+    /**
+     * Set timestamp
+     *
+     * @param string $timestamp
+     *
+     * @return Report
+     */
+    public function setTimestamp($timestamp)
+    {
+        $this->timestamp = $timestamp;
+
+        return $this;
+    }
+
+    /**
+     * Get timestamp
+     *
+     * @return string
+     */
+    public function getTimestamp()
+    {
+        return $this->timestamp;
     }
 }

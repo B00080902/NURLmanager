@@ -40,6 +40,6 @@ class __TwigTemplate_35527e7a5d17fe764b9e3454d783a369d9f7db7fba7dacea3ce2b99190a
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "@Framework/Form/email_widget.html.php", "C:\\College\\College\\Third year\\Second Semester\\WFDassignment\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\FrameworkBundle\\Resources\\views\\Form\\email_widget.html.php");
+        return new Twig_Source("", "@Framework/Form/email_widget.html.php", "C:\\College\\College\\Third year\\Second Semester\\WFDassignment\\NURLmanager\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\FrameworkBundle\\Resources\\views\\Form\\email_widget.html.php");
     }
 }

@@ -67,23 +67,21 @@ class Collection
      */
     private $public;
 
-    /**
-     * @return string
-     */
-    public function getPublic()
-    {
-        return $this->public;
-    }
 
     /**
-     * @param string $public
-     * @return $this
+     * @var string
+     *
+     * @ORM\Column(name="shared", type="string", length=255)
      */
-    public function setPublic(string $public)
-    {
-        $this->public = $public;
+    private $shared;
 
-        return $this;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->nurl = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -144,7 +142,53 @@ class Collection
         return $this->description;
     }
 
+    /**
+     * Set public
+     *
+     * @param string $public
+     *
+     * @return Collection
+     */
+    public function setPublic($public)
+    {
+        $this->public = $public;
 
+        return $this;
+    }
+
+    /**
+     * Get public
+     *
+     * @return string
+     */
+    public function getPublic()
+    {
+        return $this->public;
+    }
+
+    /**
+     * Set shared
+     *
+     * @param string $shared
+     *
+     * @return Collection
+     */
+    public function setShared($shared)
+    {
+        $this->shared = $shared;
+
+        return $this;
+    }
+
+    /**
+     * Get shared
+     *
+     * @return string
+     */
+    public function getShared()
+    {
+        return $this->shared;
+    }
 
     /**
      * Set user
@@ -168,13 +212,6 @@ class Collection
     public function getUser()
     {
         return $this->user;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->nurl = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

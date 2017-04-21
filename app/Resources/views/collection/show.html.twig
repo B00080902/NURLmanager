@@ -3,15 +3,13 @@
 {% block body %}
 
     <h1>Collection</h1>
+    <a href="{{ path('collection_view', { 'id': collection.id }) }}"><h3 style="color: #6e6e6e">See shared collections</h3></a>
 
-    {% for collection in collections %}
 
 
-    <table>
+        <table>
 
         <tbody>
-        {# Show the nurls only if they're defined as public #}
-        {% if collection.public == '' %}
 
             <tr>
                 <th>Id</th>
@@ -38,26 +36,44 @@
                 <td>{{ collection.public }}</td>
             </tr>
 
-        </tbody>
+            <tr>
+                {% for nurl in collection.nurl %}
+                <th>Nurl</th>
 
-    </table>
+                <td>{{ nurl.title }}</td>
+                {% endfor %}
+            </tr>
 
-    <hr>
-        {% endif %}
 
-    {% endfor %}
+            <tr>
+                <th>Shared</th>
+                <td>{% if collection.shared == 1 %}Yes{% else %}No{% endif %}</td>
+            </tr>
 
-    {#<ul>#}
-        {#<li>#}
+            </tbody>
+
+            </table>
+
+            <hr>
+
+
+    <ul>
+        <li>
             <a href="{{ path('collection_index') }}">Back to the list</a>
-        {#</li>#}
-        {#<li>#}
-            {#<a href="{{ path('collection_edit', { 'id': collection.id }) }}">Edit</a>#}
-        {#</li>#}
-        {#<li>#}
-            {#{{ form_start(delete_form) }}#}
-                {#<input type="submit" value="Delete">#}
-            {#{{ form_end(delete_form) }}#}
-        {#</li>#}
-    {#</ul>#}
+        </li>
+
+        <li>
+            <a href="{{ path('collection_edit', { 'id': collection.id }) }}">Edit</a>
+        </li>
+
+        <li>
+            <a href="{{ path('collection_share_share', { 'id': collection.id }) }}">Share</a>
+        </li>
+
+        <li>
+            {{ form_start(delete_form) }}
+            <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
 {% endblock %}

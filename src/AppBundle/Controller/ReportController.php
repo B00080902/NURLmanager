@@ -2,22 +2,10 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\AppBundle;
-use AppBundle\Entity\Nurl;
 use AppBundle\Entity\Report;
-use AppBundle\Form\ElectiveType;
-use MongoDB\BSON\Timestamp;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\TimeType;
-use Symfony\Component\Form\Form;
-use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Report controller.
@@ -46,46 +34,27 @@ class ReportController extends Controller
     /**
      * Creates a new report entity.
      *
-     * @Route("/{id}/new", name="report_new")
+     * @Route("/new", name="report_new")
      * @Method({"GET", "POST"})
-     * @param Request $request
-     * @param Nurl $elective
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
-    public function newAction(Request $request, Nurl $elective)
+    public function newAction(Request $request)
     {
         $report = new Report();
-
-        $form = $this->createFormBuilder($report)
-            ->add('id', TextType::class,  ['data' => $elective -> getId(), 'disabled' => true])
-            ->add('title', TextType::class,  ['data' => $elective -> getTitle(), 'disabled' => true])
-            ->add('content', TextareaType::class)
-            //->add('timestamp', TextType::class, ['data' => date('H:i:s \O\n d/m/Y'), 'disabled' => true])
-            ->add('save', SubmitType::class, array('label' => 'Send Report'))
-            ->getForm();
-
+        $form = $this->createForm('AppBundle\Form\ReportType', $report);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($report);
+            $em->flush();
 
-            $title = $elective->getTitle();
-            $time = date('H:i:s \O\n d/m/Y');
-            $report -> setTimestamp($time);
-            $report->setTitle($title);
-            $report = $form->getData();
-
-             $em = $this->getDoctrine()->getManager();
-             $em->persist($report);
-             $em->flush();
-
-            return $this->redirectToRoute('elective_index');
+            return $this->redirectToRoute('report_show', array('id' => $report->getId()));
         }
 
-
         return $this->render('report/new.html.twig', array(
+            'report' => $report,
             'form' => $form->createView(),
         ));
-
     }
 
     /**
@@ -93,14 +62,12 @@ class ReportController extends Controller
      *
      * @Route("/{id}", name="report_show")
      * @Method("GET")
-     * @param Report $report
-     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function showAction(Report $report)
     {
         $deleteForm = $this->createDeleteForm($report);
 
-        return $this->render('report/showAll.html.twig', array(
+        return $this->render('report/show.html.twig', array(
             'report' => $report,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -111,9 +78,6 @@ class ReportController extends Controller
      *
      * @Route("/{id}/edit", name="report_edit")
      * @Method({"GET", "POST"})
-     * @param Request $request
-     * @param Report $report
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
     public function editAction(Request $request, Report $report)
     {
@@ -168,33 +132,5 @@ class ReportController extends Controller
             ->setMethod('DELETE')
             ->getForm()
         ;
-    }
-
-    /**
-     * Submits custom form
-     *
-     * @Route("/submit", name="report_submit")
-     *
-     * @Method("GET")
-     *
-     * @param Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    public function submitAction(Request $request)
-    {
-        $report = new Report();
-
-
-        if (get('save')->isClicked()) {
-            $em = $this->getDoctrine()->getManager();
-
-            $em->persist($report);
-            $em->flush($report);
-        }
-
-        return $this->render('report/showAll.html.twig', array(
-            'report' => $report,
-        ));
     }
 }

@@ -44,24 +44,6 @@ class Nurl
      */
     private $public;
 
-    /**
-     * @return string
-     */
-    public function getPublic()
-    {
-        return $this->public;
-    }
-
-    /**
-     * @param string $public
-     * @return $this
-     */
-    public function setPublic(string $public)
-    {
-        $this->public = $public;
-
-        return $this;
-    }
 
 
     /**
@@ -113,61 +95,50 @@ class Nurl
     /**
      * @var \AppBundle\Entity\Tag  $tag
      *
-     * @ORM\OneToMany(targetEntity="Tag", mappedBy="nurl")
+     * @ORM\ManyToMany(targetEntity="Tag")
      *
-     * @ORM\JoinColumn(name="tag_id", referencedColumnName="id")
+     *
      *
      */
     private $tag;
 
 
 
-
     /**
-     * @return int
+     * Constructor
      */
-    public function getUpvote()
+    public function __construct()
     {
-        return $this->upvote;
+        $this->tag = new \Doctrine\Common\Collections\ArrayCollection();
     }
-
-    /**
-     * @param int $upvote
-     */
-    public function setUpvote($upvote)
-    {
-        $this->upvote = $upvote;
-    }
-
-    /**
-     * @return int
-     */
-    public function getDownvote()
-    {
-        return $this->downvote;
-    }
-
-    /**
-     * @param int $downvote
-     */
-    public function setDownvote($downvote)
-    {
-        $this->downvote = $downvote;
-    }
-
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
     }
 
+    /**
+     * Set url
+     *
+     * @param string $url
+     *
+     * @return Nurl
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+
+        return $this;
+    }
 
     /**
+     * Get url
+     *
      * @return string
      */
     public function getUrl()
@@ -176,14 +147,22 @@ class Nurl
     }
 
     /**
-     * @param string $url
+     * Set title
+     *
+     * @param string $title
+     *
+     * @return Nurl
      */
-    public function setUrl($url)
+    public function setTitle($title)
     {
-        $this->url = $url;
+        $this->title = $title;
+
+        return $this;
     }
 
     /**
+     * Get title
+     *
      * @return string
      */
     public function getTitle()
@@ -192,14 +171,46 @@ class Nurl
     }
 
     /**
-     * @param string $title
+     * Set public
+     *
+     * @param string $public
+     *
+     * @return Nurl
      */
-    public function setTitle($title)
+    public function setPublic($public)
     {
-        $this->title = $title;
+        $this->public = $public;
+
+        return $this;
     }
 
     /**
+     * Get public
+     *
+     * @return string
+     */
+    public function getPublic()
+    {
+        return $this->public;
+    }
+
+    /**
+     * Set content
+     *
+     * @param string $content
+     *
+     * @return Nurl
+     */
+    public function setContent($content)
+    {
+        $this->content = $content;
+
+        return $this;
+    }
+
+    /**
+     * Get content
+     *
      * @return string
      */
     public function getContent()
@@ -208,15 +219,52 @@ class Nurl
     }
 
     /**
-     * @param string $content
+     * Set upvote
+     *
+     * @param integer $upvote
+     *
+     * @return Nurl
      */
-    public function setContent($content)
+    public function setUpvote($upvote)
     {
-        $this->content = $content;
+        $this->upvote = $upvote;
+
+        return $this;
     }
 
+    /**
+     * Get upvote
+     *
+     * @return integer
+     */
+    public function getUpvote()
+    {
+        return $this->upvote;
+    }
 
+    /**
+     * Set downvote
+     *
+     * @param integer $downvote
+     *
+     * @return Nurl
+     */
+    public function setDownvote($downvote)
+    {
+        $this->downvote = $downvote;
 
+        return $this;
+    }
+
+    /**
+     * Get downvote
+     *
+     * @return integer
+     */
+    public function getDownvote()
+    {
+        return $this->downvote;
+    }
 
     /**
      * Set user
@@ -264,13 +312,6 @@ class Nurl
     public function getCollection()
     {
         return $this->collection;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->tag = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

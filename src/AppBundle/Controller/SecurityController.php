@@ -24,9 +24,6 @@ class SecurityController extends Controller
 
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
-        $session = new Session();
-
-        $session -> set('username', $lastUsername);
 
         return $this->render('security/login.html.twig', array(
             'last_username' => $lastUsername,
@@ -34,16 +31,4 @@ class SecurityController extends Controller
         ));
     }
 
-    /**
-     * @param User $user
-     * @return bool
-     *
-     * return whether or not contents of $user is a valid username/password combination
-     */
-    public function canAuthenticate(User $user)
-    {
-        $username = $user->getUsername();
-        $password = $user->getPassword();
-        return ('admin' == $username) && ('admin' == $password);
-    }
 }

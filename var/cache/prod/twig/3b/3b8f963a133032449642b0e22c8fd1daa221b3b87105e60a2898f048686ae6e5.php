@@ -25,16 +25,16 @@ class __TwigTemplate_137e8a67e2df1b45869bac89963ab4965e23e7afd6a6d697b7adcd87d2e
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 4
+    // line 3
     public function block_pageTitle($context, array $blocks = array())
     {
         echo "Home page";
     }
 
-    // line 6
+    // line 5
     public function block_body($context, array $blocks = array())
     {
-        // line 7
+        // line 6
         echo "
     <h1>Welcome to NURL Manager</h1>
 
@@ -45,21 +45,21 @@ class __TwigTemplate_137e8a67e2df1b45869bac89963ab4965e23e7afd6a6d697b7adcd87d2e
             <p>
                 You are currently logged in as
                 ";
-        // line 16
+        // line 15
         if ($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("ROLE_ADMIN")) {
-            // line 17
+            // line 16
             echo "                    Administrator
                 ";
         } elseif ($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("ROLE_USER")) {
-            // line 19
+            // line 18
             echo "                    User
                 ";
         } else {
-            // line 21
+            // line 20
             echo "                    <strong>Anonymous</strong>
                 ";
         }
-        // line 23
+        // line 22
         echo "            </p>
         </section>
 
@@ -67,6 +67,7 @@ class __TwigTemplate_137e8a67e2df1b45869bac89963ab4965e23e7afd6a6d697b7adcd87d2e
 
         <h3>Useful links</h3>
             <ul>
+
                 <li><a href=\"";
         // line 30
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("tag_index");
@@ -98,7 +99,7 @@ class __TwigTemplate_137e8a67e2df1b45869bac89963ab4965e23e7afd6a6d697b7adcd87d2e
 
     public function getDebugInfo()
     {
-        return array (  79 => 34,  72 => 30,  63 => 23,  59 => 21,  55 => 19,  51 => 17,  49 => 16,  38 => 7,  35 => 6,  29 => 4,  11 => 1,);
+        return array (  80 => 34,  73 => 30,  63 => 22,  59 => 20,  55 => 18,  51 => 16,  49 => 15,  38 => 6,  35 => 5,  29 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -111,6 +112,6 @@ class __TwigTemplate_137e8a67e2df1b45869bac89963ab4965e23e7afd6a6d697b7adcd87d2e
 
     public function getSourceContext()
     {
-        return new Twig_Source("", ":default:index.html.twig", "C:\\College\\College\\Third year\\Second Semester\\WFDassignment\\app/Resources\\views/default/index.html.twig");
+        return new Twig_Source("", ":default:index.html.twig", "C:\\College\\College\\Third year\\Second Semester\\WFDassignment\\NURLmanager\\app/Resources\\views/default/index.html.twig");
     }
 }

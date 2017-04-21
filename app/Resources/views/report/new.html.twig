@@ -1,28 +1,16 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Report a nurl</h1>
+    <h1>Report creation</h1>
 
-    {#<label>NURL title</label>#}
-    {#<input type="text" value="{{ elective.title }}" disabled>#}
-
-    {#<label>Report reason</label>#}
-    {#<input type="text" value="">#}
     {{ form_start(form) }}
-    {{ form_row(form.id)  }}
-    {{ form_row(form.title)  }}
-    {{ form_row(form.content) }}
-
+        {{ form_widget(form) }}
+        <input type="submit" value="Create" />
     {{ form_end(form) }}
-
-    {#***************************************************************#}
-    {# Make new route for submitting the title and the content to db #}
-    {#***************************************************************#}
-{#<input type="submit" value="Submit" >#}
 
     <ul>
         <li>
-            <a href="{{ path('elective_index') }}">Back to the list</a>
+            <a href="{{ path('report_index') }}">Back to the list</a>
         </li>
     </ul>
 {% endblock %}

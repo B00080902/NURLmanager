@@ -2,7 +2,11 @@
 
 namespace AppBundle\Form;
 
+use AppBundle\Entity\Nurl;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -13,10 +17,13 @@ class ReportType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('id');
-        $builder->add('title');
-        $builder->add('content');
-        $builder->add('timestamp');
+        $nurl = new Nurl();
+
+        $builder->add('id', TextType::class,  ['data' => $nurl -> getId(), 'disabled' => true])
+            ->add('title', TextType::class,  ['data' => $nurl -> getTitle(), 'disabled' => true])
+            ->add('content', TextareaType::class)
+            //->add('timestamp', TextType::class, ['data' => date('H:i:s \O\n d/m/Y'), 'disabled' => true])
+            ->add('save', SubmitType::class, array('label' => 'Send Report'));
     }
     
     /**

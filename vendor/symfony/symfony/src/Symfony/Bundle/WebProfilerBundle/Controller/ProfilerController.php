@@ -253,7 +253,7 @@ class ProfilerController
         }
 
         return new Response(
-            $this->twig->render('@WebProfiler/Profiler/search.html.twig', array(
+            $this->twig->render('@WebProfiler/Profiler/index.html.twig', array(
                 'token' => $token,
                 'ip' => $ip,
                 'method' => $method,

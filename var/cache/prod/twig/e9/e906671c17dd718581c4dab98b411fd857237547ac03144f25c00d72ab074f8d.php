@@ -48,6 +48,6 @@ class __TwigTemplate_4bd71dab8dad39d354f53b975b41bc6431b1532cc61ed51d0f4db2f2226
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "@Framework/FormTable/form_row.html.php", "C:\\College\\College\\Third year\\Second Semester\\WFDassignment\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\FrameworkBundle\\Resources\\views\\FormTable\\form_row.html.php");
+        return new Twig_Source("", "@Framework/FormTable/form_row.html.php", "C:\\College\\College\\Third year\\Second Semester\\WFDassignment\\NURLmanager\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\FrameworkBundle\\Resources\\views\\FormTable\\form_row.html.php");
     }
 }

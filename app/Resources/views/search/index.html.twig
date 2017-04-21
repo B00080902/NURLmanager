@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Search {%  endblock %}
+
+{% block body %}
+
+{{ result }}
+<hr>
+    <br>
+    <br>
+    <br>
+
+{{ query }}
+<hr>
+    {% for collection in collections %}
+        {{ collection.title }}
+    {% endfor %}
+{% endblock %}

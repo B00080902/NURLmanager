@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+
+{% block pageTitle %}Shared Collections{% endblock %}
+
+{% block body %}
+
+
+    <h1>Shared <i>Public</i> Collections</h1>
+
+    {# Get all the collections #}
+    {% for collection in collections %}
+
+        {# Only show shared collections #}
+        {% if collection.shared == 1 %}
+
+            {# Show the nurls only if they're defined as public #}
+            {% if collection.public == 'Public' %}
+
+
+                <table>
+
+                    <tbody>
+
+                    <tr>
+                        <th>Id</th>
+                        <td>{{ collection.id }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Title</th>
+                        <td>{{ collection.title }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Description</th>
+                        <td>{{ collection.description }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Author</th>
+                        <td>{{ collection.user.username }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Type</th>
+                        <td>{{ collection.public }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Shared</th>
+                        <td>{% if collection.shared == 1 %}Yes{% else %}No{% endif %}</td>
+                    </tr>
+
+                    </tbody>
+
+                </table>
+
+                <hr>
+
+                <hr>
+
+            {% endif %}
+
+        {% else %}
+
+            <h2>You haven't shared your collection yet! </h2>
+
+            <h4 style="color: grey">Please try again later</h4>
+
+        {% endif %}
+
+    {% endfor %}
+
+{% endblock %}

@@ -21,104 +21,161 @@ class __TwigTemplate_7d43971a0ac80dbcf07c2431bcadee7af0b2f58059228eb799436592d73
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_0870f37abe772ae4cbd03c59ded3b9ad147dfa2840eb1b26012d9c535eab0efb = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_0870f37abe772ae4cbd03c59ded3b9ad147dfa2840eb1b26012d9c535eab0efb->enter($__internal_0870f37abe772ae4cbd03c59ded3b9ad147dfa2840eb1b26012d9c535eab0efb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "collection/index.html.twig"));
+        $__internal_5eea7c976cf0ebdf52136d71b44ba09aa1ccd9423c04da9a8df4b4ada0cb5b64 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_5eea7c976cf0ebdf52136d71b44ba09aa1ccd9423c04da9a8df4b4ada0cb5b64->enter($__internal_5eea7c976cf0ebdf52136d71b44ba09aa1ccd9423c04da9a8df4b4ada0cb5b64_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "collection/index.html.twig"));
 
-        $__internal_5bd4e6063e0c38fd8f9bf05e41c5795166ba0a00b64b5f1cce596690e3a05d50 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_5bd4e6063e0c38fd8f9bf05e41c5795166ba0a00b64b5f1cce596690e3a05d50->enter($__internal_5bd4e6063e0c38fd8f9bf05e41c5795166ba0a00b64b5f1cce596690e3a05d50_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "collection/index.html.twig"));
+        $__internal_8e65ecc5e2f2d3da0a04b9f179ae09dfed1fbef5ff65f140a09a4d4a7bccbf79 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_8e65ecc5e2f2d3da0a04b9f179ae09dfed1fbef5ff65f140a09a4d4a7bccbf79->enter($__internal_8e65ecc5e2f2d3da0a04b9f179ae09dfed1fbef5ff65f140a09a4d4a7bccbf79_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "collection/index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_0870f37abe772ae4cbd03c59ded3b9ad147dfa2840eb1b26012d9c535eab0efb->leave($__internal_0870f37abe772ae4cbd03c59ded3b9ad147dfa2840eb1b26012d9c535eab0efb_prof);
+        $__internal_5eea7c976cf0ebdf52136d71b44ba09aa1ccd9423c04da9a8df4b4ada0cb5b64->leave($__internal_5eea7c976cf0ebdf52136d71b44ba09aa1ccd9423c04da9a8df4b4ada0cb5b64_prof);
 
         
-        $__internal_5bd4e6063e0c38fd8f9bf05e41c5795166ba0a00b64b5f1cce596690e3a05d50->leave($__internal_5bd4e6063e0c38fd8f9bf05e41c5795166ba0a00b64b5f1cce596690e3a05d50_prof);
+        $__internal_8e65ecc5e2f2d3da0a04b9f179ae09dfed1fbef5ff65f140a09a4d4a7bccbf79->leave($__internal_8e65ecc5e2f2d3da0a04b9f179ae09dfed1fbef5ff65f140a09a4d4a7bccbf79_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_c19384f44aadbe0ac7f8caadccbf22e56dff2767577bd3cad6e2732dfb87595b = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_c19384f44aadbe0ac7f8caadccbf22e56dff2767577bd3cad6e2732dfb87595b->enter($__internal_c19384f44aadbe0ac7f8caadccbf22e56dff2767577bd3cad6e2732dfb87595b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_a56261d7e2710c9437d2038030eabaa57ae3bca06c794bdedeb1717a22d86699 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_a56261d7e2710c9437d2038030eabaa57ae3bca06c794bdedeb1717a22d86699->enter($__internal_a56261d7e2710c9437d2038030eabaa57ae3bca06c794bdedeb1717a22d86699_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_306f63695800ef6d9852bd35e48e85ccdd1a2a2f244cddca2d61f525c78ccfa3 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_306f63695800ef6d9852bd35e48e85ccdd1a2a2f244cddca2d61f525c78ccfa3->enter($__internal_306f63695800ef6d9852bd35e48e85ccdd1a2a2f244cddca2d61f525c78ccfa3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_768d16a2199fc9997d9df09a8cb0b4fe1cd36b1a5b4813b20bb1d342e09052e1 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_768d16a2199fc9997d9df09a8cb0b4fe1cd36b1a5b4813b20bb1d342e09052e1->enter($__internal_768d16a2199fc9997d9df09a8cb0b4fe1cd36b1a5b4813b20bb1d342e09052e1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "    <h1>Collections list</h1>
+        echo "
+    <h1>Collections list</h1>
 
     <table>
+
         <thead>
+
             <tr>
+
                 <th>Id</th>
+
                 <th>Title</th>
+
                 <th>Description</th>
+
+                <th>Public</th>
+
+                <th>Shared</th>
+
+                <th>Author</th>
+
                 <th>Actions</th>
+
             </tr>
+
         </thead>
+
         <tbody>
         ";
-        // line 16
+        // line 32
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["collections"] ?? $this->getContext($context, "collections")));
         foreach ($context['_seq'] as $context["_key"] => $context["collection"]) {
-            // line 17
-            echo "            <tr>
+            // line 33
+            echo "
+            <tr>
+
                 <td><a href=\"";
-            // line 18
+            // line 36
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("collection_show", array("id" => $this->getAttribute($context["collection"], "id", array()))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["collection"], "id", array()), "html", null, true);
             echo "</a></td>
+
                 <td>";
-            // line 19
+            // line 38
             echo twig_escape_filter($this->env, $this->getAttribute($context["collection"], "title", array()), "html", null, true);
             echo "</td>
+
                 <td>";
-            // line 20
+            // line 40
             echo twig_escape_filter($this->env, $this->getAttribute($context["collection"], "description", array()), "html", null, true);
             echo "</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href=\"";
-            // line 24
-            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("collection_show", array("id" => $this->getAttribute($context["collection"], "id", array()))), "html", null, true);
-            echo "\">show</a>
-                        </li>
-                        <li>
-                            <a href=\"";
-            // line 27
-            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("collection_edit", array("id" => $this->getAttribute($context["collection"], "id", array()))), "html", null, true);
-            echo "\">edit</a>
-                        </li>
-                    </ul>
-                </td>
+
+                <td>";
+            // line 42
+            echo twig_escape_filter($this->env, $this->getAttribute($context["collection"], "public", array()), "html", null, true);
+            echo "</td>
+
+                <td>";
+            // line 44
+            echo twig_escape_filter($this->env, $this->getAttribute($context["collection"], "shared", array()), "html", null, true);
+            echo "</td>
+
+                <td>";
+            // line 46
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["collection"], "user", array()), "username", array()), "html", null, true);
+            echo "</td>
+
+                ";
+            // line 48
+            if (($this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "user", array()), "username", array()) == $this->getAttribute($this->getAttribute($context["collection"], "user", array()), "username", array()))) {
+                // line 49
+                echo "
+                    <td>
+                        <ul>
+                            <li>
+                                <a href=\"";
+                // line 53
+                echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("collection_show", array("id" => $this->getAttribute($context["collection"], "id", array()))), "html", null, true);
+                echo "\">show</a>
+                            </li>
+
+                            <li>
+                                <a href=\"";
+                // line 57
+                echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("collection_edit", array("id" => $this->getAttribute($context["collection"], "id", array()))), "html", null, true);
+                echo "\">edit</a>
+                            </li>
+
+                            <li>
+                                <a href=\"";
+                // line 61
+                echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("collection_share_share", array("id" => $this->getAttribute($context["collection"], "id", array()))), "html", null, true);
+                echo "\">share</a>
+                            </li>
+                        </ul>
+                    </td>
+
+                ";
+            }
+            // line 67
+            echo "
             </tr>
+
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['collection'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 33
-        echo "        </tbody>
+        // line 71
+        echo "
+        </tbody>
+
     </table>
 
     <ul>
         <li>
             <a href=\"";
-        // line 38
+        // line 78
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("collection_new");
         echo "\">Create a new collection</a>
         </li>
     </ul>
 ";
         
-        $__internal_306f63695800ef6d9852bd35e48e85ccdd1a2a2f244cddca2d61f525c78ccfa3->leave($__internal_306f63695800ef6d9852bd35e48e85ccdd1a2a2f244cddca2d61f525c78ccfa3_prof);
+        $__internal_768d16a2199fc9997d9df09a8cb0b4fe1cd36b1a5b4813b20bb1d342e09052e1->leave($__internal_768d16a2199fc9997d9df09a8cb0b4fe1cd36b1a5b4813b20bb1d342e09052e1_prof);
 
         
-        $__internal_c19384f44aadbe0ac7f8caadccbf22e56dff2767577bd3cad6e2732dfb87595b->leave($__internal_c19384f44aadbe0ac7f8caadccbf22e56dff2767577bd3cad6e2732dfb87595b_prof);
+        $__internal_a56261d7e2710c9437d2038030eabaa57ae3bca06c794bdedeb1717a22d86699->leave($__internal_a56261d7e2710c9437d2038030eabaa57ae3bca06c794bdedeb1717a22d86699_prof);
 
     }
 
@@ -134,7 +191,7 @@ class __TwigTemplate_7d43971a0ac80dbcf07c2431bcadee7af0b2f58059228eb799436592d73
 
     public function getDebugInfo()
     {
-        return array (  112 => 38,  105 => 33,  93 => 27,  87 => 24,  80 => 20,  76 => 19,  70 => 18,  67 => 17,  63 => 16,  49 => 4,  40 => 3,  11 => 1,);
+        return array (  169 => 78,  160 => 71,  151 => 67,  142 => 61,  135 => 57,  128 => 53,  122 => 49,  120 => 48,  115 => 46,  110 => 44,  105 => 42,  100 => 40,  95 => 38,  88 => 36,  83 => 33,  79 => 32,  49 => 4,  40 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -150,36 +207,76 @@ class __TwigTemplate_7d43971a0ac80dbcf07c2431bcadee7af0b2f58059228eb799436592d73
         return new Twig_Source("{% extends 'base.html.twig' %}
 
 {% block body %}
+
     <h1>Collections list</h1>
 
     <table>
+
         <thead>
+
             <tr>
+
                 <th>Id</th>
+
                 <th>Title</th>
+
                 <th>Description</th>
+
+                <th>Public</th>
+
+                <th>Shared</th>
+
+                <th>Author</th>
+
                 <th>Actions</th>
+
             </tr>
+
         </thead>
+
         <tbody>
         {% for collection in collections %}
+
             <tr>
+
                 <td><a href=\"{{ path('collection_show', { 'id': collection.id }) }}\">{{ collection.id }}</a></td>
+
                 <td>{{ collection.title }}</td>
+
                 <td>{{ collection.description }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href=\"{{ path('collection_show', { 'id': collection.id }) }}\">show</a>
-                        </li>
-                        <li>
-                            <a href=\"{{ path('collection_edit', { 'id': collection.id }) }}\">edit</a>
-                        </li>
-                    </ul>
-                </td>
+
+                <td>{{ collection.public }}</td>
+
+                <td>{{ collection.shared }}</td>
+
+                <td>{{ collection.user.username }}</td>
+
+                {% if app.user.username == collection.user.username %}
+
+                    <td>
+                        <ul>
+                            <li>
+                                <a href=\"{{ path('collection_show', { 'id': collection.id }) }}\">show</a>
+                            </li>
+
+                            <li>
+                                <a href=\"{{ path('collection_edit', { 'id': collection.id }) }}\">edit</a>
+                            </li>
+
+                            <li>
+                                <a href=\"{{ path('collection_share_share', { 'id': collection.id }) }}\">share</a>
+                            </li>
+                        </ul>
+                    </td>
+
+                {% endif %}
+
             </tr>
+
         {% endfor %}
+
         </tbody>
+
     </table>
 
     <ul>

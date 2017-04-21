@@ -192,6 +192,28 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
             not_collection_delete:
 
+            // collection_view
+            if (preg_match('#^/collection/(?P<id>[^/]++)/share$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_collection_view;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'collection_view')), array (  '_controller' => 'AppBundle\\Controller\\CollectionController::shareAction',));
+            }
+            not_collection_view:
+
+            // collection_share_share
+            if (preg_match('#^/collection/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_collection_share_share;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'collection_share_share')), array (  '_controller' => 'AppBundle\\Controller\\CollectionController::shareCollectionAction',));
+            }
+            not_collection_share_share:
+
         }
 
         // homepage
@@ -290,28 +312,6 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
             not_nurl_delete:
 
-            // nurl_upvote
-            if (preg_match('#^/nurl/(?P<id>[^/]++)/upvote$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                    goto not_nurl_upvote;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'nurl_upvote')), array (  '_controller' => 'AppBundle\\Controller\\NurlController::upvoteAction',));
-            }
-            not_nurl_upvote:
-
-            // nurl_downvote
-            if (preg_match('#^/nurl/(?P<id>[^/]++)/downvote$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                    goto not_nurl_downvote;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'nurl_downvote')), array (  '_controller' => 'AppBundle\\Controller\\NurlController::downvoteAction',));
-            }
-            not_nurl_downvote:
-
         }
 
         if (0 === strpos($pathinfo, '/re')) {
@@ -337,13 +337,13 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 not_report_index:
 
                 // report_new
-                if (preg_match('#^/report/(?P<id>[^/]++)/new$#s', $pathinfo, $matches)) {
+                if ($pathinfo === '/report/new') {
                     if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
                         $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
                         goto not_report_new;
                     }
 
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'report_new')), array (  '_controller' => 'AppBundle\\Controller\\ReportController::newAction',));
+                    return array (  '_controller' => 'AppBundle\\Controller\\ReportController::newAction',  '_route' => 'report_new',);
                 }
                 not_report_new:
 
@@ -380,20 +380,20 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 }
                 not_report_delete:
 
-                // report_submit
-                if ($pathinfo === '/report/submit') {
-                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                        $allow = array_merge($allow, array('GET', 'HEAD'));
-                        goto not_report_submit;
-                    }
-
-                    return array (  '_controller' => 'AppBundle\\Controller\\ReportController::submitAction',  '_route' => 'report_submit',);
-                }
-                not_report_submit:
-
             }
 
         }
+
+        // search_index
+        if ($pathinfo === '/search/') {
+            if ($this->context->getMethod() != 'POST') {
+                $allow[] = 'POST';
+                goto not_search_index;
+            }
+
+            return array (  '_controller' => 'AppBundle\\Controller\\SearchController::indexAction',  '_route' => 'search_index',);
+        }
+        not_search_index:
 
         // login
         if ($pathinfo === '/login') {

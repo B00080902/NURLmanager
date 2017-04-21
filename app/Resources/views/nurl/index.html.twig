@@ -8,10 +8,6 @@
         <section>
             <h1>Nurls list</h1>
         </section>
-        <section style="text-align: right">
-
-        </section>
-
     </div>
 
     <table style="text-align: center">
@@ -47,7 +43,7 @@
             {# Show the nurls only if they're defined as public #}
             {% if nurl.public == '' %}
 
-                {# -------- NURL table ---------#}
+                {# -------- NURL table --------- #}
                 <tr>
 
                     <td><a href="{{ path('nurl_show', { 'id': nurl.id }) }}">{{ nurl.id }}</a></td>

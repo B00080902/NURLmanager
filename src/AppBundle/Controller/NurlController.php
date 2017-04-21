@@ -3,18 +3,10 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Nurl;
-use AppBundle\Entity\Tag;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\CollectionType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 /**
  * Nurl controller.
@@ -36,9 +28,7 @@ class NurlController extends Controller
 
         $nurls = $em->getRepository('AppBundle:Nurl')->findAll();
 
-
-        $templateName = 'nurl/index';
-        return $this->render($templateName . '.html.twig', array(
+        return $this->render('nurl/index.html.twig', array(
             'nurls' => $nurls,
         ));
     }
@@ -48,43 +38,11 @@ class NurlController extends Controller
      *
      * @Route("/new", name="nurl_new")
      * @Method({"GET", "POST"})
-     * @param Request $request
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
     public function newAction(Request $request)
     {
-        $this->denyAccessUnlessGranted('ROLE_USER', null, 'Unable to access this page!');
         $nurl = new Nurl();
-        $collections = $repository = $this->getDoctrine()->getRepository('AppBundle:Collection')->findAll();
-
-        $form = $this->createFormBuilder($nurl)
-            ->add('url', TextType::class)
-            ->add('title', TextType::class)
-            ->add('content', TextareaType::class)
-            ->add('collection', EntityType::class, array(
-               // query choices from this entity
-               'class' => 'AppBundle:Collection',
-
-               // use the User.username property as the visible option string
-               'choice_label' => 'title',
-
-               // used to render a select box, check boxes or radios
-               'multiple' => false,
-               'expanded' => true,
-           ))
-
-            ->add('public', ChoiceType::class, array(
-                'choices' => array(
-                    'Public' => 'Public',
-                    'Private' => 'Private'
-                ),
-                'required' => true,
-                'empty_data' => null
-            ))
-
-            ->add('save', SubmitType::class, array('label' => 'Submit Nurl'))
-            ->getForm();
-
+        $form = $this->createForm('AppBundle\Form\NurlType', $nurl);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -94,7 +52,7 @@ class NurlController extends Controller
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($nurl);
-            $em->flush($nurl);
+            $em->flush();
 
             return $this->redirectToRoute('nurl_show', array('id' => $nurl->getId()));
         }
@@ -110,19 +68,13 @@ class NurlController extends Controller
      *
      * @Route("/{id}", name="nurl_show")
      * @Method("GET")
-     * @param Nurl $nurl
-     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function showAction(Nurl $nurl)
     {
         $deleteForm = $this->createDeleteForm($nurl);
 
-        $em = $this->getDoctrine()->getManager();
-        $tags = $em->getRepository('AppBundle:Tag')->findBy(array('nurl' => $nurl));
-
         return $this->render('nurl/show.html.twig', array(
             'nurl' => $nurl,
-            'tags' => $tags,
             'delete_form' => $deleteForm->createView(),
         ));
     }
@@ -132,56 +84,22 @@ class NurlController extends Controller
      *
      * @Route("/{id}/edit", name="nurl_edit")
      * @Method({"GET", "POST"})
-     * @param Request $request
-     * @param Nurl $nurl
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
     public function editAction(Request $request, Nurl $nurl)
     {
         $this->denyAccessUnlessGranted('ROLE_USER', null, 'Unable to access this page!');
 
         $deleteForm = $this->createDeleteForm($nurl);
-
-        $editForm = $this->createFormBuilder($nurl)
-            ->add('url', TextType::class)
-            ->add('title', TextType::class)
-            ->add('content', TextareaType::class)
-            ->add('collection', EntityType::class, array(
-                // query choices from this entity
-                'class' => 'AppBundle:Collection',
-
-                // use the User.username property as the visible option string
-                'choice_label' => 'title',
-
-                // used to render a select box, check boxes or radios
-                'multiple' => false,
-                'expanded' => true,
-            ))
-
-            ->add('public', ChoiceType::class, array(
-                'choices' => array(
-                    'Public' => 'Public',
-                    'Private' => 'Private'
-                ),
-                'required' => true,
-                'empty_data' => null
-            ))
-            ->add('save', SubmitType::class, array('label' => 'Edit Nurl'))
-            ->getForm();
-
+        $editForm = $this->createForm('AppBundle\Form\NurlType', $nurl);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
 
-
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($nurl);
-            $em->flush($nurl);
-
-            return $this->redirectToRoute('nurl_show', array('id' => $nurl->getId()));
+            return $this->redirectToRoute('nurl_edit', array('id' => $nurl->getId()));
         }
 
-        return $this->render('nurl/edit.html.twig', array(
+        return $this->render('nurl/show.html.twig', array(
             'nurl' => $nurl,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -193,14 +111,9 @@ class NurlController extends Controller
      *
      * @Route("/{id}", name="nurl_delete")
      * @Method("DELETE")
-     * @param Request $request
-     * @param Nurl $nurl
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
     public function deleteAction(Request $request, Nurl $nurl)
     {
-        $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
-
         $form = $this->createDeleteForm($nurl);
         $form->handleRequest($request);
 
@@ -226,63 +139,6 @@ class NurlController extends Controller
             ->setAction($this->generateUrl('nurl_delete', array('id' => $nurl->getId())))
             ->setMethod('DELETE')
             ->getForm()
-            ;
+        ;
     }
-
-    /**
-     * Lists all nurl entities.
-     *
-     * @Route("/{id}/upvote", name="nurl_upvote")
-     * @Method({"GET", "POST"})
-     */
-    public function upvoteAction(Nurl $nurl)
-    {
-        $nurl -> setUpvote( $nurl -> getUpvote() + 1);
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($nurl);
-        $em->flush($nurl);
-
-        return $this->redirectToRoute('nurl_index');
-    }
-
-    /**
-     * Lists all nurl entities.
-     *
-     * @Route("/{id}/downvote", name="nurl_downvote")
-     * @Method({"GET", "POST"})
-     */
-    public function downvoteAction(Nurl $nurl)
-    {
-        $nurl -> setDownvote( $nurl -> getDownvote() + 1);
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($nurl);
-        $em->flush($nurl);
-
-        return $this->redirectToRoute('nurl_index');
-    }
-
-//    /**
-//     * Searches and displays
-//     * according to the
-//     * defined criteria
-//     *
-//     * @Route("/{id}/search", name="nurl_search")
-//     * @Method({"GET", "POST"})
-//     * @param Request $request
-//     * @param Nurl $nurl
-//     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-//     */
-//    public function searchAction(Request $request, Nurl $nurl)
-//    {
-//        $request->request->get('search');
-//
-//        echo 'search', $request->request->get('search');
-//
-//        $em = $this->getDoctrine()->getManager();
-//        $em->persist($nurl);
-//        $em->flush($nurl);
-//
-//        return $this->redirectToRoute('nurl_index');
-//    }
-
 }

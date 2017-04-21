@@ -2,17 +2,10 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\Nurl;
 use AppBundle\Entity\Tag;
-use MongoDB\Driver\Server;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Session;
 
 /**
@@ -48,27 +41,11 @@ class TagController extends Controller
     public function newAction(Request $request)
     {
         $tag = new Tag();
-
-        $form = $this->createFormBuilder($tag)
-            ->add('tag', TextType::class)
-            ->add('nurl', EntityType::class, array(
-                // query choices from this entity
-                'class' => 'AppBundle:Nurl',
-
-                // use the User.username property as the visible option string
-                'choice_label' => 'title',
-
-                // used to render a select box, check boxes or radios
-                'multiple' => false,
-                'expanded' => false,
-            ))
-            ->add('save', SubmitType::class, array('label' => 'Submit Tag'))
-
-            ->getForm();
-
+        $form = $this->createForm('AppBundle\Form\TagType', $tag);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
             $tag -> setUser($this->get('security.token_storage')->getToken()->getUser());
             $tag -> setUpvote(0);
             $tag -> setDownvote(0);
@@ -76,7 +53,7 @@ class TagController extends Controller
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($tag);
-            $em->flush($tag);
+            $em->flush();
 
             return $this->redirectToRoute('tag_show', array('id' => $tag->getId()));
         }
@@ -112,20 +89,13 @@ class TagController extends Controller
     public function editAction(Request $request, Tag $tag)
     {
         $deleteForm = $this->createDeleteForm($tag);
-
-        $editForm = $this->createFormBuilder($tag)
-            ->add('tag', TextType::class)
-            ->add('save', SubmitType::class, array('label' => 'Edit Tag'))
-            ->getForm();
-
+        $editForm = $this->createForm('AppBundle\Form\TagType', $tag);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($tag);
-            $em->flush($tag);
+            $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('tag_show', array('id' => $tag->getId()));
+            return $this->redirectToRoute('tag_edit', array('id' => $tag->getId()));
         }
 
         return $this->render('tag/edit.html.twig', array(
@@ -168,9 +138,8 @@ class TagController extends Controller
             ->setAction($this->generateUrl('tag_delete', array('id' => $tag->getId())))
             ->setMethod('DELETE')
             ->getForm()
-            ;
+        ;
     }
-
 
     /**
      * Lists all nurl entities.

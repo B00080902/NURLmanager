@@ -61,6 +61,18 @@
 
                 <li>
                     <a
+                            {% if app.request.attributes.get('_route') == 'collection_index'  %}
+
+                                id="current"
+
+                            {% endif %}
+
+                            href="/collection/"><span>Collections</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a
                             {% if app.request.attributes.get('_route') == 'tag_index'  %}
 
                                 id="current"
@@ -81,6 +93,14 @@
         <li><a href="{{ path('login') }}">login</a></li>
 
     {% endif %}
+                <li style="display: flex">
+                    <form action="{{ path('search_index') }}" method="post">
+                        {#<input type="text" name="search" placeholder="Search" value="">#}
+                        <input name="search" type="search" placeholder="Search" >
+                        <input type="submit" value="Search">
+                    </form>
+
+                </li>
 
             </ul>
         </nav>

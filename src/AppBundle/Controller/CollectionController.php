@@ -6,10 +6,6 @@ use AppBundle\Entity\Collection;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
@@ -47,21 +43,17 @@ class CollectionController extends Controller
     public function newAction(Request $request)
     {
         $collection = new Collection();
-
-        $form = $this->createFormBuilder($collection)
-            ->add('title', TextType::class)
-            ->add('description', TextareaType::class)
-            ->add('save', SubmitType::class, array('label' => 'Submit Collection'))
-            ->getForm();
-
+        $form = $this->createForm('AppBundle\Form\CollectionType', $collection);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
             $collection -> setUser($this->get('security.token_storage')->getToken()->getUser());
+            $collection -> setShared(false);
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($collection);
-            $em->flush($collection);
+            $em->flush();
 
             return $this->redirectToRoute('collection_show', array('id' => $collection->getId()));
         }
@@ -100,29 +92,14 @@ class CollectionController extends Controller
     public function editAction(Request $request, Collection $collection)
     {
         $deleteForm = $this->createDeleteForm($collection);
-
-        $editForm = $this->createFormBuilder($collection)
-            ->add('title', TextType::class)
-            ->add('description', TextareaType::class)
-            ->add('public', ChoiceType::class, array(
-                'choices' => array(
-                    'Public' => 'Public',
-                    'Private' => 'Private'
-                ),
-                'required' => true,
-                'empty_data' => null
-            ))
-            ->add('save', SubmitType::class, array('label' => 'Edit Collection'))
-            ->getForm();
-
+        $editForm = $this->createForm('AppBundle\Form\CollectionType', $collection);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($collection);
-            $em->flush($collection);
 
-            return $this->redirectToRoute('collection_show', array('id' => $collection->getId()));
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('collection_index');
         }
 
         return $this->render('collection/edit.html.twig', array(
@@ -166,5 +143,44 @@ class CollectionController extends Controller
             ->setMethod('DELETE')
             ->getForm()
         ;
+    }
+
+    /**
+     * When users share their/someones
+     * collection it will appear under this path
+     *
+     * @Route("/{id}/share", name="collection_view")
+     * @Method({"GET", "POST"})
+     * @param Collection $collection
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     */
+    public function shareAction(Collection $collection)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $collections = $em->getRepository('AppBundle:Collection')->findAll();
+
+        return $this->render('collection/shared.html.twig', array(
+            'collections' => $collections
+        ));
+    }
+
+    /**
+     * Shares the selected entity
+     *
+     * @param Collection $collection The collection entity
+     * @Route("/{id}", name="collection_share_share")
+     * @Method({"GET", "POST"})
+     */
+    public function shareCollectionAction(Collection $collection)
+    {
+        $collection -> setShared(true);
+
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($collection);
+        $em->flush($collection);
+
+        return $this->redirectToRoute('collection_index');
+
     }
 }

@@ -121,6 +121,6 @@ class __TwigTemplate_0b05fac0752df520271e444f32f9cdaeeb421714b765aa6c7536f4d58db
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "@Doctrine/Collector/explain.html.twig", "C:\\College\\College\\Third year\\Second Semester\\WFDassignment\\vendor\\doctrine\\doctrine-bundle\\Resources\\views\\Collector\\explain.html.twig");
+        return new Twig_Source("", "@Doctrine/Collector/explain.html.twig", "C:\\College\\College\\Third year\\Second Semester\\WFDassignment\\NURLmanager\\vendor\\doctrine\\doctrine-bundle\\Resources\\views\\Collector\\explain.html.twig");
     }
 }

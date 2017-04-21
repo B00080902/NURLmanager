@@ -25,16 +25,16 @@ class __TwigTemplate_9834a18b85b34ab5c7f0f830e0dafe87e24b7cd07e3669a7c0d6a40d029
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 2
+    // line 3
     public function block_pageTitle($context, array $blocks = array())
     {
-        echo "home page";
+        echo "admin home page";
     }
 
-    // line 3
+    // line 5
     public function block_body($context, array $blocks = array())
     {
-        // line 4
+        // line 6
         echo "    <h1>welcome to ADMIN home page</h1>
     <p>
         Welcome to the <strong>secure</strong> admin home page
@@ -54,7 +54,7 @@ class __TwigTemplate_9834a18b85b34ab5c7f0f830e0dafe87e24b7cd07e3669a7c0d6a40d029
 
     public function getDebugInfo()
     {
-        return array (  38 => 4,  35 => 3,  29 => 2,  11 => 1,);
+        return array (  38 => 6,  35 => 5,  29 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -67,6 +67,6 @@ class __TwigTemplate_9834a18b85b34ab5c7f0f830e0dafe87e24b7cd07e3669a7c0d6a40d029
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "admin/index.html.twig", "C:\\College\\College\\Third year\\Second Semester\\WFDassignment\\app\\Resources\\views\\admin\\index.html.twig");
+        return new Twig_Source("", "admin/index.html.twig", "C:\\College\\College\\Third year\\Second Semester\\WFDassignment\\NURLmanager\\app\\Resources\\views\\admin\\index.html.twig");
     }
 }

@@ -198,6 +198,6 @@ class __TwigTemplate_64f5b4f5d3e7a5f6c50c3a35c324bf56812a71a73de3c76de0b49d4315c
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "security/register.html.twig", "C:\\College\\College\\Third year\\Second Semester\\WFDassignment\\app\\Resources\\views\\security\\register.html.twig");
+        return new Twig_Source("", "security/register.html.twig", "C:\\College\\College\\Third year\\Second Semester\\WFDassignment\\NURLmanager\\app\\Resources\\views\\security\\register.html.twig");
     }
 }

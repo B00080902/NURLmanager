@@ -64,10 +64,10 @@ class User extends \AppBundle\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'email', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'username', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'plainPassword', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'password', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'isActive'];
+            return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'email', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'username', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'plainPassword', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'password', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'isActive', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'collection', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'nurl', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'tag'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'email', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'username', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'plainPassword', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'password', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'isActive'];
+        return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'email', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'username', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'plainPassword', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'password', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'isActive', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'collection', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'nurl', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'tag'];
     }
 
     /**
@@ -176,94 +176,6 @@ class User extends \AppBundle\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function getEmail()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getEmail', []);
-
-        return parent::getEmail();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setEmail($email)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setEmail', [$email]);
-
-        return parent::setEmail($email);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getUsername()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUsername', []);
-
-        return parent::getUsername();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setUsername($username)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUsername', [$username]);
-
-        return parent::setUsername($username);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getPlainPassword()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPlainPassword', []);
-
-        return parent::getPlainPassword();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setPlainPassword($password)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPlainPassword', [$password]);
-
-        return parent::setPlainPassword($password);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getPassword()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPassword', []);
-
-        return parent::getPassword();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setPassword($password)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPassword', [$password]);
-
-        return parent::setPassword($password);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function getSalt()
     {
 
@@ -308,12 +220,45 @@ class User extends \AppBundle\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
+    public function setRoles($roles)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setRoles', [$roles]);
+
+        return parent::setRoles($roles);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function eraseCredentials()
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'eraseCredentials', []);
 
         return parent::eraseCredentials();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getPassword()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPassword', []);
+
+        return parent::getPassword();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getUsername()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUsername', []);
+
+        return parent::getUsername();
     }
 
     /**
@@ -329,6 +274,50 @@ class User extends \AppBundle\Entity\User implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getId', []);
 
         return parent::getId();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setEmail($email)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setEmail', [$email]);
+
+        return parent::setEmail($email);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getEmail()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getEmail', []);
+
+        return parent::getEmail();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setUsername($username)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUsername', [$username]);
+
+        return parent::setUsername($username);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setPassword($password)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPassword', [$password]);
+
+        return parent::setPassword($password);
     }
 
     /**
@@ -351,6 +340,105 @@ class User extends \AppBundle\Entity\User implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIsActive', []);
 
         return parent::getIsActive();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addCollection(\AppBundle\Entity\Collection $collection)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addCollection', [$collection]);
+
+        return parent::addCollection($collection);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeCollection(\AppBundle\Entity\Collection $collection)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeCollection', [$collection]);
+
+        return parent::removeCollection($collection);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getCollection()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCollection', []);
+
+        return parent::getCollection();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addNurl(\AppBundle\Entity\Nurl $nurl)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addNurl', [$nurl]);
+
+        return parent::addNurl($nurl);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeNurl(\AppBundle\Entity\Nurl $nurl)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeNurl', [$nurl]);
+
+        return parent::removeNurl($nurl);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getNurl()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getNurl', []);
+
+        return parent::getNurl();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addTag(\AppBundle\Entity\Tag $tag)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addTag', [$tag]);
+
+        return parent::addTag($tag);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeTag(\AppBundle\Entity\Tag $tag)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeTag', [$tag]);
+
+        return parent::removeTag($tag);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getTag()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getTag', []);
+
+        return parent::getTag();
     }
 
 }

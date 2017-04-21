@@ -64,10 +64,10 @@ class Nurl extends \AppBundle\Entity\Nurl implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Nurl' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Nurl' . "\0" . 'url', '' . "\0" . 'AppBundle\\Entity\\Nurl' . "\0" . 'tag', '' . "\0" . 'AppBundle\\Entity\\Nurl' . "\0" . 'title', '' . "\0" . 'AppBundle\\Entity\\Nurl' . "\0" . 'content', '' . "\0" . 'AppBundle\\Entity\\Nurl' . "\0" . 'upvote', '' . "\0" . 'AppBundle\\Entity\\Nurl' . "\0" . 'downvote'];
+            return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Nurl' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Nurl' . "\0" . 'url', '' . "\0" . 'AppBundle\\Entity\\Nurl' . "\0" . 'title', '' . "\0" . 'AppBundle\\Entity\\Nurl' . "\0" . 'public', '' . "\0" . 'AppBundle\\Entity\\Nurl' . "\0" . 'content', '' . "\0" . 'AppBundle\\Entity\\Nurl' . "\0" . 'upvote', '' . "\0" . 'AppBundle\\Entity\\Nurl' . "\0" . 'downvote', '' . "\0" . 'AppBundle\\Entity\\Nurl' . "\0" . 'user', '' . "\0" . 'AppBundle\\Entity\\Nurl' . "\0" . 'collection', '' . "\0" . 'AppBundle\\Entity\\Nurl' . "\0" . 'tag'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Nurl' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Nurl' . "\0" . 'url', '' . "\0" . 'AppBundle\\Entity\\Nurl' . "\0" . 'tag', '' . "\0" . 'AppBundle\\Entity\\Nurl' . "\0" . 'title', '' . "\0" . 'AppBundle\\Entity\\Nurl' . "\0" . 'content', '' . "\0" . 'AppBundle\\Entity\\Nurl' . "\0" . 'upvote', '' . "\0" . 'AppBundle\\Entity\\Nurl' . "\0" . 'downvote'];
+        return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Nurl' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Nurl' . "\0" . 'url', '' . "\0" . 'AppBundle\\Entity\\Nurl' . "\0" . 'title', '' . "\0" . 'AppBundle\\Entity\\Nurl' . "\0" . 'public', '' . "\0" . 'AppBundle\\Entity\\Nurl' . "\0" . 'content', '' . "\0" . 'AppBundle\\Entity\\Nurl' . "\0" . 'upvote', '' . "\0" . 'AppBundle\\Entity\\Nurl' . "\0" . 'downvote', '' . "\0" . 'AppBundle\\Entity\\Nurl' . "\0" . 'user', '' . "\0" . 'AppBundle\\Entity\\Nurl' . "\0" . 'collection', '' . "\0" . 'AppBundle\\Entity\\Nurl' . "\0" . 'tag'];
     }
 
     /**
@@ -176,50 +176,6 @@ class Nurl extends \AppBundle\Entity\Nurl implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function getUpvote()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUpvote', []);
-
-        return parent::getUpvote();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setUpvote($upvote)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUpvote', [$upvote]);
-
-        return parent::setUpvote($upvote);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getDownvote()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDownvote', []);
-
-        return parent::getDownvote();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setDownvote($downvote)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDownvote', [$downvote]);
-
-        return parent::setDownvote($downvote);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function getId()
     {
         if ($this->__isInitialized__ === false) {
@@ -230,17 +186,6 @@ class Nurl extends \AppBundle\Entity\Nurl implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getId', []);
 
         return parent::getId();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getUrl()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUrl', []);
-
-        return parent::getUrl();
     }
 
     /**
@@ -257,12 +202,12 @@ class Nurl extends \AppBundle\Entity\Nurl implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function getTitle()
+    public function getUrl()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getTitle', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUrl', []);
 
-        return parent::getTitle();
+        return parent::getUrl();
     }
 
     /**
@@ -279,12 +224,34 @@ class Nurl extends \AppBundle\Entity\Nurl implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function getContent()
+    public function getTitle()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getContent', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getTitle', []);
 
-        return parent::getContent();
+        return parent::getTitle();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setPublic($public)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPublic', [$public]);
+
+        return parent::setPublic($public);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getPublic()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPublic', []);
+
+        return parent::getPublic();
     }
 
     /**
@@ -301,23 +268,133 @@ class Nurl extends \AppBundle\Entity\Nurl implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
+    public function getContent()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getContent', []);
+
+        return parent::getContent();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setUpvote($upvote)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUpvote', [$upvote]);
+
+        return parent::setUpvote($upvote);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getUpvote()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUpvote', []);
+
+        return parent::getUpvote();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setDownvote($downvote)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDownvote', [$downvote]);
+
+        return parent::setDownvote($downvote);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getDownvote()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDownvote', []);
+
+        return parent::getDownvote();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setUser(\AppBundle\Entity\User $user = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUser', [$user]);
+
+        return parent::setUser($user);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getUser()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUser', []);
+
+        return parent::getUser();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setCollection(\AppBundle\Entity\Collection $collection = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setCollection', [$collection]);
+
+        return parent::setCollection($collection);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getCollection()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCollection', []);
+
+        return parent::getCollection();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addTag(\AppBundle\Entity\Tag $tag)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addTag', [$tag]);
+
+        return parent::addTag($tag);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeTag(\AppBundle\Entity\Tag $tag)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeTag', [$tag]);
+
+        return parent::removeTag($tag);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function getTag()
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getTag', []);
 
         return parent::getTag();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setTag($tag)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setTag', [$tag]);
-
-        return parent::setTag($tag);
     }
 
 }

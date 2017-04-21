@@ -176,28 +176,6 @@ class Report extends \AppBundle\Entity\Report implements \Doctrine\ORM\Proxy\Pro
     /**
      * {@inheritDoc}
      */
-    public function getTimestamp()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getTimestamp', []);
-
-        return parent::getTimestamp();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setTimestamp($timestamp)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setTimestamp', [$timestamp]);
-
-        return parent::setTimestamp($timestamp);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function getId()
     {
         if ($this->__isInitialized__ === false) {
@@ -252,6 +230,28 @@ class Report extends \AppBundle\Entity\Report implements \Doctrine\ORM\Proxy\Pro
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getContent', []);
 
         return parent::getContent();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setTimestamp($timestamp)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setTimestamp', [$timestamp]);
+
+        return parent::setTimestamp($timestamp);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getTimestamp()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getTimestamp', []);
+
+        return parent::getTimestamp();
     }
 
 }

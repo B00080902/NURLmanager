@@ -21,145 +21,118 @@ class __TwigTemplate_90a30ea421ecb120e1c4158148d57f57094dbf20ef093dfcc392e3ba066
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_d7441a27f12026c044ffaadd7ffc6cb14cf2b7026913e6d977d5d2c769ed69f3 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_d7441a27f12026c044ffaadd7ffc6cb14cf2b7026913e6d977d5d2c769ed69f3->enter($__internal_d7441a27f12026c044ffaadd7ffc6cb14cf2b7026913e6d977d5d2c769ed69f3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "tag/index.html.twig"));
+        $__internal_c0f91d6b4511359226423b03fe5beeb3b6c4e590637c368cb9ce85f22478f955 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_c0f91d6b4511359226423b03fe5beeb3b6c4e590637c368cb9ce85f22478f955->enter($__internal_c0f91d6b4511359226423b03fe5beeb3b6c4e590637c368cb9ce85f22478f955_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "tag/index.html.twig"));
 
-        $__internal_47a743e520c638bc6457abdea82f68e4fb2fda52def3baf54f2a9db7bd431909 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_47a743e520c638bc6457abdea82f68e4fb2fda52def3baf54f2a9db7bd431909->enter($__internal_47a743e520c638bc6457abdea82f68e4fb2fda52def3baf54f2a9db7bd431909_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "tag/index.html.twig"));
+        $__internal_c5b16fae5a1edd60023032957ede3f32ba8ff20d5a6a38432f88b2b22797735a = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_c5b16fae5a1edd60023032957ede3f32ba8ff20d5a6a38432f88b2b22797735a->enter($__internal_c5b16fae5a1edd60023032957ede3f32ba8ff20d5a6a38432f88b2b22797735a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "tag/index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_d7441a27f12026c044ffaadd7ffc6cb14cf2b7026913e6d977d5d2c769ed69f3->leave($__internal_d7441a27f12026c044ffaadd7ffc6cb14cf2b7026913e6d977d5d2c769ed69f3_prof);
+        $__internal_c0f91d6b4511359226423b03fe5beeb3b6c4e590637c368cb9ce85f22478f955->leave($__internal_c0f91d6b4511359226423b03fe5beeb3b6c4e590637c368cb9ce85f22478f955_prof);
 
         
-        $__internal_47a743e520c638bc6457abdea82f68e4fb2fda52def3baf54f2a9db7bd431909->leave($__internal_47a743e520c638bc6457abdea82f68e4fb2fda52def3baf54f2a9db7bd431909_prof);
+        $__internal_c5b16fae5a1edd60023032957ede3f32ba8ff20d5a6a38432f88b2b22797735a->leave($__internal_c5b16fae5a1edd60023032957ede3f32ba8ff20d5a6a38432f88b2b22797735a_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_ecc8da3c6f334b3c8fbd985c57e5a355f9e2eef36a33e1ba2962df58c472a551 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_ecc8da3c6f334b3c8fbd985c57e5a355f9e2eef36a33e1ba2962df58c472a551->enter($__internal_ecc8da3c6f334b3c8fbd985c57e5a355f9e2eef36a33e1ba2962df58c472a551_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_c6376c45cba0d9813200301290cb1efec548c5251b8f700b9975e37c5e4f46a5 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_c6376c45cba0d9813200301290cb1efec548c5251b8f700b9975e37c5e4f46a5->enter($__internal_c6376c45cba0d9813200301290cb1efec548c5251b8f700b9975e37c5e4f46a5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_a499c65543a88a1468d0df09bedb283132683187f24aae7cdcf42db459985066 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_a499c65543a88a1468d0df09bedb283132683187f24aae7cdcf42db459985066->enter($__internal_a499c65543a88a1468d0df09bedb283132683187f24aae7cdcf42db459985066_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_489bfcbbd943ebbdff62874c22ff0dffc07c02038b5b754c1f048d04a9ae3ad6 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_489bfcbbd943ebbdff62874c22ff0dffc07c02038b5b754c1f048d04a9ae3ad6->enter($__internal_489bfcbbd943ebbdff62874c22ff0dffc07c02038b5b754c1f048d04a9ae3ad6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <h1>Tags list</h1>
 
-    <table style=\"text-align: center\">
+    <table>
         <thead>
-        <tr>
-            <th>Id</th>
-            <th>Tag</th>
-            <th>Approved</th>
-            <th>Upvote</th>
-            <th>Downvote</th>
-            <th>Author</th>
-            <th>Actions</th>
-        </tr>
+            <tr>
+                <th>Id</th>
+                <th>Tag</th>
+                <th>Approved</th>
+                <th>Upvote</th>
+                <th>Downvote</th>
+                <th>Actions</th>
+            </tr>
         </thead>
         <tbody>
         ";
-        // line 19
+        // line 18
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["tags"] ?? $this->getContext($context, "tags")));
         foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
-            // line 20
+            // line 19
             echo "            <tr>
                 <td><a href=\"";
-            // line 21
+            // line 20
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("tag_show", array("id" => $this->getAttribute($context["tag"], "id", array()))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["tag"], "id", array()), "html", null, true);
             echo "</a></td>
                 <td>";
-            // line 22
+            // line 21
             echo twig_escape_filter($this->env, $this->getAttribute($context["tag"], "tag", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 23
+            // line 22
             if ($this->getAttribute($context["tag"], "approved", array())) {
                 echo "Yes";
             } else {
                 echo "No";
             }
             echo "</td>
-                <td style=\"color: green\">";
-            // line 24
+                <td>";
+            // line 23
             echo twig_escape_filter($this->env, $this->getAttribute($context["tag"], "upvote", array()), "html", null, true);
             echo "</td>
-                <td style=\"color: red\">";
-            // line 25
+                <td>";
+            // line 24
             echo twig_escape_filter($this->env, $this->getAttribute($context["tag"], "downvote", array()), "html", null, true);
             echo "</td>
-                <td>";
-            // line 26
-            echo twig_escape_filter($this->env, $this->getAttribute($context["tag"], "user", array()), "html", null, true);
-            echo "</td>
                 <td>
-                    ";
+                    <ul>
+                        <li>
+                            <a href=\"";
             // line 28
-            if ($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("ROLE_ADMIN")) {
-                // line 29
-                echo "
-                        <ul>
-                            <li>
-                                <a href=\"";
-                // line 32
-                echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("tag_show", array("id" => $this->getAttribute($context["tag"], "id", array()))), "html", null, true);
-                echo "\">show</a>
-                            </li>
-                            <li>
-                                <a href=\"";
-                // line 35
-                echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("tag_edit", array("id" => $this->getAttribute($context["tag"], "id", array()))), "html", null, true);
-                echo "\">edit</a>
-                            </li>
-                        </ul>
-                    ";
-            } else {
-                // line 39
-                echo "
-                        <ul style=\"display: flex; list-style-type: none\" >
-                            <li><a id=\"upd\" href=\"";
-                // line 41
-                echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("tag_upvote", array("id" => $this->getAttribute($context["tag"], "id", array()))), "html", null, true);
-                echo "\"><img src=\"/images/Upvote.png\"></a></li>
-                            <li><a id=\"upd\" href=\"";
-                // line 42
-                echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("tag_downvote", array("id" => $this->getAttribute($context["tag"], "id", array()))), "html", null, true);
-                echo "\"><img src=\"/images/Downvote.png\"></a></li>
-                        </ul>
-                    ";
-            }
-            // line 45
-            echo "                </td>
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("tag_show", array("id" => $this->getAttribute($context["tag"], "id", array()))), "html", null, true);
+            echo "\">show</a>
+                        </li>
+                        <li>
+                            <a href=\"";
+            // line 31
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("tag_edit", array("id" => $this->getAttribute($context["tag"], "id", array()))), "html", null, true);
+            echo "\">edit</a>
+                        </li>
+                    </ul>
+                </td>
             </tr>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tag'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 48
+        // line 37
         echo "        </tbody>
     </table>
 
     <ul>
         <li>
             <a href=\"";
-        // line 53
+        // line 42
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("tag_new");
         echo "\">Create a new tag</a>
         </li>
     </ul>
 ";
         
-        $__internal_a499c65543a88a1468d0df09bedb283132683187f24aae7cdcf42db459985066->leave($__internal_a499c65543a88a1468d0df09bedb283132683187f24aae7cdcf42db459985066_prof);
+        $__internal_489bfcbbd943ebbdff62874c22ff0dffc07c02038b5b754c1f048d04a9ae3ad6->leave($__internal_489bfcbbd943ebbdff62874c22ff0dffc07c02038b5b754c1f048d04a9ae3ad6_prof);
 
         
-        $__internal_ecc8da3c6f334b3c8fbd985c57e5a355f9e2eef36a33e1ba2962df58c472a551->leave($__internal_ecc8da3c6f334b3c8fbd985c57e5a355f9e2eef36a33e1ba2962df58c472a551_prof);
+        $__internal_c6376c45cba0d9813200301290cb1efec548c5251b8f700b9975e37c5e4f46a5->leave($__internal_c6376c45cba0d9813200301290cb1efec548c5251b8f700b9975e37c5e4f46a5_prof);
 
     }
 
@@ -175,7 +148,7 @@ class __TwigTemplate_90a30ea421ecb120e1c4158148d57f57094dbf20ef093dfcc392e3ba066
 
     public function getDebugInfo()
     {
-        return array (  153 => 53,  146 => 48,  138 => 45,  132 => 42,  128 => 41,  124 => 39,  117 => 35,  111 => 32,  106 => 29,  104 => 28,  99 => 26,  95 => 25,  91 => 24,  83 => 23,  79 => 22,  73 => 21,  70 => 20,  66 => 19,  49 => 4,  40 => 3,  11 => 1,);
+        return array (  126 => 42,  119 => 37,  107 => 31,  101 => 28,  94 => 24,  90 => 23,  82 => 22,  78 => 21,  72 => 20,  69 => 19,  65 => 18,  49 => 4,  40 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -193,17 +166,16 @@ class __TwigTemplate_90a30ea421ecb120e1c4158148d57f57094dbf20ef093dfcc392e3ba066
 {% block body %}
     <h1>Tags list</h1>
 
-    <table style=\"text-align: center\">
+    <table>
         <thead>
-        <tr>
-            <th>Id</th>
-            <th>Tag</th>
-            <th>Approved</th>
-            <th>Upvote</th>
-            <th>Downvote</th>
-            <th>Author</th>
-            <th>Actions</th>
-        </tr>
+            <tr>
+                <th>Id</th>
+                <th>Tag</th>
+                <th>Approved</th>
+                <th>Upvote</th>
+                <th>Downvote</th>
+                <th>Actions</th>
+            </tr>
         </thead>
         <tbody>
         {% for tag in tags %}
@@ -211,27 +183,17 @@ class __TwigTemplate_90a30ea421ecb120e1c4158148d57f57094dbf20ef093dfcc392e3ba066
                 <td><a href=\"{{ path('tag_show', { 'id': tag.id }) }}\">{{ tag.id }}</a></td>
                 <td>{{ tag.tag }}</td>
                 <td>{% if tag.approved %}Yes{% else %}No{% endif %}</td>
-                <td style=\"color: green\">{{ tag.upvote }}</td>
-                <td style=\"color: red\">{{ tag.downvote }}</td>
-                <td>{{ tag.user }}</td>
+                <td>{{ tag.upvote }}</td>
+                <td>{{ tag.downvote }}</td>
                 <td>
-                    {% if is_granted('ROLE_ADMIN')  %}
-
-                        <ul>
-                            <li>
-                                <a href=\"{{ path('tag_show', { 'id': tag.id }) }}\">show</a>
-                            </li>
-                            <li>
-                                <a href=\"{{ path('tag_edit', { 'id': tag.id }) }}\">edit</a>
-                            </li>
-                        </ul>
-                    {% else %}
-
-                        <ul style=\"display: flex; list-style-type: none\" >
-                            <li><a id=\"upd\" href=\"{{ path('tag_upvote', { 'id': tag.id })}}\"><img src=\"/images/Upvote.png\"></a></li>
-                            <li><a id=\"upd\" href=\"{{ path('tag_downvote', { 'id': tag.id })}}\"><img src=\"/images/Downvote.png\"></a></li>
-                        </ul>
-                    {% endif %}
+                    <ul>
+                        <li>
+                            <a href=\"{{ path('tag_show', { 'id': tag.id }) }}\">show</a>
+                        </li>
+                        <li>
+                            <a href=\"{{ path('tag_edit', { 'id': tag.id }) }}\">edit</a>
+                        </li>
+                    </ul>
                 </td>
             </tr>
         {% endfor %}

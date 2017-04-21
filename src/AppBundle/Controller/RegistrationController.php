@@ -35,6 +35,7 @@ class RegistrationController extends Controller
 
             $user->setPassword($password);
 
+            $user -> setRoles(['ROLE_USER']);
 
             $em = $this->getDoctrine()->getManager();
 
@@ -42,7 +43,7 @@ class RegistrationController extends Controller
 
             $em->flush();
 
-            return $this->redirectToRoute('homepage');
+            return $this->redirectToRoute('login');
         }
 
         return $this->render(

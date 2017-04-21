@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    {{ dump() }}
     <h1>Users list</h1>
 
     <table>
@@ -10,8 +11,8 @@
                 <th>Email</th>
                 <th>Username</th>
                 <th>Password</th>
-                <th>Isactive</th>
-                <th>Role</th>
+                <th>IsActive</th>
+                <th>Roles</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -23,7 +24,7 @@
                 <td>{{ user.username }}</td>
                 <td>{{ user.password }}</td>
                 <td>{% if user.isActive %}Yes{% else %}No{% endif %}</td>
-                <td>{{ user.role }}</td>
+                {#<td>{{ user.roles }}</td>#}
                 <td>
                     <ul>
                         <li>

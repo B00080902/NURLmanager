@@ -328,6 +328,6 @@ class __TwigTemplate_8e1610e13ea28a53f97d15fa9afe115f0d086997f4003216096015188f0
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "@Twig/layout.html.twig", "C:\\College\\College\\Third year\\Second Semester\\WFDassignment\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\TwigBundle\\Resources\\views\\layout.html.twig");
+        return new Twig_Source("", "@Twig/layout.html.twig", "C:\\College\\College\\Third year\\Second Semester\\WFDassignment\\NURLmanager\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\TwigBundle\\Resources\\views\\layout.html.twig");
     }
 }

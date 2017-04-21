@@ -44,6 +44,6 @@ class __TwigTemplate_c44df36313d502b1278f191f49d3d3a8b913380f0a6d0fd92e15e06cf55
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "@Twig/Exception/exception.atom.twig", "C:\\College\\College\\Third year\\Second Semester\\WFDassignment\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\TwigBundle\\Resources\\views\\Exception\\exception.atom.twig");
+        return new Twig_Source("", "@Twig/Exception/exception.atom.twig", "C:\\College\\College\\Third year\\Second Semester\\WFDassignment\\NURLmanager\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\TwigBundle\\Resources\\views\\Exception\\exception.atom.twig");
     }
 }

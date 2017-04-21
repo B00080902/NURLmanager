@@ -42,6 +42,22 @@ class User implements UserInterface, \Serializable
     private $plainPassword;
 
     /**
+     * @return mixed
+     */
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
+
+    /**
+     * @param mixed $plainPassword
+     */
+    public function setPlainPassword($plainPassword)
+    {
+        $this->plainPassword = $plainPassword;
+    }
+
+    /**
      * The below length depends on the "algorithm" you use for encoding
      * the password, but this works well with bcrypt.
      *
@@ -57,7 +73,8 @@ class User implements UserInterface, \Serializable
     /**
      * @ORM\Column(type="json_array")
      */
-    private $roles = [];
+    private $roles;
+
 
     /**
      * @var \AppBundle\Entity\Collection  $collection
@@ -79,10 +96,7 @@ class User implements UserInterface, \Serializable
 
 
     /**
-     * @var \AppBundle\Entity\Tag  $tag
-     *
-     * @ORM\OneToMany(targetEntity="Tag", mappedBy="user")
-     * @ORM\JoinColumn(name="tag_id", referencedColumnName="id")
+    * @ORM\OneToMany(targetEntity="Tag", mappedBy="user")
      */
     private $tag;
 
@@ -93,51 +107,11 @@ class User implements UserInterface, \Serializable
     public function __construct()
     {
         $this->isActive = true;
-        // may not be needed, see section on salt below
+        $this->tag = new \Doctrine\Common\Collections\ArrayCollection();
         // $this->salt = md5(uniqid(null, true));
     }
 
-    // other properties and methods
 
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    public function setEmail($email)
-    {
-        $this->email = $email;
-    }
-
-    public function getUsername()
-    {
-        return $this->username;
-    }
-
-    public function setUsername($username)
-    {
-        $this->username = $username;
-    }
-
-    public function getPlainPassword()
-    {
-        return $this->plainPassword;
-    }
-
-    public function setPlainPassword($password)
-    {
-        $this->plainPassword = $password;
-    }
-
-    public function getPassword()
-    {
-        return $this->password;
-    }
-
-    public function setPassword($password)
-    {
-        $this->password = $password;
-    }
 
     public function getSalt()
     {
@@ -185,8 +159,7 @@ class User implements UserInterface, \Serializable
      * Alternatively, the roles might be stored on a ``roles`` property,
      * and populated in any number of different ways when the user object
      * is created.
-     *
-     * @return (Role|string)[] The user roles
+     * @return array (Role|string)[] The user roles
      */
     public function getRoles()
     {
@@ -220,6 +193,30 @@ class User implements UserInterface, \Serializable
     }
 
     /**
+     * Returns the password used to authenticate the user.
+     *
+     * This should be the encoded password. On authentication, a plain-text
+     * password will be salted, encoded, and then compared to this value.
+     *
+     * @return string The password
+     */
+    public function getPassword()
+    {
+        return $this-> password;
+
+    }
+
+    /**
+     * Returns the username used to authenticate the user.
+     *
+     * @return string The username
+     */
+    public function getUsername()
+    {
+        return $this-> username;
+    }
+
+    /**
      * Get id
      *
      * @return integer
@@ -227,6 +224,58 @@ class User implements UserInterface, \Serializable
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     *
+     * @return User
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set username
+     *
+     * @param string $username
+     *
+     * @return User
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+
+    /**
+     * Set password
+     *
+     * @param string $password
+     *
+     * @return User
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+
+        return $this;
     }
 
     /**
@@ -252,11 +301,6 @@ class User implements UserInterface, \Serializable
     {
         return $this->isActive;
     }
-
-
-
-
-
 
     /**
      * Add collection
@@ -326,6 +370,9 @@ class User implements UserInterface, \Serializable
         return $this->nurl;
     }
 
+
+
+
     /**
      * Add tag
      *
@@ -359,4 +406,5 @@ class User implements UserInterface, \Serializable
     {
         return $this->tag;
     }
+
 }

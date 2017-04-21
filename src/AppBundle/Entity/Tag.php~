@@ -36,7 +36,6 @@ class Tag
     private $approved;
 
 
-
     /**
      * @var int
      *
@@ -51,24 +50,23 @@ class Tag
      */
     private $downvote;
 
-    /**
-     * @var \AppBundle\Entity\Nurl  $nurl
-     *
-     * @ORM\ManyToOne(targetEntity="Nurl", inversedBy="tag")
-     *
-     * @ORM\JoinColumn(name="nurl_id", referencedColumnName="id")
-     *
-     */
-    private $nurl;
-
 
     /**
-     * @var \AppBundle\Entity\User  $user
      *
-     * @ORM\ManyToOne(targetEntity="User", inversedBy="nurl")
-     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     *
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="tag")
+     *
      */
     private $user;
+
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->nurl = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -177,26 +175,63 @@ class Tag
     }
 
     /**
-     * Set nurl
+     * Add nurl
      *
      * @param \AppBundle\Entity\Nurl $nurl
      *
      * @return Tag
      */
-    public function setNurl(\AppBundle\Entity\Nurl $nurl = null)
+    public function addNurl(\AppBundle\Entity\Nurl $nurl)
     {
-        $this->nurl = $nurl;
+        $this->nurl[] = $nurl;
 
         return $this;
     }
 
     /**
+     * Remove nurl
+     *
+     * @param \AppBundle\Entity\Nurl $nurl
+     */
+    public function removeNurl(\AppBundle\Entity\Nurl $nurl)
+    {
+        $this->nurl->removeElement($nurl);
+    }
+
+    /**
      * Get nurl
      *
-     * @return \AppBundle\Entity\Nurl
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getNurl()
     {
         return $this->nurl;
+    }
+
+   
+
+
+    /**
+     * Set user
+     *
+     * @param \AppBundle\Entity\User $user
+     *
+     * @return Tag
+     */
+    public function setUser(\AppBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \AppBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }

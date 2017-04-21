@@ -42,6 +42,6 @@ class __TwigTemplate_e10f4a5412b5a3dfd5e589e7652de76663ad6c4f08759b005e2aa78a696
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "@Swiftmailer/Collector/icon.svg", "C:\\College\\College\\Third year\\Second Semester\\WFDassignment\\vendor\\symfony\\swiftmailer-bundle\\Resources\\views\\Collector\\icon.svg");
+        return new Twig_Source("", "@Swiftmailer/Collector/icon.svg", "C:\\College\\College\\Third year\\Second Semester\\WFDassignment\\NURLmanager\\vendor\\symfony\\swiftmailer-bundle\\Resources\\views\\Collector\\icon.svg");
     }
 }

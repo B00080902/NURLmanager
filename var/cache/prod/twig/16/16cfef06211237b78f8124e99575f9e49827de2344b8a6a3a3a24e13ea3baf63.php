@@ -54,11 +54,18 @@ class __TwigTemplate_641dc187b37ef577c8bffde17e5546c689df4ee814aae3d6a8152f04369
         // line 14
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("login");
         echo "\" method=\"post\">
+
+                    <input type=\"hidden\" name=\"_csrf_token\"
+                           value=\"";
+        // line 17
+        echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderCsrfToken("authenticate"), "html", null, true);
+        echo "\"
+                    >
                     <table id=\"loginTable\">
                         <tr>
                             <td><label for=\"username\">Username:</label></td>
                             <td><input type=\"text\" id=\"username\" name=\"_username\" value=\"";
-        // line 18
+        // line 22
         echo twig_escape_filter($this->env, ($context["last_username"] ?? null), "html", null, true);
         echo "\" /></td>
                         </tr>
@@ -76,7 +83,7 @@ class __TwigTemplate_641dc187b37ef577c8bffde17e5546c689df4ee814aae3d6a8152f04369
             <div id=\"registerSide\">
                 <h2>Don't have an account yet?</h2>
                 <a href=\"";
-        // line 33
+        // line 37
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("user_registration");
         echo "\"><button id=\"registerButton\">Register</button></a>
             </div>
@@ -96,7 +103,7 @@ class __TwigTemplate_641dc187b37ef577c8bffde17e5546c689df4ee814aae3d6a8152f04369
 
     public function getDebugInfo()
     {
-        return array (  80 => 33,  62 => 18,  55 => 14,  52 => 13,  46 => 11,  44 => 10,  38 => 6,  35 => 5,  29 => 3,  11 => 1,);
+        return array (  87 => 37,  69 => 22,  61 => 17,  55 => 14,  52 => 13,  46 => 11,  44 => 10,  38 => 6,  35 => 5,  29 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -109,6 +116,6 @@ class __TwigTemplate_641dc187b37ef577c8bffde17e5546c689df4ee814aae3d6a8152f04369
 
     public function getSourceContext()
     {
-        return new Twig_Source("", ":security:login.html.twig", "C:\\College\\College\\Third year\\Second Semester\\WFDassignment\\app/Resources\\views/security/login.html.twig");
+        return new Twig_Source("", ":security:login.html.twig", "C:\\College\\College\\Third year\\Second Semester\\WFDassignment\\NURLmanager\\app/Resources\\views/security/login.html.twig");
     }
 }

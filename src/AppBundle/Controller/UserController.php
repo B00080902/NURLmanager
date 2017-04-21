@@ -39,34 +39,18 @@ class UserController extends Controller
      */
     public function newAction(Request $request)
     {
-        // Only ADMINS can create a new user
-        $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
-
-        // Calling user
         $user = new User();
-
-        // Creating  form for the user
         $form = $this->createForm('AppBundle\Form\UserType', $user);
-
-        // Handling the form
         $form->handleRequest($request);
 
-        // Checking if the form is valid
         if ($form->isSubmitted() && $form->isValid()) {
-
-            // If form is valid and submitted...
             $em = $this->getDoctrine()->getManager();
-
-            // upload the new information to the database using doctrine
             $em->persist($user);
-
             $em->flush();
 
-            // Show the correct route
             return $this->redirectToRoute('user_show', array('id' => $user->getId()));
         }
 
-        // Render the form
         return $this->render('user/new.html.twig', array(
             'user' => $user,
             'form' => $form->createView(),
@@ -81,10 +65,9 @@ class UserController extends Controller
      */
     public function showAction(User $user)
     {
-        $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
         $deleteForm = $this->createDeleteForm($user);
 
-        return $this->render('user/showAll.html.twig', array(
+        return $this->render('user/show.html.twig', array(
             'user' => $user,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -98,7 +81,6 @@ class UserController extends Controller
      */
     public function editAction(Request $request, User $user)
     {
-        $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
         $deleteForm = $this->createDeleteForm($user);
         $editForm = $this->createForm('AppBundle\Form\UserType', $user);
         $editForm->handleRequest($request);
@@ -124,7 +106,6 @@ class UserController extends Controller
      */
     public function deleteAction(Request $request, User $user)
     {
-        $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
         $form = $this->createDeleteForm($user);
         $form->handleRequest($request);
 
