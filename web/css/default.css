@@ -1,0 +1,26 @@
+* {
+    font-family: 'Lato', sans-serif;
+    color: #595959;
+}
+html {
+    background: url("/images/4k.png")  no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+    min-width: 45%;
+    max-width: 51%;
+    min-height: 360px;
+    max-height: 370px;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2%;
+    overflow-y: scroll;
+    background: #99CDD8;
+}
+
+h1 {
+    text-align: center;
+}

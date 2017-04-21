@@ -1,0 +1,39 @@
+
+{% extends 'base.html.twig' %}
+
+
+{% block pageTitle %}home page{% endblock %}
+
+{% block body %}
+
+{% set basket_nurls = app.session.get('basket') %}
+
+{{ dump(app.session.get('basket')) }}
+
+
+    {% if basket_nurls is null %}
+        <p>
+            you have no nurls in your basket
+        </p>
+        {% else %}
+<ul>
+{% for nurl in basket_nurls %}
+<li>
+    <hr>
+        id = {{ nurl.id }}
+    <br>
+    nurl url = {{ nurl.url }}
+    <br>
+    nurl title = {{ nurl.title }}
+    <br>
+    credits = {{ nurl.content }}
+    <br>
+    <a href="{{ path('nurls_basket_delete', { 'id': nurl.id }) }}">(remove)</a>
+</li>
+{% endfor %}
+</ul>
+    {% endif %}
+    <p>
+        <a href="{{ path('nurls_basket_clear') }}">CLEAR all items in basket</a>
+    </p>
+{% endblock %}

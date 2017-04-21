@@ -1,0 +1,65 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Tag
+ *
+ * @ORM\Table(name="tag")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\TagRepository")
+ */
+class Tag
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tag", type="string", length=255)
+     */
+    private $tag;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="approved", type="boolean")
+     */
+    private $approved;
+
+
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="upvote", type="integer")
+     */
+    private $upvote;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="downvote", type="integer")
+     */
+    private $downvote;
+
+    /**
+     * @var \AppBundle\Entity\Nurl  $nurl
+     *
+     * @ORM\ManyToOne(targetEntity="Nurl", inversedBy="tag")
+     *
+     * @ORM\JoinColumn(name="nurl_id", referencedColumnName="id")
+     *
+     */
+    private $nurl;
+
+
+}
