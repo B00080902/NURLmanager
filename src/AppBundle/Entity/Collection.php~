@@ -54,7 +54,6 @@ class Collection
      * @var \AppBundle\Entity\Nurl  $nurl
      *
      * @ORM\OneToMany(targetEntity="Nurl", mappedBy="collection")
-     *
      * @ORM\JoinColumn(name="nurl_id", referencedColumnName="id")
      *
      */

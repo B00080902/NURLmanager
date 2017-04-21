@@ -78,6 +78,14 @@ class User implements UserInterface, \Serializable
     private $nurl;
 
 
+    /**
+     * @var \AppBundle\Entity\Tag  $tag
+     *
+     * @ORM\OneToMany(targetEntity="Tag", mappedBy="user")
+     * @ORM\JoinColumn(name="tag_id", referencedColumnName="id")
+     */
+    private $tag;
+
 
 
 
@@ -316,5 +324,39 @@ class User implements UserInterface, \Serializable
     public function getNurl()
     {
         return $this->nurl;
+    }
+
+    /**
+     * Add tag
+     *
+     * @param \AppBundle\Entity\Tag $tag
+     *
+     * @return User
+     */
+    public function addTag(\AppBundle\Entity\Tag $tag)
+    {
+        $this->tag[] = $tag;
+
+        return $this;
+    }
+
+    /**
+     * Remove tag
+     *
+     * @param \AppBundle\Entity\Tag $tag
+     */
+    public function removeTag(\AppBundle\Entity\Tag $tag)
+    {
+        $this->tag->removeElement($tag);
+    }
+
+    /**
+     * Get tag
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getTag()
+    {
+        return $this->tag;
     }
 }

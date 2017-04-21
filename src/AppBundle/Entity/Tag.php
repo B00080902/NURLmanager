@@ -62,6 +62,13 @@ class Tag
     private $nurl;
 
 
+    /**
+     * @var \AppBundle\Entity\User  $user
+     *
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="nurl")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    private $user;
 
     /**
      * Get id
@@ -191,5 +198,29 @@ class Tag
     public function getNurl()
     {
         return $this->nurl;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \AppBundle\Entity\User $user
+     *
+     * @return Tag
+     */
+    public function setUser(\AppBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \AppBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }

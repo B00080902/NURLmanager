@@ -28,7 +28,7 @@ class NurlCollectionController extends Controller
 
         ];
 
-        $templateName = 'collection/index';
+        $templateName = 'collections/index';
         return $this->render($templateName . '.html.twig', $argsArray);
     }
 

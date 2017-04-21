@@ -2,6 +2,7 @@
 
 namespace AppBundle\Form;
 
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -13,7 +14,15 @@ class NurlType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('url')->add('title')->add('content')->add('upvote')->add('downvote')->add('user')->add('collection');
+        $builder
+            ->add('url')
+            ->add('title')
+            ->add('content')
+            ->add('upvote')
+            ->add('downvote')
+            ->add('user')
+            ->add('collection');
+
     }
     
     /**

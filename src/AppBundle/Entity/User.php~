@@ -78,6 +78,14 @@ class User implements UserInterface, \Serializable
     private $nurl;
 
 
+    /**
+     * @var \AppBundle\Entity\Tag  $tag
+     *
+     * @ORM\OneToMany(targetEntity="Tag", mappedBy="user")
+     * @ORM\JoinColumn(name="tag_id", referencedColumnName="id")
+     */
+    private $tag;
+
 
 
 

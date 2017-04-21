@@ -13,7 +13,7 @@ class TagType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('tag');
+        $builder->add('tag')->add('approved')->add('upvote')->add('downvote');
     }
     
     /**

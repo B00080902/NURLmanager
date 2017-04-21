@@ -1,6 +1,6 @@
 <?php
 
-/* :nurl:show.html.twig */
+/* :nurl:showAll.html.twig */
 class __TwigTemplate_0a89feef30413de7373b2c635769b51015454c77566b94848af9f913336cf54d extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -8,7 +8,7 @@ class __TwigTemplate_0a89feef30413de7373b2c635769b51015454c77566b94848af9f913336
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", ":nurl:show.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", ":nurl:showAll.html.twig", 1);
         $this->blocks = array(
             'body' => array($this, 'block_body'),
         );
@@ -114,7 +114,7 @@ class __TwigTemplate_0a89feef30413de7373b2c635769b51015454c77566b94848af9f913336
 
     public function getTemplateName()
     {
-        return ":nurl:show.html.twig";
+        return ":nurl:showAll.html.twig";
     }
 
     public function isTraitable()
@@ -137,6 +137,6 @@ class __TwigTemplate_0a89feef30413de7373b2c635769b51015454c77566b94848af9f913336
 
     public function getSourceContext()
     {
-        return new Twig_Source("", ":nurl:show.html.twig", "C:\\College\\College\\Third year\\Second Semester\\WFDassignment\\app/Resources\\views/nurl/show.html.twig");
+        return new Twig_Source("", ":nurl:showAll.html.twig", "C:\\College\\College\\Third year\\Second Semester\\WFDassignment\\app/Resources\\views/nurl/showAll.html.twig");
     }
 }

@@ -100,7 +100,7 @@ class ReportController extends Controller
     {
         $deleteForm = $this->createDeleteForm($report);
 
-        return $this->render('report/show.html.twig', array(
+        return $this->render('report/showAll.html.twig', array(
             'report' => $report,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -193,7 +193,7 @@ class ReportController extends Controller
             $em->flush($report);
         }
 
-        return $this->render('report/show.html.twig', array(
+        return $this->render('report/showAll.html.twig', array(
             'report' => $report,
         ));
     }

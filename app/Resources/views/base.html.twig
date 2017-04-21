@@ -73,7 +73,7 @@
 
 
     {% if is_granted('ROLE_USER') %}
-        You are logged in as:  <strong>{{ app.user.username }}</strong>
+        You are logged in as:  <a href="{{ path('account_index') }}"><strong>{{ app.user.username }}</strong></a>
         <br>
         <li><a href="{{ path('logout') }}">logout</a></li>
 

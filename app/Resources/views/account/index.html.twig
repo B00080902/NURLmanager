@@ -1,33 +1,84 @@
 {% extends 'base.html.twig' %}
 
 
-{% block pageTitle %}Home page{% endblock %}
+{% block pageTitle %}Account{% endblock %}
 
 {% block body %}
 
 
     <h1>{{ app.user.username }}'s profile</h1>
 
-    <div>
-        {{ dump() }}
+    {{ dump() }}
 
-        <h3>These are the nurls you have submitted</h3>
+    <div style="display: flex">
 
-        <table>
-            {% for nurl in nurls  %}
-            <tr>
+        <section>
 
+            <h3>These are your nurls</h3>
 
-                <td>
+            <table>
 
-                    {{ nurl.title }}
+                {% for nurl in nurls  %}
 
-                </td>
+                    <tr>
+                        <td>
 
-            </tr>
-            {%  endfor %}
+                            <a href="{{ path('nurl_edit', { 'id': nurl.id }) }}">{{ nurl.title }}</a>
 
-        </table>
+                        </td>
+                    </tr>
+
+                {%  endfor %}
+
+            </table>
+
+        </section>
+
+        <hr>
+
+        <section>
+
+            <h3>These are your collections</h3>
+
+            <table>
+
+                {% for collection in collections %}
+
+                    <tr>
+                        <td>
+
+                            <a href="{{ path('collection_edit', { 'id': collection.id }) }}">{{ collection.title }}</a>
+
+                        </td>
+                    </tr>
+                {%  endfor %}
+
+            </table>
+
+        </section>
+
+        <hr>
+
+        <section>
+
+            <h3>These are your tags</h3>
+
+            <table>
+
+                {% for tag in tags %}
+
+                    <tr>
+                        <td>
+
+                            <a href="{{ path('tag_edit', { 'id': tag.id }) }}">{{ tag.tag }}</a>
+
+                        </td>
+                    </tr>
+                {%  endfor %}
+
+            </table>
+
+        </section>
 
     </div>
 

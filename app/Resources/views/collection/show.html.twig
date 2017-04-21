@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>Collection</h1>
+
+    {% for collection in collections %}
+
+
+    <table>
+
+        <tbody>
+        {# Show the nurls only if they're defined as public #}
+        {% if collection.public == '' %}
+
+            <tr>
+                <th>Id</th>
+                <td>{{ collection.id }}</td>
+            </tr>
+
+            <tr>
+                <th>Title</th>
+                <td>{{ collection.title }}</td>
+            </tr>
+
+            <tr>
+                <th>Description</th>
+                <td>{{ collection.description }}</td>
+            </tr>
+
+            <tr>
+                <th>Author</th>
+                <td>{{ collection.user.username }}</td>
+            </tr>
+
+            <tr>
+                <th>Type</th>
+                <td>{{ collection.public }}</td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+    <hr>
+        {% endif %}
+
+    {% endfor %}
+
+    {#<ul>#}
+        {#<li>#}
+            <a href="{{ path('collection_index') }}">Back to the list</a>
+        {#</li>#}
+        {#<li>#}
+            {#<a href="{{ path('collection_edit', { 'id': collection.id }) }}">Edit</a>#}
+        {#</li>#}
+        {#<li>#}
+            {#{{ form_start(delete_form) }}#}
+                {#<input type="submit" value="Delete">#}
+            {#{{ form_end(delete_form) }}#}
+        {#</li>#}
+    {#</ul>#}
+{% endblock %}

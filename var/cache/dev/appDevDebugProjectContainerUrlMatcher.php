@@ -132,6 +132,68 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        if (0 === strpos($pathinfo, '/collection')) {
+            // collection_index
+            if (rtrim($pathinfo, '/') === '/collection') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_collection_index;
+                }
+
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'collection_index');
+                }
+
+                return array (  '_controller' => 'AppBundle\\Controller\\CollectionController::indexAction',  '_route' => 'collection_index',);
+            }
+            not_collection_index:
+
+            // collection_new
+            if ($pathinfo === '/collection/new') {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_collection_new;
+                }
+
+                return array (  '_controller' => 'AppBundle\\Controller\\CollectionController::newAction',  '_route' => 'collection_new',);
+            }
+            not_collection_new:
+
+            // collection_show
+            if (preg_match('#^/collection/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_collection_show;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'collection_show')), array (  '_controller' => 'AppBundle\\Controller\\CollectionController::showAction',));
+            }
+            not_collection_show:
+
+            // collection_edit
+            if (preg_match('#^/collection/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_collection_edit;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'collection_edit')), array (  '_controller' => 'AppBundle\\Controller\\CollectionController::editAction',));
+            }
+            not_collection_edit:
+
+            // collection_delete
+            if (preg_match('#^/collection/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'DELETE') {
+                    $allow[] = 'DELETE';
+                    goto not_collection_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'collection_delete')), array (  '_controller' => 'AppBundle\\Controller\\CollectionController::deleteAction',));
+            }
+            not_collection_delete:
+
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {

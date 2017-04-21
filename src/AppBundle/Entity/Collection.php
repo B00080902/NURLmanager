@@ -54,13 +54,37 @@ class Collection
      * @var \AppBundle\Entity\Nurl  $nurl
      *
      * @ORM\OneToMany(targetEntity="Nurl", mappedBy="collection")
-     *
      * @ORM\JoinColumn(name="nurl_id", referencedColumnName="id")
      *
      */
     private $nurl;
 
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="public", type="string", length=255)
+     */
+    private $public;
+
+    /**
+     * @return string
+     */
+    public function getPublic()
+    {
+        return $this->public;
+    }
+
+    /**
+     * @param string $public
+     * @return $this
+     */
+    public function setPublic(string $public)
+    {
+        $this->public = $public;
+
+        return $this;
+    }
 
     /**
      * Get id

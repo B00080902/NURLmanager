@@ -28,24 +28,19 @@ class AccountController extends Controller
     public function indexAction()
     {
         $session = new Session();
-        $nurl = new Nurl();
         $em = $this->getDoctrine()->getManager();
-        $nurlControl = new NurlController();
-        /*
-         * We want the user to be able to visit it's profile
-         * to see its own collections
-         */
-        $username = $session -> get('username');
 
-        $user = $em->getRepository('AppBundle:User')->findByUsername($username);
+        $nurls = $em->getRepository('AppBundle:Nurl')->findBy(array('user' => $this->get('security.token_storage')->getToken()->getUser()));
 
-        $nurls = $em->getRepository('AppBundle:Nurl')->findBy(array('user' => $user));
+        $collections = $em->getRepository('AppBundle:Collection')->findBy(array('user' => $this->get('security.token_storage')->getToken()->getUser()));
 
+        $tags = $em->getRepository('AppBundle:Tag')->findBy(array('user' => $this->get('security.token_storage')->getToken()->getUser()));
 
         $templateName = 'account/index';
         return $this->render($templateName . '.html.twig', array(
-            'username' => $username,
-            'nurls' => $nurls
+            'nurls' => $nurls,
+            'tags' => $tags,
+            'collections' => $collections
         ));
     }
 }

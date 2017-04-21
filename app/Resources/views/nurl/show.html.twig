@@ -5,6 +5,7 @@
 
     <table>
         <tbody>
+
             <tr>
                 <th>Id</th>
                 <td>{{ nurl.id }}</td>
@@ -29,6 +30,23 @@
                 <th>Downvote</th>
                 <td>{{ nurl.downvote }}</td>
             </tr>
+
+            <tr>
+                <th>Collection</th>
+                <td>{{ nurl.collection.title }}</td>
+            </tr>
+
+            <tr>
+                <th>Tags</th>
+                {% for tag in tags %}
+                    <td>{{ tag.tag }}</td>
+                {% endfor %}
+            </tr>
+
+            <tr>
+                <th>Type</th>
+                <td>{{ nurl.public }}</td>
+            </tr>
         </tbody>
     </table>
 
@@ -38,6 +56,10 @@
         </li>
         <li>
             <a href="{{ path('nurl_edit', { 'id': nurl.id }) }}">Edit</a>
+        </li>
+
+        <li>
+            <a href="{{ path('tag_new', { 'id': nurl.id }) }}">Add Tag</a>
         </li>
         <li>
             {{ form_start(delete_form) }}

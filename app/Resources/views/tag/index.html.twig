@@ -11,6 +11,7 @@
             <th>Approved</th>
             <th>Upvote</th>
             <th>Downvote</th>
+            <th>Author</th>
             <th>Actions</th>
         </tr>
         </thead>
@@ -22,6 +23,7 @@
                 <td>{% if tag.approved %}Yes{% else %}No{% endif %}</td>
                 <td style="color: green">{{ tag.upvote }}</td>
                 <td style="color: red">{{ tag.downvote }}</td>
+                <td>{{ tag.user }}</td>
                 <td>
                     {% if is_granted('ROLE_ADMIN')  %}
 
