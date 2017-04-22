@@ -46,6 +46,7 @@ class NurlController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
             $nurl -> setUser($this->get('security.token_storage')->getToken()->getUser());
             $nurl -> setUpvote(0);
             $nurl -> setDownvote(0);

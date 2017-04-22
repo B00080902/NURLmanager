@@ -97,8 +97,6 @@ class Nurl
      *
      * @ORM\ManyToMany(targetEntity="Tag")
      *
-     *
-     *
      */
     private $tag;
 
