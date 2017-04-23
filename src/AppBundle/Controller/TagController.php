@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Tag;
+use AppBundle\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
@@ -51,6 +52,25 @@ class TagController extends Controller
         ));
     }
 
+
+    /**
+     * Lists all proposed tags for all users.
+     *
+     * @Route("/proposed", name="tag_proposed")
+     * @Method("GET")
+     */
+    public function proposedAction()
+    {
+
+        $em = $this->getDoctrine()->getManager();
+
+        $tags = $em->getRepository('AppBundle:Tag')->findAll();
+
+        return $this->render('tag/proposed.html.twig', array(
+            'tags' => $tags,
+        ));
+    }
+
     /**
      * Creates a new tag entity.
      *
@@ -65,11 +85,27 @@ class TagController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $tag -> setUser($this->get('security.token_storage')->getToken()->getUser());
+            $em = $this->getDoctrine()->getManager();
+
+            $user = $this -> getUser();
+
+            if($this->get('security.token_storage')->getToken()->getUser() == 'anon.')
+            {
+                $tags = $em->getRepository('AppBundle:User')
+                    ->loadUserByUsername('anon');
+                $tag -> setUser($tags);
+
+            }
+
+            else {
+                $tag -> setUser($this->get('security.token_storage')->getToken()->getUser());
+            }
+
+
             $tag -> setUpvote(0);
             $tag -> setDownvote(0);
-            $tag -> setVoted(0);
             $tag -> setApproved(false);
+            $tag -> setUserVoted('unknown');
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($tag);
@@ -169,30 +205,38 @@ class TagController extends Controller
      */
     public function upvoteAction(Tag $tag)
     {
-        $user = $this->getUser();
-
-        if($user->getVoted())
+        // Check if this tag has a username equal to the current one
+        if($tag->getUserVoted() == $this->get('security.token_storage')->getToken()->getUser())
         {
+            // Show an error if the user has already voted there
+            $this->addFlash(
+                'notice',
+                'You have already upvoted that tag!'
+            );
+
+            // Return with the error
+            return $this->redirectToRoute('tag_index');
+        }
+
+        else
+        {
+            // Set that that particular user has voted
+            $tag -> setUserVoted($this->get('security.token_storage')->getToken()->getUser());
+
+            // Increase the tag vote by 1 or by 5 depending on the role
             $tag -> setUpvote( $tag -> getUpvote() + 1);
 
+            if($this->get('security.authorization_checker')->isGranted('ROLE_USER'))
+            {
+                $tag -> setUpvote( $tag -> getUpvote() + 5);
+            }
+
+
+            // Flush everything
             $em = $this->getDoctrine()->getManager();
             $em->persist($tag);
             $em->flush($tag);
         }
-
-
-        echo 'nope';
-
-//            $tag -> setUpvote( $tag -> getUpvote() + 1);
-//            $em = $this->getDoctrine()->getManager();
-//            $em->persist($tag);
-//            $em->flush($tag);
-//
-//        else {
-//            echo '<script language="javascript">';
-//            echo 'alert("message successfully sent")';
-//            echo '</script>';
-//        }
 
         return $this->redirectToRoute('tag_index');
     }
@@ -205,10 +249,46 @@ class TagController extends Controller
      */
     public function downvoteAction(Tag $tag)
     {
-        $tag -> setDownvote( $tag -> getDownvote() + 1);
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($tag);
-        $em->flush($tag);
+
+        // Check if this tag has a username equal to the current one
+        if($tag->getUserVoted() == $this->get('security.token_storage')->getToken()->getUser())
+        {
+
+            // Show an error if the user has already voted there
+            $this->addFlash(
+
+                'notice',
+
+                'You have already downvoted that tag!'
+
+            );
+
+            // Return with the error
+            return $this->redirectToRoute('tag_index');
+        }
+
+        else
+        {
+            // Set that that particular user has voted
+            $tag -> setUserVoted($this->get('security.token_storage')->getToken()->getUser());
+
+            // Increase the tag vote by 1 or by 5 depending on the role
+            $tag -> setDownvote( $tag -> getDownvote() + 1);
+
+            // Registered user vote counts as 5
+            if($this->get('security.authorization_checker')->isGranted('ROLE_USER'))
+            {
+                $tag -> setDownvote( $tag -> getDownvote() + 5);
+            }
+
+            // Flush everything
+            $em = $this->getDoctrine()->getManager();
+
+            $em->persist($tag);
+
+            $em->flush($tag);
+
+        }
 
         return $this->redirectToRoute('tag_index');
     }
@@ -234,5 +314,10 @@ class TagController extends Controller
         $em->flush($tag);
 
         return $this->redirectToRoute('tag_index');
+    }
+
+    public function votedUserCheck(){
+
+
     }
 }

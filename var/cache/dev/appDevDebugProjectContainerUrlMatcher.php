@@ -279,6 +279,17 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
             not_nurl_seeAll:
 
+            // nurl_proposed
+            if ($pathinfo === '/nurl/proposed') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_nurl_proposed;
+                }
+
+                return array (  '_controller' => 'AppBundle\\Controller\\NurlController::proposedAction',  '_route' => 'nurl_proposed',);
+            }
+            not_nurl_proposed:
+
             // nurl_new
             if ($pathinfo === '/nurl/new') {
                 if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
@@ -417,17 +428,9 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        if (0 === strpos($pathinfo, '/search')) {
-            // search_page
-            if ($pathinfo === '/search') {
-                return array (  '_controller' => 'AppBundle\\Controller\\SearchController::searchAction',  '_route' => 'search_page',);
-            }
-
-            // search_results
-            if ($pathinfo === '/search/results') {
-                return array (  '_controller' => 'AppBundle\\Controller\\SearchController::resultsAction',  '_route' => 'search_results',);
-            }
-
+        // search
+        if ($pathinfo === '/search/results') {
+            return array (  '_controller' => 'AppBundle\\Controller\\SearchController::resultsAction',  '_route' => 'search',);
         }
 
         // login
@@ -461,6 +464,17 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return array (  '_controller' => 'AppBundle\\Controller\\TagController::allAction',  '_route' => 'tag_seeAll',);
             }
             not_tag_seeAll:
+
+            // tag_proposed
+            if ($pathinfo === '/tag/proposed') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_tag_proposed;
+                }
+
+                return array (  '_controller' => 'AppBundle\\Controller\\TagController::proposedAction',  '_route' => 'tag_proposed',);
+            }
+            not_tag_proposed:
 
             // tag_new
             if ($pathinfo === '/tag/new') {

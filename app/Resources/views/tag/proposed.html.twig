@@ -1,0 +1,126 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tags {% endblock %}
+
+{% block body %}
+
+
+    <h1>Proposed tag's list</h1>
+
+
+    {# Only admin can go to approve the tags #}
+    {% if is_granted('ROLE_ADMIN') %}
+
+        <a href="{{ path('tag_seeAll') }}">See all tags</a>
+
+    {% endif %}
+
+    <table style="text-align: center">
+
+        <thead>
+
+        <tr>
+
+            <th>Id</th>
+
+            <th>Tag</th>
+
+            <th>Approved</th>
+
+            <th>Upvote</th>
+
+            <th>Downvote</th>
+
+            {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_USER')%}
+
+            <th>Actions</th>
+
+            {% endif %}
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        {% for tag in tags %}
+
+            {% if not tag.approved %}
+                <tr>
+                    <td><a href="{{ path('tag_show', { 'id': tag.id }) }}">{{ tag.id }}</a></td>
+
+                    <td>{{ tag.tag }}</td>
+
+                    <td>{% if tag.approved %}Yes{% else %}No{% endif %}</td>
+
+                    <td>
+
+                        {{ tag.upvote }}
+
+                        <a href="{{ path('tag_upvote', { 'id': tag.id }) }}" >
+
+                            <img width="20" src="/images/upvote.png">
+
+                        </a>
+
+                    </td>
+
+                    <td>{{ tag.downvote }}
+
+                        <a href="{{ path('tag_downvote', { 'id': tag.id }) }}" >
+
+                            <img width="20" src="/images/downvote.png">
+
+                        </a>
+
+                    </td>
+                    {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_USER')%}
+
+                        <td>
+
+                            <ul>
+
+                                <li>
+                                    <a href="{{ path('tag_show', { 'id': tag.id }) }}">show</a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ path('tag_edit', { 'id': tag.id }) }}">edit</a>
+                                </li>
+
+                                {# Admin tag CRUD options #}
+                                {% if is_granted('ROLE_ADMIN') %}
+
+                                    <li>
+                                        <a href="{{ path('tag_delete', { 'id': tag.id }) }}">delete</a>
+                                    </li>
+
+                                {% endif %}
+
+                            </ul>
+
+                        </td>
+
+                    {% endif %}
+
+                </tr>
+
+            {% endif %}
+
+        {% endfor %}
+        </tbody>
+
+    </table>
+
+    <ul>
+
+        <li>
+
+            <a href="{{ path('tag_new') }}">Create a new tag</a>
+
+        </li>
+
+    </ul>
+
+
+{% endblock %}

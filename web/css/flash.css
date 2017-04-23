@@ -3,3 +3,16 @@
     margin: 1rem;
     background-color: pink;
 }
+
+.flash-notice {
+    border: 1px solid #cc0000;
+    border-radius: 10px;
+    text-align: center;
+    margin: 5px;
+}
+
+.flash-notice h5, h3{
+    text-align: center;
+    color: #cc0000;
+
+}

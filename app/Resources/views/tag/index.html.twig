@@ -7,6 +7,20 @@
 
     <h1>Tags list</h1>
 
+    {% for flash_message in app.session.flashBag.get('notice') %}
+
+        <div class="flash-notice">
+
+            <h3>Warning!</h3>
+
+            <h5>{{ flash_message }}</h5>
+
+        </div>
+
+    {% endfor %}
+
+    <a href="{{  path('tag_proposed') }}">Proposed tags</a>
+
 
     {# Only admin can go to approve the tags #}
     {% if is_granted('ROLE_ADMIN') %}
@@ -31,7 +45,11 @@
 
                 <th>Downvote</th>
 
-                <th>Actions</th>
+                {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_USER')%}
+
+                    <th>Actions</th>
+
+                {% endif %}
 
             </tr>
 
@@ -61,7 +79,18 @@
 
                     </td>
 
-                    <td>{{ tag.downvote }}</td>
+                    <td>{{ tag.downvote }}
+
+                        <a href="{{ path('tag_downvote', { 'id': tag.id }) }}" >
+
+                            <img width="20" src="/images/downvote.png">
+
+                        </a>
+
+                    </td>
+
+                    {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_USER')%}
+
 
                     <td>
 
@@ -87,6 +116,8 @@
                         </ul>
 
                     </td>
+
+                    {% endif %}
 
                 </tr>
 

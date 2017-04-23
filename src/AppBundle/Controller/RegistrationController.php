@@ -38,8 +38,6 @@ class RegistrationController extends Controller
 
             $user -> setRoles(['ROLE_USER']);
 
-            $user -> setVoted(false);
-
 
             $em = $this->getDoctrine()->getManager();
 

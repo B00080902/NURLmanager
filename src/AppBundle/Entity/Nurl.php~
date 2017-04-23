@@ -294,4 +294,28 @@ class Nurl
 
 
 
+
+    /**
+     * Set approved
+     *
+     * @param boolean $approved
+     *
+     * @return Nurl
+     */
+    public function setApproved($approved)
+    {
+        $this->approved = $approved;
+
+        return $this;
+    }
+
+    /**
+     * Get approved
+     *
+     * @return boolean
+     */
+    public function getApproved()
+    {
+        return $this->approved;
+    }
 }

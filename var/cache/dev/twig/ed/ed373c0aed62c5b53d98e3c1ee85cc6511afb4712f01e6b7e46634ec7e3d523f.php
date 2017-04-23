@@ -15,11 +15,11 @@ class __TwigTemplate_29f97442156659f6c1cb57e96432c5445d393d1e7f83c083af4b474ba42
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_ff0f05c33b2916ff1077f2b62c46e26c50cdd7bb42d81ad6cc174cc69dafd225 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_ff0f05c33b2916ff1077f2b62c46e26c50cdd7bb42d81ad6cc174cc69dafd225->enter($__internal_ff0f05c33b2916ff1077f2b62c46e26c50cdd7bb42d81ad6cc174cc69dafd225_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Security/Collector/icon.svg"));
+        $__internal_a4786fc126876764053666c1c07b755033172510dbc08a720e6851a6bc5da8a7 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_a4786fc126876764053666c1c07b755033172510dbc08a720e6851a6bc5da8a7->enter($__internal_a4786fc126876764053666c1c07b755033172510dbc08a720e6851a6bc5da8a7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Security/Collector/icon.svg"));
 
-        $__internal_109c49bd593c070ac7ea8750cb772152c7c7c240ccb1d319d824535968bdf52b = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_109c49bd593c070ac7ea8750cb772152c7c7c240ccb1d319d824535968bdf52b->enter($__internal_109c49bd593c070ac7ea8750cb772152c7c7c240ccb1d319d824535968bdf52b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Security/Collector/icon.svg"));
+        $__internal_2a199be5c2e41a360f47586c29b4beceacc928c673ea3a7a652de9e6e6847c2d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_2a199be5c2e41a360f47586c29b4beceacc928c673ea3a7a652de9e6e6847c2d->enter($__internal_2a199be5c2e41a360f47586c29b4beceacc928c673ea3a7a652de9e6e6847c2d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Security/Collector/icon.svg"));
 
         // line 1
         echo "<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" x=\"0px\" y=\"0px\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" enable-background=\"new 0 0 24 24\" xml:space=\"preserve\">
@@ -27,10 +27,10 @@ class __TwigTemplate_29f97442156659f6c1cb57e96432c5445d393d1e7f83c083af4b474ba42
 </svg>
 ";
         
-        $__internal_ff0f05c33b2916ff1077f2b62c46e26c50cdd7bb42d81ad6cc174cc69dafd225->leave($__internal_ff0f05c33b2916ff1077f2b62c46e26c50cdd7bb42d81ad6cc174cc69dafd225_prof);
+        $__internal_a4786fc126876764053666c1c07b755033172510dbc08a720e6851a6bc5da8a7->leave($__internal_a4786fc126876764053666c1c07b755033172510dbc08a720e6851a6bc5da8a7_prof);
 
         
-        $__internal_109c49bd593c070ac7ea8750cb772152c7c7c240ccb1d319d824535968bdf52b->leave($__internal_109c49bd593c070ac7ea8750cb772152c7c7c240ccb1d319d824535968bdf52b_prof);
+        $__internal_2a199be5c2e41a360f47586c29b4beceacc928c673ea3a7a652de9e6e6847c2d->leave($__internal_2a199be5c2e41a360f47586c29b4beceacc928c673ea3a7a652de9e6e6847c2d_prof);
 
     }
 

@@ -25,6 +25,8 @@
                 <a href="{{ path('nurl_seeAll') }}">Review suggested nurls</a>
 
             {% endif %}
+
+        <a href="{{  path('nurl_proposed') }}">Proposed nurls</a>
     </div>
 
     <table style="text-align: center">
@@ -43,7 +45,14 @@
 
                 <th>Content</th>
 
+                {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_USER')%}
+
                 <th>Actions</th>
+
+                {% endif %}
+
+                <th>Approved</th>
+
 
             </tr>
 
@@ -55,7 +64,7 @@
         {% for nurl in nurls %}
 
             {# Show the nurls only if they're defined as public #}
-            {% if nurl.public == 'Public' %}
+            {% if nurl.public == 'Public' and nurl.approved %}
 
                 {# -------- NURL table --------- #}
                 <tr>
@@ -70,6 +79,8 @@
 
 
                     {# Anon and User CRUD options #}
+                    {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_USER')%}
+
                     <td>
                         <ul>
 
@@ -89,6 +100,12 @@
 
                     </td>
 
+                    {% endif %}
+
+                    <td>
+                        {{ nurl.approved }}
+                    </td>
+
                 </tr>
 
             {% endif %}
@@ -104,15 +121,17 @@
 
         <li>
 
-            {% for flash_message in app.session.flashBag.get('notice') %}
+            {#{% for flash_message in app.session.flashBag.get('notice') %}#}
 
-                <div class="flash-notice">
+                {#<div class="flash-notice">#}
 
-                    {{ flash_message }}
+                    {#<h3>Warning</h3>#}
 
-                </div>
+                    {#<h5>{{ flash_message }}</h5>#}
 
-            {% endfor %}
+                {#</div>#}
+
+            {#{% endfor %}#}
 
             <a href="{{ path('nurl_new') }}">Create a new nurl</a>
 

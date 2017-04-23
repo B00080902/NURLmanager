@@ -60,6 +60,25 @@ class NurlController extends Controller
     }
 
     /**
+     * Lists all proposed nurls for all users.
+     *
+     * @Route("/proposed", name="nurl_proposed")
+     * @Method("GET")
+     */
+    public function proposedAction()
+    {
+
+        $em = $this->getDoctrine()->getManager();
+
+        $nurls = $em->getRepository('AppBundle:Nurl')->findAll();
+
+        return $this->render('nurl/proposed.html.twig', array(
+            'nurls' => $nurls,
+        ));
+    }
+
+
+    /**
      * Creates a new nurl entity.
      *
      * @Route("/new", name="nurl_new")
@@ -69,15 +88,15 @@ class NurlController extends Controller
     {
         $nurl = new Nurl();
 
-        // If the user is anon, it cannot post anything
-        if($this->get('security.token_storage')->getToken()->getUser('anon'))
-        {
-            $this->addFlash(
-                'notice',
-                'Please login before you write a new Nurl!'
-            );
-            return $this->redirectToRoute('login');
-        }
+//        // If the user is anon, it cannot post anything
+//        if($this->get('security.token_storage')->getToken()->getUser() == 'anon.')
+//        {
+//            $this->addFlash(
+//                'notice',
+//                'Please login before you write a new Nurl!'
+//            );
+//            return $this->redirectToRoute('login');
+//        }
 
         $form = $this->createForm('AppBundle\Form\NurlType', $nurl);
 
@@ -87,10 +106,8 @@ class NurlController extends Controller
         if ($form->isSubmitted() && $form->isValid())
         {
 
-
-
             $nurl -> setUser($this->get('security.token_storage')->getToken()->getUser());
-            $nurl -> setSuggested(false);
+            $nurl -> setApproved(false);
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($nurl);
@@ -241,6 +258,7 @@ class NurlController extends Controller
             {
                 $report -> setEmail('none');
             }
+
             $report -> setTimestamp(date('H:i:s \O\n d/m/Y'));
             $report->setTitle($nurl->getTitle());
             $report = $form->getData();

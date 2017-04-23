@@ -23,6 +23,40 @@
         </section>
 
         <section>
+            <form
+                    action="{{ path('search') }}"
+                    method="post"
+            >
+
+
+                <select>
+
+                    <optgroup label="Type" >
+
+                        <option name="type" >User</option>
+
+                        <option name="type" >Collection</option>
+
+                        <option name="type" >Nurl</option>
+
+                        <option name="type">Tag</option>
+
+                    </optgroup>
+
+                </select>
+                {#<input type="text" name="type">#}
+
+
+                <input type="text" name="query" placeholder="Search">
+
+
+                <input type="submit" id="Submit" value="Submit">
+
+
+            </form>
+        </section>
+
+        <section>
 
         <h3>Useful links</h3>
             <ul>

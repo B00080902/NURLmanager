@@ -102,12 +102,7 @@ class User implements UserInterface, \Serializable
 
 
 
-    /**
-     * @var boolean
-     *
-     * @ORM\Column(name="voted", type="boolean")
-     */
-    private $voted;
+
 
     public function __construct()
     {
@@ -414,30 +409,6 @@ class User implements UserInterface, \Serializable
     }
 
 
-
-    /**
-     * Set voted
-     *
-     * @param boolean $voted
-     *
-     * @return User
-     */
-    public function setVoted($voted)
-    {
-        $this->voted = $voted;
-
-        return $this;
-    }
-
-    /**
-     * Get voted
-     *
-     * @return boolean
-     */
-    public function getVoted()
-    {
-        return $this->voted;
-    }
 
     public function __toString()
     {

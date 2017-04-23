@@ -17,26 +17,7 @@ class SearchController extends Controller
 {
 
     /**
-     * @Route("/search", name="search_page")
-     */
-    public function searchAction(Request $request)
-    {
-
-
-        $argsArray = [
-
-        ];
-
-        $templateName = 'search/index';
-
-        return $this->render($templateName . '.html.twig', $argsArray);
-
-
-    }
-
-
-    /**
-     * @Route("/search/results", name="search_results")
+     * @Route("/search/results", name="search")
      */
     public function resultsAction(Request $request)
     {

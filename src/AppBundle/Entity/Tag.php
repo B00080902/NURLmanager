@@ -53,12 +53,18 @@ class Tag
 
     /**
      *
-     *
      * @ORM\ManyToOne(targetEntity="User", inversedBy="tag")
      *
      */
     private $user;
 
+
+    /**
+     *
+     * @var
+     * @ORM\Column(name="userVoted", type="string")
+     */
+    private $userVoted;
 
     /**
      * Constructor
@@ -243,4 +249,29 @@ class Tag
 
 
 
+
+
+    /**
+     * Set userVoted
+     *
+     * @param string $userVoted
+     *
+     * @return Tag
+     */
+    public function setUserVoted($userVoted)
+    {
+        $this->userVoted = $userVoted;
+    
+        return $this;
+    }
+
+    /**
+     * Get userVoted
+     *
+     * @return string
+     */
+    public function getUserVoted()
+    {
+        return $this->userVoted;
+    }
 }
