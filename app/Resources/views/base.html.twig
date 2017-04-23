@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}{% endblock %}</title>
+        <style>
+            @import '/css/flash.css';
+            @import '/css/header.css';
+            @import '/css/default.css';
+            @import '/css/nav.css';
+            @import '/css/img.css';
+            @import '/css/table.css';
+            {% block stylesheets %}
+            {% endblock %}
+        </style>
+
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,400" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+    </head>
+
+    <body>
+
+    <header>
+        <nav>
+            <ul>
+
+                <li>
+                    <a
+                        {% if app.request.attributes.get('_route') == 'homepage'  %}
+
+                            id="current"
+
+                        {% endif %}
+
+                        href="/"><span>Home</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        {% if app.request.attributes.get('_route') == 'nurl_index'  %}
+
+                            id="current"
+
+                        {% endif %}
+
+                        href="/nurl/"><span>Nurls</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        {% if app.request.attributes.get('_route') == 'collection_index'  %}
+
+                            id="current"
+
+                        {% endif %}
+
+                        href="/collection/"><span>Collections</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        {% if app.request.attributes.get('_route') == 'tag_index'  %}
+
+                            id="current"
+
+                        {% endif %}
+
+                        href="/tag/"><span>Tags</span>
+                    </a>
+                </li>
+
+
+    {% if is_granted('ROLE_USER') %}
+
+        hi,
+
+            <a href="{{ path('account_index') }}">
+
+                 <strong>{{ app.user.username }}</strong>
+
+            </a>
+        <br>
+
+
+        <li><a href="{{ path('logout') }}">logout</a></li>
+
+
+
+    {% else %}
+
+        <li><a href="{{ path('login') }}">login</a></li>
+
+    {% endif %}
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    {% block body %}
+
+    {% endblock %}
+
+    {% block javascripts %}
+    {% endblock %}
+
+    </body>
+</html>

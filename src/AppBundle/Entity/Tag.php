@@ -1,0 +1,246 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Tag
+ *
+ * @ORM\Table(name="tag")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\TagRepository")
+ */
+class Tag
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tag", type="string", length=255)
+     */
+    private $tag;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="approved", type="boolean")
+     */
+    private $approved;
+
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="upvote", type="integer")
+     */
+    private $upvote;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="downvote", type="integer")
+     */
+    private $downvote;
+
+
+    /**
+     *
+     *
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="tag")
+     *
+     */
+    private $user;
+
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->nurl = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return $this->getTag();
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set tag
+     *
+     * @param string $tag
+     *
+     * @return Tag
+     */
+    public function setTag($tag)
+    {
+        $this->tag = $tag;
+
+        return $this;
+    }
+
+    /**
+     * Get tag
+     *
+     * @return string
+     */
+    public function getTag()
+    {
+        return $this->tag;
+    }
+
+    /**
+     * Set approved
+     *
+     * @param boolean $approved
+     *
+     * @return Tag
+     */
+    public function setApproved($approved)
+    {
+        $this->approved = $approved;
+
+        return $this;
+    }
+
+    /**
+     * Get approved
+     *
+     * @return boolean
+     */
+    public function getApproved()
+    {
+        return $this->approved;
+    }
+
+    /**
+     * Set upvote
+     *
+     * @param integer $upvote
+     *
+     * @return Tag
+     */
+    public function setUpvote($upvote)
+    {
+        $this->upvote = $upvote;
+
+        return $this;
+    }
+
+    /**
+     * Get upvote
+     *
+     * @return integer
+     */
+    public function getUpvote()
+    {
+        return $this->upvote;
+    }
+
+    /**
+     * Set downvote
+     *
+     * @param integer $downvote
+     *
+     * @return Tag
+     */
+    public function setDownvote($downvote)
+    {
+        $this->downvote = $downvote;
+
+        return $this;
+    }
+
+    /**
+     * Get downvote
+     *
+     * @return integer
+     */
+    public function getDownvote()
+    {
+        return $this->downvote;
+    }
+
+//    /**
+//     * Add nurl
+//     *
+//     * @param \AppBundle\Entity\Nurl $nurl
+//     *
+//     * @return Tag
+//     */
+//    public function addNurl(\AppBundle\Entity\Nurl $nurl)
+//    {
+//        $this->nurl[] = $nurl;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Remove nurl
+//     *
+//     * @param \AppBundle\Entity\Nurl $nurl
+//     */
+//    public function removeNurl(\AppBundle\Entity\Nurl $nurl)
+//    {
+//        $this->nurl->removeElement($nurl);
+//    }
+//
+//    /**
+//     * Get nurl
+//     *
+//     * @return \Doctrine\Common\Collections\Collection
+//     */
+//    public function getNurl()
+//    {
+//        return $this->nurl;
+//    }
+//
+//
+
+
+    /**
+     * Set user
+     *
+     * @param \AppBundle\Entity\User $user
+     *
+     * @return Tag
+     */
+    public function setUser(\AppBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \AppBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+
+
+
+}

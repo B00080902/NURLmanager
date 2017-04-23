@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block pageTitle %}Home page{% endblock %}
+
+{% block body %}
+
+    <h1>Welcome to NURL Manager</h1>
+
+    <div id="shared">
+        <section>
+            <h3>Online System to organise and share useful links and notes</h3>
+
+            <p>
+                You are currently logged in as
+                {% if is_granted('ROLE_ADMIN') %}
+                    Administrator
+                {% elseif is_granted('ROLE_USER') %}
+                    User
+                {% else %}
+                    <strong>Anonymous</strong>
+                {% endif %}
+            </p>
+        </section>
+
+        <section>
+
+        <h3>Useful links</h3>
+            <ul>
+
+                <li><a href="{{ path('tag_index') }}">List of tags</a></li>
+                <li><a>List of proposed new tags</a></li>
+                <li><a>Upvote / Downvote list</a></li>
+                <li><a>Propose a new candidate tag</a></li>
+                <li><a href="{{ path('nurl_index') }}">All NURLS</a></li>
+                <li><a>Report a NURL</a></li>
+            </ul>
+        </section>
+    </div>
+
+{% endblock %}

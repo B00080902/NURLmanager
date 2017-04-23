@@ -1,0 +1,28 @@
+nav {
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    flex: 1;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: aliceblue;
+    padding: 5%;
+    background-color: transparent;
+    transition: 0.5s;
+    border-radius: 4px;
+}
+
+nav ul li a:hover {
+    text-decoration: none;
+    color: #e6ecff;
+    background-color: #4d79ff;
+    transition: 0.5s;
+}

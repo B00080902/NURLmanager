@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>Collection</h1>
+    <a href="{{ path('collection_view', { 'id': collection.id }) }}"><h3 style="color: #6e6e6e">See shared collections</h3></a>
+
+
+
+        <table>
+
+        <tbody>
+
+            <tr>
+                <th>Id</th>
+                <td>{{ collection.id }}</td>
+            </tr>
+
+            <tr>
+                <th>Title</th>
+                <td>{{ collection.title }}</td>
+            </tr>
+
+            <tr>
+                <th>Description</th>
+                <td>{{ collection.description }}</td>
+            </tr>
+
+            <tr>
+                <th>Author</th>
+                <td>{{ collection.user.username }}</td>
+            </tr>
+
+            <tr>
+                <th>Type</th>
+                <td>{{ collection.public }}</td>
+            </tr>
+
+            <tr>
+                {% for nurl in collection.nurl %}
+                <th>Nurl</th>
+
+                <td>{{ nurl.title }}</td>
+                {% endfor %}
+            </tr>
+
+
+            <tr>
+                <th>Shared</th>
+                <td>{% if collection.shared == 1 %}Yes{% else %}No{% endif %}</td>
+            </tr>
+
+            </tbody>
+
+            </table>
+
+            <hr>
+
+
+    <ul>
+        <li>
+            <a href="{{ path('collection_index') }}">Back to the list</a>
+        </li>
+
+        <li>
+            <a href="{{ path('collection_edit', { 'id': collection.id }) }}">Edit</a>
+        </li>
+
+        <li>
+            <a href="{{ path('collection_share_share', { 'id': collection.id }) }}">Share</a>
+        </li>
+
+        <li>
+            {{ form_start(delete_form) }}
+            <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

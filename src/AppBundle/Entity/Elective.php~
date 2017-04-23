@@ -1,0 +1,185 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Elective
+ *
+ * @ORM\Table(name="elective")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ElectiveRepository")
+ */
+class Elective
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="url", type="string", length=255)
+     */
+    private $url;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tag", type="string", nullable=true)
+     */
+    private $tag;
+
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="string", length=255)
+     */
+    private $title;
+
+
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="content", type="string", length=255)
+     */
+    private $content;
+
+
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="upvote", type="integer")
+     */
+    private $upvote;
+
+
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="downvote", type="integer")
+     */
+    private $downvote;
+
+
+    /**
+     * @return int
+     */
+    public function getUpvote()
+    {
+        return $this->upvote;
+    }
+
+    /**
+     * @param int $upvote
+     */
+    public function setUpvote($upvote)
+    {
+        $this->upvote = $upvote;
+    }
+
+    /**
+     * @return int
+     */
+    public function getDownvote()
+    {
+        return $this->downvote;
+    }
+
+    /**
+     * @param int $downvote
+     */
+    public function setDownvote($downvote)
+    {
+        $this->downvote = $downvote;
+    }
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * @param string $url
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param string $title
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+
+    /**
+     * @return string
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    /**
+     * @param string $content
+     */
+    public function setContent($content)
+    {
+        $this->content = $content;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTag()
+    {
+        return $this->tag;
+    }
+
+    /**
+     * @param string $tag
+     */
+    public function setTag($tag)
+    {
+        $this->tag = $tag;
+    }
+
+
+}
