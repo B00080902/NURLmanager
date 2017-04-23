@@ -102,12 +102,18 @@ class User implements UserInterface, \Serializable
 
 
 
-
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="voted", type="boolean")
+     */
+    private $voted;
 
     public function __construct()
     {
         $this->isActive = true;
         $this->tag = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->roles;
         // $this->salt = md5(uniqid(null, true));
     }
 
@@ -407,4 +413,34 @@ class User implements UserInterface, \Serializable
         return $this->tag;
     }
 
+
+
+    /**
+     * Set voted
+     *
+     * @param boolean $voted
+     *
+     * @return User
+     */
+    public function setVoted($voted)
+    {
+        $this->voted = $voted;
+
+        return $this;
+    }
+
+    /**
+     * Get voted
+     *
+     * @return boolean
+     */
+    public function getVoted()
+    {
+        return $this->voted;
+    }
+
+    public function __toString()
+    {
+        return (string) $this->getRoles();
+    }
 }

@@ -2,10 +2,15 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Nurl;
 use AppBundle\Entity\Report;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Report controller.
@@ -34,25 +39,40 @@ class ReportController extends Controller
     /**
      * Creates a new report entity.
      *
-     * @Route("/new", name="report_new")
+     * @Route("/{id}/new", name="report_new")
      * @Method({"GET", "POST"})
      */
-    public function newAction(Request $request)
+    public function newAction(Request $request, Nurl $nurl)
     {
         $report = new Report();
-        $form = $this->createForm('AppBundle\Form\ReportType', $report);
+
+        $form = $this->createFormBuilder($report)
+            ->add('id', TextType::class,  ['data' => $nurl -> getId(), 'disabled' => true])
+            ->add('title', TextType::class,  ['data' => $nurl -> getTitle(), 'disabled' => true])
+            ->add('content', TextareaType::class)
+            ->add('timestamp', TextType::class, ['data' => date('H:i:s \O\n d/m/Y'), 'disabled' => true])
+            ->add('save', SubmitType::class, array('label' => 'Send Report'))
+            ->getForm();
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $title = $nurl->getTitle();
+            $time = date('H:i:s \O\n d/m/Y');
+            $report -> setTimestamp($time);
+            $report->setTitle($title);
+            $report = $form->getData();
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($report);
             $em->flush();
 
-            return $this->redirectToRoute('report_show', array('id' => $report->getId()));
+            return $this->redirectToRoute('nurl_index');
         }
 
+
         return $this->render('report/new.html.twig', array(
-            'report' => $report,
             'form' => $form->createView(),
         ));
     }

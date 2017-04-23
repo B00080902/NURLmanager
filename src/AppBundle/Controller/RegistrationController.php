@@ -33,9 +33,13 @@ class RegistrationController extends Controller
 
                 ->encodePassword($user, $user->getPlainPassword());
 
+
             $user->setPassword($password);
 
             $user -> setRoles(['ROLE_USER']);
+
+            $user -> setVoted(false);
+
 
             $em = $this->getDoctrine()->getManager();
 

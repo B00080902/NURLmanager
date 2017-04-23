@@ -54,24 +54,6 @@ class Nurl
     private $content;
 
 
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="upvote", type="integer")
-     */
-    private $upvote;
-
-
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="downvote", type="integer")
-     */
-    private $downvote;
-
-
     /**
      * @var \AppBundle\Entity\User  $user
      *
@@ -100,6 +82,12 @@ class Nurl
      */
     private $tag;
 
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="approved", type="boolean")
+     */
+    private $approved;
 
 
     /**
@@ -108,6 +96,11 @@ class Nurl
     public function __construct()
     {
         $this->tag = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return (string) $this->tag;
     }
 
     /**
@@ -216,53 +209,6 @@ class Nurl
         return $this->content;
     }
 
-    /**
-     * Set upvote
-     *
-     * @param integer $upvote
-     *
-     * @return Nurl
-     */
-    public function setUpvote($upvote)
-    {
-        $this->upvote = $upvote;
-
-        return $this;
-    }
-
-    /**
-     * Get upvote
-     *
-     * @return integer
-     */
-    public function getUpvote()
-    {
-        return $this->upvote;
-    }
-
-    /**
-     * Set downvote
-     *
-     * @param integer $downvote
-     *
-     * @return Nurl
-     */
-    public function setDownvote($downvote)
-    {
-        $this->downvote = $downvote;
-
-        return $this;
-    }
-
-    /**
-     * Get downvote
-     *
-     * @return integer
-     */
-    public function getDownvote()
-    {
-        return $this->downvote;
-    }
 
     /**
      * Set user
@@ -344,5 +290,32 @@ class Nurl
     public function getTag()
     {
         return $this->tag;
+    }
+
+
+
+
+    /**
+     * Set approved
+     *
+     * @param boolean $approved
+     *
+     * @return Nurl
+     */
+    public function setApproved($approved)
+    {
+        $this->approved = $approved;
+
+        return $this;
+    }
+
+    /**
+     * Get approved
+     *
+     * @return boolean
+     */
+    public function getApproved()
+    {
+        return $this->approved;
     }
 }

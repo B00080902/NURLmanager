@@ -1,34 +1,25 @@
-{% set colours = app.session.get('colours') %}
-{# default = blue #}
-{% if colours is null %}
-    {% set colours = {
-    'foreground': 'black',
-    'background': 'while'
-    }
-    %}
-{% endif %}
-
 <!DOCTYPE html>
 <html>
-    <head>
+
+<head>
         <meta charset="UTF-8" />
-        <title>{% block title %}NURL - Home {% endblock %}</title>
+        <title>{% block title %}{% endblock %}</title>
         <style>
             @import '/css/flash.css';
             @import '/css/header.css';
             @import '/css/default.css';
             @import '/css/nav.css';
             @import '/css/img.css';
+            @import '/css/table.css';
             {% block stylesheets %}
             {% endblock %}
-            body {
-                {#color: {{ colours['foreground'] }};#}
-                {#background-color: {{ colours['background'] }};#}
-            }
         </style>
+
         <link href="https://fonts.googleapis.com/css?family=Lato:100,400" rel="stylesheet">
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
     </head>
+
     <body>
 
     <header>
@@ -61,57 +52,64 @@
 
                 <li>
                     <a
-                            {% if app.request.attributes.get('_route') == 'collection_index'  %}
+                        {% if app.request.attributes.get('_route') == 'collection_index'  %}
 
-                                id="current"
+                            id="current"
 
-                            {% endif %}
+                        {% endif %}
 
-                            href="/collection/"><span>Collections</span>
+                        href="/collection/"><span>Collections</span>
                     </a>
                 </li>
 
                 <li>
                     <a
-                            {% if app.request.attributes.get('_route') == 'tag_index'  %}
+                        {% if app.request.attributes.get('_route') == 'tag_index'  %}
 
-                                id="current"
+                            id="current"
 
-                            {% endif %}
+                        {% endif %}
 
-                            href="/tag/"><span>Tags</span>
+                        href="/tag/"><span>Tags</span>
                     </a>
                 </li>
 
 
     {% if is_granted('ROLE_USER') %}
-        You are logged in as:  <a href="{{ path('account_index') }}"><strong>{{ app.user.username }}</strong></a>
+
+        hi,
+
+            <a href="{{ path('account_index') }}">
+
+                 <strong>{{ app.user.username }}</strong>
+
+            </a>
         <br>
+
+
         <li><a href="{{ path('logout') }}">logout</a></li>
 
+
+
     {% else %}
+
         <li><a href="{{ path('login') }}">login</a></li>
 
     {% endif %}
-                <li style="display: flex">
-                    <form action="{{ path('search_index') }}" method="post">
-                        {#<input type="text" name="search" placeholder="Search" value="">#}
-                        <input name="search" type="search" placeholder="Search" >
-                        <input type="submit" value="Search">
-                    </form>
-
-                </li>
 
             </ul>
+
         </nav>
+
     </header>
 
 
     {% block body %}
+
     {% endblock %}
 
-        {% block javascripts %}
-        {% endblock %}
+    {% block javascripts %}
+    {% endblock %}
 
     </body>
 </html>

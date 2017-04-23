@@ -73,7 +73,8 @@ class User implements UserInterface, \Serializable
     /**
      * @ORM\Column(type="json_array")
      */
-    private $roles = [];
+    private $roles;
+
 
     /**
      * @var \AppBundle\Entity\Collection  $collection
@@ -101,7 +102,12 @@ class User implements UserInterface, \Serializable
 
 
 
-
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="voted", type="boolean")
+     */
+    private $voted;
 
     public function __construct()
     {
@@ -158,8 +164,7 @@ class User implements UserInterface, \Serializable
      * Alternatively, the roles might be stored on a ``roles`` property,
      * and populated in any number of different ways when the user object
      * is created.
-     *
-     * @return (Role|string)[] The user roles
+     * @return array (Role|string)[] The user roles
      */
     public function getRoles()
     {
@@ -202,7 +207,8 @@ class User implements UserInterface, \Serializable
      */
     public function getPassword()
     {
-        // TODO: Implement getPassword() method.
+        return $this-> password;
+
     }
 
     /**
@@ -212,7 +218,7 @@ class User implements UserInterface, \Serializable
      */
     public function getUsername()
     {
-        // TODO: Implement getUsername() method.
+        return $this-> username;
     }
 
     /**
@@ -404,5 +410,31 @@ class User implements UserInterface, \Serializable
     public function getTag()
     {
         return $this->tag;
+    }
+
+
+
+    /**
+     * Set voted
+     *
+     * @param boolean $voted
+     *
+     * @return User
+     */
+    public function setVoted($voted)
+    {
+        $this->voted = $voted;
+
+        return $this;
+    }
+
+    /**
+     * Get voted
+     *
+     * @return boolean
+     */
+    public function getVoted()
+    {
+        return $this->voted;
     }
 }

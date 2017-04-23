@@ -1,15 +1,30 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Nurl creation</h1>
+
+    <h1>Create a Nurl</h1>
 
     {{ form_start(form) }}
-        {{ form_widget(form) }}
+
+    {{ form_widget(form) }}
+
+
+    {% for tags in nurl.tag %}
+
+        {% if nurl.tag.approved %}
+
+            {{ form_row(form.tag) }}
+
+        {% endif %}
+
+    {% endfor %}
+
+
     {{ form_end(form) }}
 
     <ul>
         <li>
-            <a href="{{ path('nurl_index') }}">Back to the list</a>
+            <a href="{{ path('nurl_index') }}">Back</a>
         </li>
     </ul>
 {% endblock %}

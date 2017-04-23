@@ -35,7 +35,7 @@ table ul li a {
     transition: 0.5s;
 }
 table ul li a:hover{
-    background-color: #e6e6e6;
+    background-color: #cccccc;
     transition: 0.5s;
     color: #000;
 }
@@ -82,3 +82,6 @@ td {
     box-shadow: 5px 5px 10px #6e6e6e;
 }
 
+table ul {
+    list-style-type: none;
+}

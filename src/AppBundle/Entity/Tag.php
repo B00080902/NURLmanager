@@ -68,6 +68,11 @@ class Tag
         $this->nurl = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return $this->getTag();
+    }
+
     /**
      * Get id
      *
@@ -174,41 +179,41 @@ class Tag
         return $this->downvote;
     }
 
-    /**
-     * Add nurl
-     *
-     * @param \AppBundle\Entity\Nurl $nurl
-     *
-     * @return Tag
-     */
-    public function addNurl(\AppBundle\Entity\Nurl $nurl)
-    {
-        $this->nurl[] = $nurl;
-
-        return $this;
-    }
-
-    /**
-     * Remove nurl
-     *
-     * @param \AppBundle\Entity\Nurl $nurl
-     */
-    public function removeNurl(\AppBundle\Entity\Nurl $nurl)
-    {
-        $this->nurl->removeElement($nurl);
-    }
-
-    /**
-     * Get nurl
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getNurl()
-    {
-        return $this->nurl;
-    }
-
-   
+//    /**
+//     * Add nurl
+//     *
+//     * @param \AppBundle\Entity\Nurl $nurl
+//     *
+//     * @return Tag
+//     */
+//    public function addNurl(\AppBundle\Entity\Nurl $nurl)
+//    {
+//        $this->nurl[] = $nurl;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Remove nurl
+//     *
+//     * @param \AppBundle\Entity\Nurl $nurl
+//     */
+//    public function removeNurl(\AppBundle\Entity\Nurl $nurl)
+//    {
+//        $this->nurl->removeElement($nurl);
+//    }
+//
+//    /**
+//     * Get nurl
+//     *
+//     * @return \Doctrine\Common\Collections\Collection
+//     */
+//    public function getNurl()
+//    {
+//        return $this->nurl;
+//    }
+//
+//
 
 
     /**
@@ -234,4 +239,8 @@ class Tag
     {
         return $this->user;
     }
+
+
+
+
 }

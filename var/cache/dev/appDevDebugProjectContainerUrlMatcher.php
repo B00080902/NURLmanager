@@ -268,6 +268,17 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
             not_nurl_index:
 
+            // nurl_seeAll
+            if ($pathinfo === '/nurl/seeAll') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_nurl_seeAll;
+                }
+
+                return array (  '_controller' => 'AppBundle\\Controller\\NurlController::allAction',  '_route' => 'nurl_seeAll',);
+            }
+            not_nurl_seeAll:
+
             // nurl_new
             if ($pathinfo === '/nurl/new') {
                 if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
@@ -312,6 +323,28 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
             not_nurl_delete:
 
+            // nurl_approved
+            if (preg_match('#^/nurl/(?P<id>[^/]++)/approved$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_nurl_approved;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'nurl_approved')), array (  '_controller' => 'AppBundle\\Controller\\NurlController::approvedAction',));
+            }
+            not_nurl_approved:
+
+            // nurl_report
+            if (preg_match('#^/nurl/(?P<id>[^/]++)/report$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_nurl_report;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'nurl_report')), array (  '_controller' => 'AppBundle\\Controller\\NurlController::reportAction',));
+            }
+            not_nurl_report:
+
         }
 
         if (0 === strpos($pathinfo, '/re')) {
@@ -337,13 +370,13 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 not_report_index:
 
                 // report_new
-                if ($pathinfo === '/report/new') {
+                if (preg_match('#^/report/(?P<id>[^/]++)/new$#s', $pathinfo, $matches)) {
                     if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
                         $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
                         goto not_report_new;
                     }
 
-                    return array (  '_controller' => 'AppBundle\\Controller\\ReportController::newAction',  '_route' => 'report_new',);
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'report_new')), array (  '_controller' => 'AppBundle\\Controller\\ReportController::newAction',));
                 }
                 not_report_new:
 
@@ -384,16 +417,18 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        // search_index
-        if ($pathinfo === '/search/') {
-            if ($this->context->getMethod() != 'POST') {
-                $allow[] = 'POST';
-                goto not_search_index;
+        if (0 === strpos($pathinfo, '/search')) {
+            // search_page
+            if ($pathinfo === '/search') {
+                return array (  '_controller' => 'AppBundle\\Controller\\SearchController::searchAction',  '_route' => 'search_page',);
             }
 
-            return array (  '_controller' => 'AppBundle\\Controller\\SearchController::indexAction',  '_route' => 'search_index',);
+            // search_results
+            if ($pathinfo === '/search/results') {
+                return array (  '_controller' => 'AppBundle\\Controller\\SearchController::resultsAction',  '_route' => 'search_results',);
+            }
+
         }
-        not_search_index:
 
         // login
         if ($pathinfo === '/login') {
@@ -415,6 +450,17 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return array (  '_controller' => 'AppBundle\\Controller\\TagController::indexAction',  '_route' => 'tag_index',);
             }
             not_tag_index:
+
+            // tag_seeAll
+            if ($pathinfo === '/tag/seeAll') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_tag_seeAll;
+                }
+
+                return array (  '_controller' => 'AppBundle\\Controller\\TagController::allAction',  '_route' => 'tag_seeAll',);
+            }
+            not_tag_seeAll:
 
             // tag_new
             if ($pathinfo === '/tag/new') {
@@ -481,6 +527,17 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'tag_downvote')), array (  '_controller' => 'AppBundle\\Controller\\TagController::downvoteAction',));
             }
             not_tag_downvote:
+
+            // tag_approved
+            if (preg_match('#^/tag/(?P<id>[^/]++)/approved$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_tag_approved;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'tag_approved')), array (  '_controller' => 'AppBundle\\Controller\\TagController::approvedAction',));
+            }
+            not_tag_approved:
 
         }
 

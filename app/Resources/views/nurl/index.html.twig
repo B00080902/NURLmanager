@@ -4,15 +4,33 @@
 
 {% block body %}
 
-    <div id="headerTable" style="display: flex" >
-        <section>
-            <h1>Nurls list</h1>
-        </section>
+    <div id="headerTable" >
+
+            <h1 style="text-align: center">Nurls list</h1>
+
+            {# Notice whe user submits a report #}
+            {% for flash_message in app.session.flashBag.get('notice') %}
+
+                <div class="flash-notice">
+
+                    {{ flash_message }}
+
+                </div>
+
+            {% endfor %}
+
+            {# Only Admins are able to CRUD any nurls #}
+            {% if is_granted('ROLE_ADMIN') %}
+
+                <a href="{{ path('nurl_seeAll') }}">Review suggested nurls</a>
+
+            {% endif %}
     </div>
 
     <table style="text-align: center">
 
         {# Table head #}
+
         <thead>
 
             <tr>
@@ -24,10 +42,6 @@
                 <th>Title</th>
 
                 <th>Content</th>
-
-                <th>Upvote</th>
-
-                <th>Downvote</th>
 
                 <th>Actions</th>
 
@@ -54,11 +68,8 @@
 
                     <td>{{ nurl.content }}</td>
 
-                    <td>{{ nurl.upvote }}</td>
 
-                    <td>{{ nurl.downvote }}</td>
-
-                    {# CRUD options #}
+                    {# Anon and User CRUD options #}
                     <td>
                         <ul>
 
@@ -70,7 +81,12 @@
                                 <a href="{{ path('nurl_edit', { 'id': nurl.id }) }}">edit</a>
                             </li>
 
+                            <li>
+                                <a href="{{ path('nurl_report', { 'id': nurl.id }) }}">Report</a>
+                            </li>
+
                         </ul>
+
                     </td>
 
                 </tr>
@@ -83,16 +99,24 @@
 
     </table>
 
+
     <ul>
+
         <li>
+
+            {% for flash_message in app.session.flashBag.get('notice') %}
+
+                <div class="flash-notice">
+
+                    {{ flash_message }}
+
+                </div>
+
+            {% endfor %}
+
             <a href="{{ path('nurl_new') }}">Create a new nurl</a>
+
         </li>
 
-        {#<li>#}
-            {#<form action="{{ path('nurl_search') }}" method="post">#}
-                {#<input type="text" id="search" placeholder="Search" value="{{  }}">#}
-                {#<input type="submit" value="Search">#}
-            {#</form>#}
-        {#</li>#}
     </ul>
 {% endblock %}

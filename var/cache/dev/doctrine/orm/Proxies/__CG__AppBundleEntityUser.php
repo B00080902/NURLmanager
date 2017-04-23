@@ -64,10 +64,10 @@ class User extends \AppBundle\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'email', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'username', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'plainPassword', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'password', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'isActive', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'collection', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'nurl', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'tag'];
+            return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'email', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'username', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'plainPassword', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'password', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'isActive', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'collection', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'nurl', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'tag', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'voted'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'email', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'username', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'plainPassword', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'password', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'isActive', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'collection', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'nurl', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'tag'];
+        return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'email', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'username', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'plainPassword', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'password', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'isActive', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'collection', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'nurl', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'tag', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'voted'];
     }
 
     /**
@@ -461,6 +461,39 @@ class User extends \AppBundle\Entity\User implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getTag', []);
 
         return parent::getTag();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setVoted($voted)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setVoted', [$voted]);
+
+        return parent::setVoted($voted);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getVoted()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getVoted', []);
+
+        return parent::getVoted();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function __toString()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', []);
+
+        return parent::__toString();
     }
 
 }

@@ -21,29 +21,29 @@ class __TwigTemplate_0316c6a286b7e0c357e7d5fb62874ef618e33d826fa3f9a860b56fbc146
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_a3f7322b4ace54063e7761bdb281cdb0b91bcb8f830e3e1240916c9d13a3706d = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_a3f7322b4ace54063e7761bdb281cdb0b91bcb8f830e3e1240916c9d13a3706d->enter($__internal_a3f7322b4ace54063e7761bdb281cdb0b91bcb8f830e3e1240916c9d13a3706d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "nurl/new.html.twig"));
+        $__internal_bf286bb472e03917162ab3866c00545f830a778c972a48525b2688b867f17414 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_bf286bb472e03917162ab3866c00545f830a778c972a48525b2688b867f17414->enter($__internal_bf286bb472e03917162ab3866c00545f830a778c972a48525b2688b867f17414_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "nurl/new.html.twig"));
 
-        $__internal_fd00e5a11c52184e43264a5ffeb0d52f2bd62e277de9840322fd0fdaf6f416f0 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_fd00e5a11c52184e43264a5ffeb0d52f2bd62e277de9840322fd0fdaf6f416f0->enter($__internal_fd00e5a11c52184e43264a5ffeb0d52f2bd62e277de9840322fd0fdaf6f416f0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "nurl/new.html.twig"));
+        $__internal_795641df64cb13cff619a31f33c1c23654a80b5fe05f08028ea2c3815ead9151 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_795641df64cb13cff619a31f33c1c23654a80b5fe05f08028ea2c3815ead9151->enter($__internal_795641df64cb13cff619a31f33c1c23654a80b5fe05f08028ea2c3815ead9151_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "nurl/new.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_a3f7322b4ace54063e7761bdb281cdb0b91bcb8f830e3e1240916c9d13a3706d->leave($__internal_a3f7322b4ace54063e7761bdb281cdb0b91bcb8f830e3e1240916c9d13a3706d_prof);
+        $__internal_bf286bb472e03917162ab3866c00545f830a778c972a48525b2688b867f17414->leave($__internal_bf286bb472e03917162ab3866c00545f830a778c972a48525b2688b867f17414_prof);
 
         
-        $__internal_fd00e5a11c52184e43264a5ffeb0d52f2bd62e277de9840322fd0fdaf6f416f0->leave($__internal_fd00e5a11c52184e43264a5ffeb0d52f2bd62e277de9840322fd0fdaf6f416f0_prof);
+        $__internal_795641df64cb13cff619a31f33c1c23654a80b5fe05f08028ea2c3815ead9151->leave($__internal_795641df64cb13cff619a31f33c1c23654a80b5fe05f08028ea2c3815ead9151_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_d8d99b0b40faab0094f6c7b36841cfb2e48160b6a27c007840dae047a43971bb = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_d8d99b0b40faab0094f6c7b36841cfb2e48160b6a27c007840dae047a43971bb->enter($__internal_d8d99b0b40faab0094f6c7b36841cfb2e48160b6a27c007840dae047a43971bb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_df16ac76d9a671dd79d40a392672391ee34941bb0ad507bd6ad642007f65f97f = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_df16ac76d9a671dd79d40a392672391ee34941bb0ad507bd6ad642007f65f97f->enter($__internal_df16ac76d9a671dd79d40a392672391ee34941bb0ad507bd6ad642007f65f97f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_2bb5f5f908cffe72aeb7fab3ecf2897be03696058bb59a8a9d6bf53e8b596739 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_2bb5f5f908cffe72aeb7fab3ecf2897be03696058bb59a8a9d6bf53e8b596739->enter($__internal_2bb5f5f908cffe72aeb7fab3ecf2897be03696058bb59a8a9d6bf53e8b596739_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_2ad4a4e12d374da87d8c372518b63279bf0a20771b0331ee129d075897861f4c = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_2ad4a4e12d374da87d8c372518b63279bf0a20771b0331ee129d075897861f4c->enter($__internal_2ad4a4e12d374da87d8c372518b63279bf0a20771b0331ee129d075897861f4c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <h1>Nurl creation</h1>
@@ -52,29 +52,51 @@ class __TwigTemplate_0316c6a286b7e0c357e7d5fb62874ef618e33d826fa3f9a860b56fbc146
         // line 6
         echo         $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_start');
         echo "
-        ";
-        // line 7
-        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock(($context["form"] ?? $this->getContext($context, "form")), 'widget');
-        echo "
+
     ";
         // line 8
+        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock(($context["form"] ?? $this->getContext($context, "form")), 'widget');
+        echo "
+
+    ";
+        // line 10
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute(($context["nurl"] ?? $this->getContext($context, "nurl")), "tag", array()));
+        foreach ($context['_seq'] as $context["_key"] => $context["tags"]) {
+            // line 11
+            echo "        ";
+            if ($this->getAttribute($this->getAttribute(($context["nurl"] ?? $this->getContext($context, "nurl")), "tag", array()), "approved", array())) {
+                // line 12
+                echo "    ";
+                echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "tag", array()), 'row');
+                echo "
+";
+            }
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tags'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 15
+        echo "
+    ";
+        // line 16
         echo         $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_end');
         echo "
 
     <ul>
         <li>
             <a href=\"";
-        // line 12
+        // line 20
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("nurl_index");
         echo "\">Back to the list</a>
         </li>
     </ul>
 ";
         
-        $__internal_2bb5f5f908cffe72aeb7fab3ecf2897be03696058bb59a8a9d6bf53e8b596739->leave($__internal_2bb5f5f908cffe72aeb7fab3ecf2897be03696058bb59a8a9d6bf53e8b596739_prof);
+        $__internal_2ad4a4e12d374da87d8c372518b63279bf0a20771b0331ee129d075897861f4c->leave($__internal_2ad4a4e12d374da87d8c372518b63279bf0a20771b0331ee129d075897861f4c_prof);
 
         
-        $__internal_d8d99b0b40faab0094f6c7b36841cfb2e48160b6a27c007840dae047a43971bb->leave($__internal_d8d99b0b40faab0094f6c7b36841cfb2e48160b6a27c007840dae047a43971bb_prof);
+        $__internal_df16ac76d9a671dd79d40a392672391ee34941bb0ad507bd6ad642007f65f97f->leave($__internal_df16ac76d9a671dd79d40a392672391ee34941bb0ad507bd6ad642007f65f97f_prof);
 
     }
 
@@ -90,7 +112,7 @@ class __TwigTemplate_0316c6a286b7e0c357e7d5fb62874ef618e33d826fa3f9a860b56fbc146
 
     public function getDebugInfo()
     {
-        return array (  68 => 12,  61 => 8,  57 => 7,  53 => 6,  49 => 4,  40 => 3,  11 => 1,);
+        return array (  90 => 20,  83 => 16,  80 => 15,  70 => 12,  67 => 11,  63 => 10,  58 => 8,  53 => 6,  49 => 4,  40 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -109,7 +131,15 @@ class __TwigTemplate_0316c6a286b7e0c357e7d5fb62874ef618e33d826fa3f9a860b56fbc146
     <h1>Nurl creation</h1>
 
     {{ form_start(form) }}
-        {{ form_widget(form) }}
+
+    {{ form_widget(form) }}
+
+    {% for tags in nurl.tag %}
+        {% if nurl.tag.approved %}
+    {{ form_row(form.tag) }}
+{% endif %}
+{% endfor %}
+
     {{ form_end(form) }}
 
     <ul>

@@ -42,6 +42,13 @@ class Report
      */
     private $timestamp;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=255)
+     */
+    private $email;
+
 
 
     /**

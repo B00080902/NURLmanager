@@ -16,7 +16,7 @@ use Symfony\Component\HttpFoundation\Session\Session;
 class TagController extends Controller
 {
     /**
-     * Lists all tag entities.
+     * Lists all APPROVED tag entities.
      *
      * @Route("/", name="tag_index")
      * @Method("GET")
@@ -28,6 +28,25 @@ class TagController extends Controller
         $tags = $em->getRepository('AppBundle:Tag')->findAll();
 
         return $this->render('tag/index.html.twig', array(
+            'tags' => $tags,
+        ));
+    }
+
+    /**
+     * Lists all tags for admin to see.
+     *
+     * @Route("/seeAll", name="tag_seeAll")
+     * @Method("GET")
+     */
+    public function allAction()
+    {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
+
+        $em = $this->getDoctrine()->getManager();
+
+        $tags = $em->getRepository('AppBundle:Tag')->findAll();
+
+        return $this->render('tag/all.html.twig', array(
             'tags' => $tags,
         ));
     }
@@ -49,6 +68,7 @@ class TagController extends Controller
             $tag -> setUser($this->get('security.token_storage')->getToken()->getUser());
             $tag -> setUpvote(0);
             $tag -> setDownvote(0);
+            $tag -> setVoted(0);
             $tag -> setApproved(false);
 
             $em = $this->getDoctrine()->getManager();
@@ -149,23 +169,30 @@ class TagController extends Controller
      */
     public function upvoteAction(Tag $tag)
     {
-        $session = new Session();
-        $count = 0;
+        $user = $this->getUser();
 
-        $session->set('count', $count);
-
-        if($count >= 1){
+        if($user->getVoted())
+        {
             $tag -> setUpvote( $tag -> getUpvote() + 1);
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($tag);
             $em->flush($tag);
-            $count++;
         }
-        else {
-            echo '<script language="javascript">';
-            echo 'alert("message successfully sent")';
-            echo '</script>';
-        }
+
+
+        echo 'nope';
+
+//            $tag -> setUpvote( $tag -> getUpvote() + 1);
+//            $em = $this->getDoctrine()->getManager();
+//            $em->persist($tag);
+//            $em->flush($tag);
+//
+//        else {
+//            echo '<script language="javascript">';
+//            echo 'alert("message successfully sent")';
+//            echo '</script>';
+//        }
 
         return $this->redirectToRoute('tag_index');
     }
@@ -181,6 +208,29 @@ class TagController extends Controller
         $tag -> setDownvote( $tag -> getDownvote() + 1);
         $em = $this->getDoctrine()->getManager();
         $em->persist($tag);
+        $em->flush($tag);
+
+        return $this->redirectToRoute('tag_index');
+    }
+
+    /**
+     * Only Moderator can set it to approved
+     *
+     * @Route("/{id}/approved", name="tag_approved")
+     * @Method({"GET", "POST"})
+     * @param Tag $tag
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
+    public function approvedAction(Tag $tag)
+    {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
+
+        $tag -> setApproved(true);
+
+        $em = $this->getDoctrine()->getManager();
+
+        $em->persist($tag);
+
         $em->flush($tag);
 
         return $this->redirectToRoute('tag_index');
