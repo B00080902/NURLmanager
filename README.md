@@ -24,7 +24,9 @@ Assignment goal was to show understanding of Symfony's framework and create a we
 x - Future work (due to time constraints)
 
 **Use case role 'public' (no login required)**
-_____________________________________________________________________________________- can see most recently added public NURLs						✓
+______________________________________________
+
+- can see most recently added public NURLs						✓
 - NURL:											✓
 	- tags										✓
 	- text title									✓
@@ -44,7 +46,9 @@ NURL id + timestamp + text description of why unacceptable
 + email (optional) of reporter								
 
 **Use case role 'user'**
-_____________________________________________________________________________________- 
+________________________
+
+
 - can view / search NURLs in collections							x
 	- own collections								✓/x
 	- shared collections from other users						✓/x
@@ -67,12 +71,13 @@ EXTRA marks - upload of profile picture							x
 	- can make profile public / private (user name is always public for public NURLs)
 	
 **Use case role 'admin'**
-    _____________________________________________________________________________________
-    - can CRUD user and admin accounts							✓
+_________________________
+
+  - can CRUD user and admin accounts							✓
     
     
-   **Use case role 'moderator'**
-    _____________________________________________________________________________________
+**Use case role 'moderator'**
+____________________________
     
  - can review 'pending' and 'reported' NURLS						✓
  
