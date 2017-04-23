@@ -21,29 +21,29 @@ class __TwigTemplate_f05436131b9e2c5d41e90df7eda0c92418a1f814ac331fe5626150b9c8b
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_b463fd21eec5f205eec56cf19660753ea2a77ca84ae7dad3301204357d84751f = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_b463fd21eec5f205eec56cf19660753ea2a77ca84ae7dad3301204357d84751f->enter($__internal_b463fd21eec5f205eec56cf19660753ea2a77ca84ae7dad3301204357d84751f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "user/show.html.twig"));
+        $__internal_5676e055b6531558cc8b3114b15760834ca96a53f54d3928e895db1beb5070e3 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_5676e055b6531558cc8b3114b15760834ca96a53f54d3928e895db1beb5070e3->enter($__internal_5676e055b6531558cc8b3114b15760834ca96a53f54d3928e895db1beb5070e3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "user/show.html.twig"));
 
-        $__internal_c44b33a95ead4c98f44d7f444e2ddae469d0eabb1d2f43d5f73d9bd641dc4cf6 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_c44b33a95ead4c98f44d7f444e2ddae469d0eabb1d2f43d5f73d9bd641dc4cf6->enter($__internal_c44b33a95ead4c98f44d7f444e2ddae469d0eabb1d2f43d5f73d9bd641dc4cf6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "user/show.html.twig"));
+        $__internal_b6b7910364c20f2b107403146da5d468b1e17d2dcaa1ae59fe55b5b8a858b509 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_b6b7910364c20f2b107403146da5d468b1e17d2dcaa1ae59fe55b5b8a858b509->enter($__internal_b6b7910364c20f2b107403146da5d468b1e17d2dcaa1ae59fe55b5b8a858b509_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "user/show.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_b463fd21eec5f205eec56cf19660753ea2a77ca84ae7dad3301204357d84751f->leave($__internal_b463fd21eec5f205eec56cf19660753ea2a77ca84ae7dad3301204357d84751f_prof);
+        $__internal_5676e055b6531558cc8b3114b15760834ca96a53f54d3928e895db1beb5070e3->leave($__internal_5676e055b6531558cc8b3114b15760834ca96a53f54d3928e895db1beb5070e3_prof);
 
         
-        $__internal_c44b33a95ead4c98f44d7f444e2ddae469d0eabb1d2f43d5f73d9bd641dc4cf6->leave($__internal_c44b33a95ead4c98f44d7f444e2ddae469d0eabb1d2f43d5f73d9bd641dc4cf6_prof);
+        $__internal_b6b7910364c20f2b107403146da5d468b1e17d2dcaa1ae59fe55b5b8a858b509->leave($__internal_b6b7910364c20f2b107403146da5d468b1e17d2dcaa1ae59fe55b5b8a858b509_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_2370fad70ba09c6e87107cdfd955bc171817d7dec601b5a52bcb06950b3ca63a = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_2370fad70ba09c6e87107cdfd955bc171817d7dec601b5a52bcb06950b3ca63a->enter($__internal_2370fad70ba09c6e87107cdfd955bc171817d7dec601b5a52bcb06950b3ca63a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_a0c98eb1467ba1c37cf18f8cdd8695bc63e382f1bdb82a658c3199ef6219ef14 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_a0c98eb1467ba1c37cf18f8cdd8695bc63e382f1bdb82a658c3199ef6219ef14->enter($__internal_a0c98eb1467ba1c37cf18f8cdd8695bc63e382f1bdb82a658c3199ef6219ef14_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_7535489dccfd2c29687c92015affcf2f471868b0c7d6b4f4791e33986e4a8046 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_7535489dccfd2c29687c92015affcf2f471868b0c7d6b4f4791e33986e4a8046->enter($__internal_7535489dccfd2c29687c92015affcf2f471868b0c7d6b4f4791e33986e4a8046_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_3da750e5d04206c791210bfd74b22f7e21dbe27475d13bfe652ba2de29a1d7f7 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_3da750e5d04206c791210bfd74b22f7e21dbe27475d13bfe652ba2de29a1d7f7->enter($__internal_3da750e5d04206c791210bfd74b22f7e21dbe27475d13bfe652ba2de29a1d7f7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <h1>";
@@ -81,7 +81,7 @@ class __TwigTemplate_f05436131b9e2c5d41e90df7eda0c92418a1f814ac331fe5626150b9c8b
         echo "</td>
             </tr>
             <tr>
-                <th>Isactive</th>
+                <th>Is active</th>
                 <td>";
         // line 26
         if ($this->getAttribute(($context["user"] ?? $this->getContext($context, "user")), "isActive", array())) {
@@ -115,38 +115,161 @@ class __TwigTemplate_f05436131b9e2c5d41e90df7eda0c92418a1f814ac331fe5626150b9c8b
         echo "            </tr>
         </tbody>
     </table>
-
+";
+        // line 39
+        if ($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("ROLE_ADMIN")) {
+            // line 40
+            echo "
     <ul>
         <li>
             <a href=\"";
-        // line 42
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("user_index");
-        echo "\">Back to the list</a>
+            // line 43
+            echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("user_index");
+            echo "\">Back to the list</a>
         </li>
         <li>
             <a href=\"";
-        // line 45
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("user_edit", array("id" => $this->getAttribute(($context["user"] ?? $this->getContext($context, "user")), "id", array()))), "html", null, true);
-        echo "\">Edit</a>
+            // line 46
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("user_edit", array("id" => $this->getAttribute(($context["user"] ?? $this->getContext($context, "user")), "id", array()))), "html", null, true);
+            echo "\">Edit</a>
         </li>
         <li>
             ";
-        // line 48
-        echo         $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock(($context["delete_form"] ?? $this->getContext($context, "delete_form")), 'form_start');
-        echo "
+            // line 49
+            echo             $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock(($context["delete_form"] ?? $this->getContext($context, "delete_form")), 'form_start');
+            echo "
                 <input type=\"submit\" value=\"Delete\">
             ";
-        // line 50
-        echo         $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock(($context["delete_form"] ?? $this->getContext($context, "delete_form")), 'form_end');
-        echo "
+            // line 51
+            echo             $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock(($context["delete_form"] ?? $this->getContext($context, "delete_form")), 'form_end');
+            echo "
         </li>
     </ul>
 ";
+        }
+        // line 55
+        echo "    <div style=\"display: flex\">
+
+        <section>
+
+            <h3>These are your nurls</h3>
+
+            <table>
+
+                ";
+        // line 63
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["nurls"] ?? $this->getContext($context, "nurls")));
+        foreach ($context['_seq'] as $context["_key"] => $context["nurl"]) {
+            // line 64
+            echo "
+                    <tr>
+                        <td>
+
+                            <a href=\"";
+            // line 68
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("nurl_edit", array("id" => $this->getAttribute($context["nurl"], "id", array()))), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["nurl"], "title", array()), "html", null, true);
+            echo "</a>
+
+                        </td>
+                    </tr>
+
+                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['nurl'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 74
+        echo "
+            </table>
+
+        </section>
+
+        <hr>
+
+        <section>
+
+            <h3>These are your collections</h3>
+
+            <table>
+
+                ";
+        // line 87
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["collections"] ?? $this->getContext($context, "collections")));
+        foreach ($context['_seq'] as $context["_key"] => $context["collection"]) {
+            // line 88
+            echo "
+                    <tr>
+                        <td>
+
+                            <a href=\"";
+            // line 92
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("collection_edit", array("id" => $this->getAttribute($context["collection"], "id", array()))), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["collection"], "title", array()), "html", null, true);
+            echo "</a>
+
+                        </td>
+                    </tr>
+                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['collection'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 97
+        echo "
+            </table>
+
+        </section>
+
+        <hr>
+
+        <section>
+
+            <h3>These are your tags</h3>
+
+            <table>
+
+                ";
+        // line 110
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["tags"] ?? $this->getContext($context, "tags")));
+        foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
+            // line 111
+            echo "
+                    <tr>
+                        <td>
+
+                            <a href=\"";
+            // line 115
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("tag_edit", array("id" => $this->getAttribute($context["tag"], "id", array()))), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["tag"], "tag", array()), "html", null, true);
+            echo "</a>
+
+                        </td>
+                    </tr>
+                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tag'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 120
+        echo "
+            </table>
+
+        </section>
+
+    </div>
+";
         
-        $__internal_7535489dccfd2c29687c92015affcf2f471868b0c7d6b4f4791e33986e4a8046->leave($__internal_7535489dccfd2c29687c92015affcf2f471868b0c7d6b4f4791e33986e4a8046_prof);
+        $__internal_3da750e5d04206c791210bfd74b22f7e21dbe27475d13bfe652ba2de29a1d7f7->leave($__internal_3da750e5d04206c791210bfd74b22f7e21dbe27475d13bfe652ba2de29a1d7f7_prof);
 
         
-        $__internal_2370fad70ba09c6e87107cdfd955bc171817d7dec601b5a52bcb06950b3ca63a->leave($__internal_2370fad70ba09c6e87107cdfd955bc171817d7dec601b5a52bcb06950b3ca63a_prof);
+        $__internal_a0c98eb1467ba1c37cf18f8cdd8695bc63e382f1bdb82a658c3199ef6219ef14->leave($__internal_a0c98eb1467ba1c37cf18f8cdd8695bc63e382f1bdb82a658c3199ef6219ef14_prof);
 
     }
 
@@ -162,7 +285,7 @@ class __TwigTemplate_f05436131b9e2c5d41e90df7eda0c92418a1f814ac331fe5626150b9c8b
 
     public function getDebugInfo()
     {
-        return array (  140 => 50,  135 => 48,  129 => 45,  123 => 42,  115 => 36,  106 => 33,  103 => 32,  99 => 31,  87 => 26,  80 => 22,  73 => 18,  66 => 14,  59 => 10,  49 => 4,  40 => 3,  11 => 1,);
+        return array (  261 => 120,  248 => 115,  242 => 111,  238 => 110,  223 => 97,  210 => 92,  204 => 88,  200 => 87,  185 => 74,  171 => 68,  165 => 64,  161 => 63,  151 => 55,  144 => 51,  139 => 49,  133 => 46,  127 => 43,  122 => 40,  120 => 39,  115 => 36,  106 => 33,  103 => 32,  99 => 31,  87 => 26,  80 => 22,  73 => 18,  66 => 14,  59 => 10,  49 => 4,  40 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -199,7 +322,7 @@ class __TwigTemplate_f05436131b9e2c5d41e90df7eda0c92418a1f814ac331fe5626150b9c8b
                 <td>{{ user.password }}</td>
             </tr>
             <tr>
-                <th>Isactive</th>
+                <th>Is active</th>
                 <td>{% if user.isActive %}Yes{% else %}No{% endif %}</td>
             </tr>
             <tr>
@@ -213,6 +336,7 @@ class __TwigTemplate_f05436131b9e2c5d41e90df7eda0c92418a1f814ac331fe5626150b9c8b
             </tr>
         </tbody>
     </table>
+{% if is_granted('ROLE_ADMIN') %}
 
     <ul>
         <li>
@@ -227,6 +351,78 @@ class __TwigTemplate_f05436131b9e2c5d41e90df7eda0c92418a1f814ac331fe5626150b9c8b
             {{ form_end(delete_form) }}
         </li>
     </ul>
+{% endif %}
+    <div style=\"display: flex\">
+
+        <section>
+
+            <h3>These are your nurls</h3>
+
+            <table>
+
+                {% for nurl in nurls  %}
+
+                    <tr>
+                        <td>
+
+                            <a href=\"{{ path('nurl_edit', { 'id': nurl.id }) }}\">{{ nurl.title }}</a>
+
+                        </td>
+                    </tr>
+
+                {%  endfor %}
+
+            </table>
+
+        </section>
+
+        <hr>
+
+        <section>
+
+            <h3>These are your collections</h3>
+
+            <table>
+
+                {% for collection in collections %}
+
+                    <tr>
+                        <td>
+
+                            <a href=\"{{ path('collection_edit', { 'id': collection.id }) }}\">{{ collection.title }}</a>
+
+                        </td>
+                    </tr>
+                {%  endfor %}
+
+            </table>
+
+        </section>
+
+        <hr>
+
+        <section>
+
+            <h3>These are your tags</h3>
+
+            <table>
+
+                {% for tag in tags %}
+
+                    <tr>
+                        <td>
+
+                            <a href=\"{{ path('tag_edit', { 'id': tag.id }) }}\">{{ tag.tag }}</a>
+
+                        </td>
+                    </tr>
+                {%  endfor %}
+
+            </table>
+
+        </section>
+
+    </div>
 {% endblock %}
 ", "user/show.html.twig", "C:\\College\\College\\Third year\\Second Semester\\WFDassignment\\NURLmanager\\app\\Resources\\views\\user\\show.html.twig");
     }

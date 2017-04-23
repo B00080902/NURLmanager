@@ -7,68 +7,54 @@
     <h1>Welcome to NURL Manager</h1>
 
     <div id="shared">
+
         <section>
+
             <h3>Online System to organise and share useful links and notes</h3>
 
             <p>
                 You are currently logged in as
+
                 {% if is_granted('ROLE_ADMIN') %}
+
                     Administrator
+
                 {% elseif is_granted('ROLE_USER') %}
+
                     User
+
                 {% else %}
+
                     <strong>Anonymous</strong>
+
                 {% endif %}
+
             </p>
+
         </section>
 
-        <section>
-            <form
-                    action="{{ path('search') }}"
-                    method="post"
-            >
-
-
-                <select>
-
-                    <optgroup label="Type" >
-
-                        <option name="type" >User</option>
-
-                        <option name="type" >Collection</option>
-
-                        <option name="type" >Nurl</option>
-
-                        <option name="type">Tag</option>
-
-                    </optgroup>
-
-                </select>
-                {#<input type="text" name="type">#}
-
-
-                <input type="text" name="query" placeholder="Search">
-
-
-                <input type="submit" id="Submit" value="Submit">
-
-
-            </form>
-        </section>
 
         <section>
+
 
         <h3>Useful links</h3>
+
             <ul>
 
-                <li><a href="{{ path('tag_index') }}">List of tags</a></li>
-                <li><a>List of proposed new tags</a></li>
-                <li><a>Upvote / Downvote list</a></li>
-                <li><a>Propose a new candidate tag</a></li>
-                <li><a href="{{ path('nurl_index') }}">All NURLS</a></li>
-                <li><a>Report a NURL</a></li>
+                <li><a href="{{ path('tag_index') }}">Tags</a></li>
+
+                <li><a href="{{ path('tag_proposed') }}">List of proposed new tags</a></li>
+
+                <li><a href="{{ path('collection_index') }}">Collections</a></li>
+
+                <li><a href="{{ path('tag_new') }}">Propose a new tag</a></li>
+
+                <li><a href="{{ path('nurl_index') }}">All Nurls</a></li>
+
             </ul>
+
         </section>
+
     </div>
 
 {% endblock %}

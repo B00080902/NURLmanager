@@ -22,7 +22,7 @@
                 <td>{{ user.password }}</td>
             </tr>
             <tr>
-                <th>Isactive</th>
+                <th>Is active</th>
                 <td>{% if user.isActive %}Yes{% else %}No{% endif %}</td>
             </tr>
             <tr>
@@ -37,6 +37,8 @@
         </tbody>
     </table>
 
+    {% if is_granted('ROLE_ADMIN') %}
+
     <ul>
         <li>
             <a href="{{ path('user_index') }}">Back to the list</a>
@@ -50,4 +52,77 @@
             {{ form_end(delete_form) }}
         </li>
     </ul>
+{% endif %}
+
+    <div style="display: flex">
+
+        <section>
+
+            <h3>These are your nurls</h3>
+
+            <table>
+
+                {% for nurl in nurls  %}
+
+                    <tr>
+                        <td>
+
+                            <a href="{{ path('nurl_edit', { 'id': nurl.id }) }}">{{ nurl.title }}</a>
+
+                        </td>
+                    </tr>
+
+                {%  endfor %}
+
+            </table>
+
+        </section>
+
+        <hr>
+
+        <section>
+
+            <h3>These are your collections</h3>
+
+            <table>
+
+                {% for collection in collections %}
+
+                    <tr>
+                        <td>
+
+                            <a href="{{ path('collection_edit', { 'id': collection.id }) }}">{{ collection.title }}</a>
+
+                        </td>
+                    </tr>
+                {%  endfor %}
+
+            </table>
+
+        </section>
+
+        <hr>
+
+        <section>
+
+            <h3>These are your tags</h3>
+
+            <table>
+
+                {% for tag in tags %}
+
+                    <tr>
+                        <td>
+
+                            <a href="{{ path('tag_edit', { 'id': tag.id }) }}">{{ tag.tag }}</a>
+
+                        </td>
+                    </tr>
+                {%  endfor %}
+
+            </table>
+
+        </section>
+
+    </div>
 {% endblock %}

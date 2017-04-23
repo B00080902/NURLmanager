@@ -4,7 +4,6 @@
 
     <h1>Collections list</h1>
 
-    <a href="{{ path('search_page') }}">Search</a>
 
     <table>
 
@@ -24,7 +23,9 @@
 
                 <th>Author</th>
 
-                <th>Actions</th>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <th>Actions</th>
+                {% endif %}
 
             </tr>
 
@@ -47,7 +48,7 @@
 
                 <td>{{ collection.user.username }}</td>
 
-                {% if app.user.username == collection.user.username %}
+                {% if app.user.username == collection.user.username or is_granted('ROLE_ADMIN') %}
 
                     <td>
                         <ul>

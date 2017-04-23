@@ -70,6 +70,7 @@
         </tbody>
 
     </table>
+{% if app.user.username == nurl.user.username %}
 
     <ul>
 
@@ -99,5 +100,5 @@
         </li>
 
     </ul>
-
+{% endif %}
 {% endblock %}

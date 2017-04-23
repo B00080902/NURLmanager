@@ -64,15 +64,30 @@
 
                 <li>
                     <a
-                        {% if app.request.attributes.get('_route') == 'tag_index'  %}
+                            {% if app.request.attributes.get('_route') == 'tag_index'  %}
 
-                            id="current"
+                                id="current"
 
-                        {% endif %}
+                            {% endif %}
 
-                        href="/tag/"><span>Tags</span>
+                            href="/tag/"><span>Tags</span>
                     </a>
                 </li>
+                {% if is_granted('ROLE_ADMIN') %}
+
+
+                <li>
+                    <a
+                            {% if app.request.attributes.get('_route') == 'user_index'  %}
+
+                                id="current"
+
+                            {% endif %}
+
+                            href="/user/"><span>Users</span>
+                    </a>
+                </li>
+                {% endif %}
 
 
     {% if is_granted('ROLE_USER') %}

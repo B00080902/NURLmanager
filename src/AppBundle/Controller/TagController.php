@@ -27,9 +27,11 @@ class TagController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $tags = $em->getRepository('AppBundle:Tag')->findAll();
+        $tag = new Tag();
 
         return $this->render('tag/index.html.twig', array(
             'tags' => $tags,
+            'tag' => $tag,
         ));
     }
 
@@ -220,15 +222,23 @@ class TagController extends Controller
 
         else
         {
-            // Set that that particular user has voted
-            $tag -> setUserVoted($this->get('security.token_storage')->getToken()->getUser());
 
-            // Increase the tag vote by 1 or by 5 depending on the role
-            $tag -> setUpvote( $tag -> getUpvote() + 1);
+            $user = $this->get('security.token_storage')->getToken()->getUser()-> getUsername();
 
             if($this->get('security.authorization_checker')->isGranted('ROLE_USER'))
             {
                 $tag -> setUpvote( $tag -> getUpvote() + 5);
+
+                $tag -> setUserVoted($user );
+            }
+
+            else
+            {
+                // Set that that particular user has voted
+                $tag -> setUserVoted($user);
+
+                // Increase the tag vote by 1 or by 5 depending on the role
+                $tag -> setUpvote( $tag -> getUpvote() + 1);
             }
 
 
@@ -269,16 +279,23 @@ class TagController extends Controller
 
         else
         {
-            // Set that that particular user has voted
-            $tag -> setUserVoted($this->get('security.token_storage')->getToken()->getUser());
 
-            // Increase the tag vote by 1 or by 5 depending on the role
-            $tag -> setDownvote( $tag -> getDownvote() + 1);
+            $user = $this->get('security.token_storage')->getToken()->getUser()-> getUsername();
 
-            // Registered user vote counts as 5
             if($this->get('security.authorization_checker')->isGranted('ROLE_USER'))
             {
                 $tag -> setDownvote( $tag -> getDownvote() + 5);
+
+                $tag -> setUserVoted($user );
+            }
+
+            else
+            {
+                // Set that that particular user has voted
+                $tag -> setUserVoted($user);
+
+                // Increase the tag vote by 1 or by 5 depending on the role
+                $tag -> setDownvote( $tag -> getDownvote() + 1);
             }
 
             // Flush everything

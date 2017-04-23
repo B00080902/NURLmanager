@@ -28,18 +28,24 @@ class SearchController extends Controller
 
         $data = $this -> getData($type,$query);
 
+
         $argsArray = [
             'type' => $type,
             'data' => $data,
-            'query' => $query
+            'query' => $query,
         ];
 
+//        echo implode(" ",$data);
+
         $templateName = 'search/results';
-
         return $this->render($templateName . '.html.twig', $argsArray);
-
-
     }
+
+
+//    public function __toString()
+//    {
+//        return $this->data;
+//    }
 
 
     public function getData($type,$query){

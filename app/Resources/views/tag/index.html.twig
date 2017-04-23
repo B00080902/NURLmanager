@@ -45,7 +45,7 @@
 
                 <th>Downvote</th>
 
-                {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_USER')%}
+                {% if app.user.username == tag.user or is_granted('ROLE_ADMIN') %}
 
                     <th>Actions</th>
 
@@ -89,7 +89,7 @@
 
                     </td>
 
-                    {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_USER')%}
+                    {% if app.user.username == tag.user or is_granted('ROLE_ADMIN') %}
 
 
                     <td>

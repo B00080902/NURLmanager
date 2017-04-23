@@ -5,35 +5,99 @@
     <h1>Users list</h1>
 
     <table>
+
         <thead>
+
             <tr>
+
                 <th>Id</th>
+
                 <th>Email</th>
+
                 <th>Username</th>
+
                 <th>IsActive</th>
-                <th>Actions</th>
+
+                {% if is_granted('ROLE_ADMIN') %}
+
+                    <th>Actions</th>
+
+                    <th>Password</th>
+
+                {% endif %}
+
             </tr>
+
         </thead>
+
         <tbody>
+
         {% for user in users %}
+
             <tr>
-                <td><a href="{{ path('user_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
-                <td>{{ user.email }}</td>
-                <td>{{ user.username }}</td>
-                <td>{% if user.isActive %}Yes{% else %}No{% endif %}</td>
+
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('user_show', { 'id': user.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('user_edit', { 'id': user.id }) }}">edit</a>
-                        </li>
-                    </ul>
+
+                    <a href="{{ path('user_show', { 'id': user.id }) }}">
+
+                        {{ user.id }}
+
+                    </a>
+
                 </td>
+
+                <td>{{ user.email }}</td>
+
+                <td>{{ user.username }}</td>
+
+                <td>
+
+                    {% if user.isActive %}
+
+                        Yes
+
+                    {% else %}
+
+                        No
+
+                    {% endif %}
+
+                </td>
+                {% if is_granted('ROLE_ADMIN') %}
+
+                <td>
+
+                    <ul>
+
+                        <li>
+
+                            <a href="{{ path('user_show', { 'id': user.id }) }}">show</a>
+
+                        </li>
+
+                        <li>
+
+                            <a href="{{ path('user_edit', { 'id': user.id }) }}">edit</a>
+
+                        </li>
+
+                    </ul>
+
+                </td>
+
+                <td>
+                    {{ user.password }}
+                </td>
+
+
+                {% endif %}
+
             </tr>
+
         {% endfor %}
+
         </tbody>
+
     </table>
 
     <ul>

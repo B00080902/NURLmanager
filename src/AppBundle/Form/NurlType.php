@@ -3,6 +3,7 @@
 namespace AppBundle\Form;
 
 use AppBundle\Entity\Tag;
+use Doctrine\DBAL\Exception\NonUniqueFieldNameException;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\CallbackTransformer;
@@ -34,9 +35,12 @@ class NurlType extends AbstractType
                 // used to render a select box, check boxes or radios
                 'multiple' => false,
                 'expanded' => true,
-            ))
+            ));
+                $nurl = new Nurl();
 
-            ->add('public', ChoiceType::class, array(
+
+
+            $builder->add('public', ChoiceType::class, array(
                 'choices' => array(
                     'Public' => 'Public',
                     'Private' => 'Private'

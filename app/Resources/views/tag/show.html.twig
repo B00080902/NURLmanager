@@ -28,7 +28,9 @@
         </tbody>
     </table>
 
-    <ul>
+{% if app.user.username == tag.user.username %}
+
+<ul>
         <li>
             <a href="{{ path('tag_index') }}">Back to the list</a>
         </li>
@@ -41,4 +43,6 @@
             {{ form_end(delete_form) }}
         </li>
     </ul>
+
+{% endif %}
 {% endblock %}

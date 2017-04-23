@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -33,9 +34,12 @@ class NurlController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $nurls = $em->getRepository('AppBundle:Nurl')->findAll();
+        $nurl = new Nurl();
 
         return $this->render('nurl/index.html.twig', array(
             'nurls' => $nurls,
+            'nurl' => $nurl,
+
         ));
     }
 
@@ -48,7 +52,7 @@ class NurlController extends Controller
      */
     public function allAction()
     {
-        $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
+        $this->denyAccessUnlessGranted('ROLE_MODERATOR', null, 'Unable to access this page!');
 
         $em = $this->getDoctrine()->getManager();
 
@@ -77,7 +81,6 @@ class NurlController extends Controller
         ));
     }
 
-
     /**
      * Creates a new nurl entity.
      *
@@ -88,15 +91,6 @@ class NurlController extends Controller
     {
         $nurl = new Nurl();
 
-//        // If the user is anon, it cannot post anything
-//        if($this->get('security.token_storage')->getToken()->getUser() == 'anon.')
-//        {
-//            $this->addFlash(
-//                'notice',
-//                'Please login before you write a new Nurl!'
-//            );
-//            return $this->redirectToRoute('login');
-//        }
 
         $form = $this->createForm('AppBundle\Form\NurlType', $nurl);
 
@@ -152,18 +146,32 @@ class NurlController extends Controller
     public function editAction(Request $request, Nurl $nurl)
     {
         $this->denyAccessUnlessGranted('ROLE_USER', null, 'Unable to access this page!');
+        $editForm = $this->createForm('AppBundle\Form\NurlType', $nurl);
 
         $deleteForm = $this->createDeleteForm($nurl);
-        $editForm = $this->createForm('AppBundle\Form\NurlType', $nurl);
+
+        if($nurl -> getPublic() == 'Public')
+        {
+            $editForm->add('public', ChoiceType::class, array(
+                'choices' => array(
+                    'Public' => 'Public',
+                    'Private' => 'Private'
+                ),
+                'required' => true,
+                'empty_data' => null,
+                'disabled' => true
+            ));
+        }
+
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('nurl_edit', array('id' => $nurl->getId()));
+            return $this->redirectToRoute('nurl_show', array('id' => $nurl->getId()));
         }
 
-        return $this->render('nurl/show.html.twig', array(
+        return $this->render('nurl/edit.html.twig', array(
             'nurl' => $nurl,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

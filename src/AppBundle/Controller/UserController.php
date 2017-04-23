@@ -67,9 +67,22 @@ class UserController extends Controller
     {
         $deleteForm = $this->createDeleteForm($user);
 
+        $em = $this->getDoctrine()->getManager();
+
+        $nurls = $em->getRepository('AppBundle:Nurl')->findBy(array('user' => $user));
+
+        $collections = $em->getRepository('AppBundle:Collection')->findBy(array('user' => $user));
+
+        $tags = $em->getRepository('AppBundle:Tag')->findBy(array('user' => $user));
+
+
+
         return $this->render('user/show.html.twig', array(
             'user' => $user,
             'delete_form' => $deleteForm->createView(),
+            'nurls' => $nurls,
+            'tags' => $tags,
+            'collections' => $collections
         ));
     }
 

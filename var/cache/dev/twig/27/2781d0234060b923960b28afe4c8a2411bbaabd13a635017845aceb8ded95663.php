@@ -21,116 +21,192 @@ class __TwigTemplate_885270aa5b2111698c366ebc4bbbfbd5af6aeaa1c032dda7cd7543e4862
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_657ca4427d2e68ea832eb39183ec2198cd6d33a9cf85b92f6bc4b3b65525415f = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_657ca4427d2e68ea832eb39183ec2198cd6d33a9cf85b92f6bc4b3b65525415f->enter($__internal_657ca4427d2e68ea832eb39183ec2198cd6d33a9cf85b92f6bc4b3b65525415f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "user/index.html.twig"));
+        $__internal_d7df75eb8232bc3a9e57a30d6654ef39eb8c97a4c7b6a66d5e9934aef93ff838 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_d7df75eb8232bc3a9e57a30d6654ef39eb8c97a4c7b6a66d5e9934aef93ff838->enter($__internal_d7df75eb8232bc3a9e57a30d6654ef39eb8c97a4c7b6a66d5e9934aef93ff838_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "user/index.html.twig"));
 
-        $__internal_93051cdbf8c775e1ec790a6c3962f0c989ffa804b3b578d0a4b7f7dcf945e642 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_93051cdbf8c775e1ec790a6c3962f0c989ffa804b3b578d0a4b7f7dcf945e642->enter($__internal_93051cdbf8c775e1ec790a6c3962f0c989ffa804b3b578d0a4b7f7dcf945e642_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "user/index.html.twig"));
+        $__internal_bfb72a80fba1e5eefba29bac2afe5b613de28ee8b1bb54fc3b9e888199d9dec8 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_bfb72a80fba1e5eefba29bac2afe5b613de28ee8b1bb54fc3b9e888199d9dec8->enter($__internal_bfb72a80fba1e5eefba29bac2afe5b613de28ee8b1bb54fc3b9e888199d9dec8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "user/index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_657ca4427d2e68ea832eb39183ec2198cd6d33a9cf85b92f6bc4b3b65525415f->leave($__internal_657ca4427d2e68ea832eb39183ec2198cd6d33a9cf85b92f6bc4b3b65525415f_prof);
+        $__internal_d7df75eb8232bc3a9e57a30d6654ef39eb8c97a4c7b6a66d5e9934aef93ff838->leave($__internal_d7df75eb8232bc3a9e57a30d6654ef39eb8c97a4c7b6a66d5e9934aef93ff838_prof);
 
         
-        $__internal_93051cdbf8c775e1ec790a6c3962f0c989ffa804b3b578d0a4b7f7dcf945e642->leave($__internal_93051cdbf8c775e1ec790a6c3962f0c989ffa804b3b578d0a4b7f7dcf945e642_prof);
+        $__internal_bfb72a80fba1e5eefba29bac2afe5b613de28ee8b1bb54fc3b9e888199d9dec8->leave($__internal_bfb72a80fba1e5eefba29bac2afe5b613de28ee8b1bb54fc3b9e888199d9dec8_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_15469085f667c73a35a7c4b5e9948cd1f2fc416911be60f69af73ede246c39bd = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_15469085f667c73a35a7c4b5e9948cd1f2fc416911be60f69af73ede246c39bd->enter($__internal_15469085f667c73a35a7c4b5e9948cd1f2fc416911be60f69af73ede246c39bd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_98da5e227854deed84692e163ae3e3b21634557d8bd5c4a45aed6e31ae070f51 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_98da5e227854deed84692e163ae3e3b21634557d8bd5c4a45aed6e31ae070f51->enter($__internal_98da5e227854deed84692e163ae3e3b21634557d8bd5c4a45aed6e31ae070f51_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_d60dd338dcf3457eb1169480882d6eb03e696fd67e7f6a5d0d89162f90817527 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_d60dd338dcf3457eb1169480882d6eb03e696fd67e7f6a5d0d89162f90817527->enter($__internal_d60dd338dcf3457eb1169480882d6eb03e696fd67e7f6a5d0d89162f90817527_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_2b747e7ac68e37bb54ac9b04b0bc41902fab3cab0aada65540a4779a28da4ea9 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_2b747e7ac68e37bb54ac9b04b0bc41902fab3cab0aada65540a4779a28da4ea9->enter($__internal_2b747e7ac68e37bb54ac9b04b0bc41902fab3cab0aada65540a4779a28da4ea9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "    ";
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\DumpExtension')->dump($this->env, $context);
         echo "
     <h1>Users list</h1>
 
     <table>
+
         <thead>
+
             <tr>
+
                 <th>Id</th>
+
                 <th>Email</th>
+
                 <th>Username</th>
+
                 <th>IsActive</th>
-                <th>Actions</th>
+
+                ";
+        // line 21
+        if ($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("ROLE_ADMIN")) {
+            // line 22
+            echo "
+                    <th>Actions</th>
+
+                    <th>Password</th>
+
+                ";
+        }
+        // line 28
+        echo "
             </tr>
+
         </thead>
+
         <tbody>
+
         ";
-        // line 18
+        // line 35
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["users"] ?? $this->getContext($context, "users")));
         foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-            // line 19
-            echo "            <tr>
-                <td><a href=\"";
-            // line 20
+            // line 36
+            echo "
+            <tr>
+
+                <td>
+
+                    <a href=\"";
+            // line 41
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("user_show", array("id" => $this->getAttribute($context["user"], "id", array()))), "html", null, true);
-            echo "\">";
+            echo "\">
+
+                        ";
+            // line 43
             echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "id", array()), "html", null, true);
-            echo "</a></td>
+            echo "
+
+                    </a>
+
+                </td>
+
                 <td>";
-            // line 21
+            // line 49
             echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "email", array()), "html", null, true);
             echo "</td>
+
                 <td>";
-            // line 22
+            // line 51
             echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "username", array()), "html", null, true);
             echo "</td>
-                <td>";
-            // line 23
-            if ($this->getAttribute($context["user"], "isActive", array())) {
-                echo "Yes";
-            } else {
-                echo "No";
-            }
-            echo "</td>
+
                 <td>
-                    <ul>
-                        <li>
-                            <a href=\"";
-            // line 27
-            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("user_show", array("id" => $this->getAttribute($context["user"], "id", array()))), "html", null, true);
-            echo "\">show</a>
-                        </li>
-                        <li>
-                            <a href=\"";
-            // line 30
-            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("user_edit", array("id" => $this->getAttribute($context["user"], "id", array()))), "html", null, true);
-            echo "\">edit</a>
-                        </li>
-                    </ul>
+
+                    ";
+            // line 55
+            if ($this->getAttribute($context["user"], "isActive", array())) {
+                // line 56
+                echo "
+                        Yes
+
+                    ";
+            } else {
+                // line 60
+                echo "
+                        No
+
+                    ";
+            }
+            // line 64
+            echo "
                 </td>
+                ";
+            // line 66
+            if ($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("ROLE_ADMIN")) {
+                // line 67
+                echo "
+                <td>
+
+                    <ul>
+
+                        <li>
+
+                            <a href=\"";
+                // line 74
+                echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("user_show", array("id" => $this->getAttribute($context["user"], "id", array()))), "html", null, true);
+                echo "\">show</a>
+
+                        </li>
+
+                        <li>
+
+                            <a href=\"";
+                // line 80
+                echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("user_edit", array("id" => $this->getAttribute($context["user"], "id", array()))), "html", null, true);
+                echo "\">edit</a>
+
+                        </li>
+
+                    </ul>
+
+                </td>
+
+                <td>
+                    ";
+                // line 89
+                echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "password", array()), "html", null, true);
+                echo "
+                </td>
+
+
+                ";
+            }
+            // line 94
+            echo "
             </tr>
+
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 36
-        echo "        </tbody>
+        // line 98
+        echo "
+        </tbody>
+
     </table>
 
     <ul>
         <li>
             <a href=\"";
-        // line 41
+        // line 105
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("user_new");
         echo "\">Create a new user</a>
         </li>
     </ul>
 ";
         
-        $__internal_d60dd338dcf3457eb1169480882d6eb03e696fd67e7f6a5d0d89162f90817527->leave($__internal_d60dd338dcf3457eb1169480882d6eb03e696fd67e7f6a5d0d89162f90817527_prof);
+        $__internal_2b747e7ac68e37bb54ac9b04b0bc41902fab3cab0aada65540a4779a28da4ea9->leave($__internal_2b747e7ac68e37bb54ac9b04b0bc41902fab3cab0aada65540a4779a28da4ea9_prof);
 
         
-        $__internal_15469085f667c73a35a7c4b5e9948cd1f2fc416911be60f69af73ede246c39bd->leave($__internal_15469085f667c73a35a7c4b5e9948cd1f2fc416911be60f69af73ede246c39bd_prof);
+        $__internal_98da5e227854deed84692e163ae3e3b21634557d8bd5c4a45aed6e31ae070f51->leave($__internal_98da5e227854deed84692e163ae3e3b21634557d8bd5c4a45aed6e31ae070f51_prof);
 
     }
 
@@ -146,7 +222,7 @@ class __TwigTemplate_885270aa5b2111698c366ebc4bbbfbd5af6aeaa1c032dda7cd7543e4862
 
     public function getDebugInfo()
     {
-        return array (  124 => 41,  117 => 36,  105 => 30,  99 => 27,  88 => 23,  84 => 22,  80 => 21,  74 => 20,  71 => 19,  67 => 18,  49 => 4,  40 => 3,  11 => 1,);
+        return array (  200 => 105,  191 => 98,  182 => 94,  174 => 89,  162 => 80,  153 => 74,  144 => 67,  142 => 66,  138 => 64,  132 => 60,  126 => 56,  124 => 55,  117 => 51,  112 => 49,  103 => 43,  98 => 41,  91 => 36,  87 => 35,  78 => 28,  70 => 22,  68 => 21,  49 => 4,  40 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -162,39 +238,103 @@ class __TwigTemplate_885270aa5b2111698c366ebc4bbbfbd5af6aeaa1c032dda7cd7543e4862
         return new Twig_Source("{% extends 'base.html.twig' %}
 
 {% block body %}
-    {{ dump() }}
+
     <h1>Users list</h1>
 
     <table>
+
         <thead>
+
             <tr>
+
                 <th>Id</th>
+
                 <th>Email</th>
+
                 <th>Username</th>
+
                 <th>IsActive</th>
-                <th>Actions</th>
+
+                {% if is_granted('ROLE_ADMIN') %}
+
+                    <th>Actions</th>
+
+                    <th>Password</th>
+
+                {% endif %}
+
             </tr>
+
         </thead>
+
         <tbody>
+
         {% for user in users %}
+
             <tr>
-                <td><a href=\"{{ path('user_show', { 'id': user.id }) }}\">{{ user.id }}</a></td>
-                <td>{{ user.email }}</td>
-                <td>{{ user.username }}</td>
-                <td>{% if user.isActive %}Yes{% else %}No{% endif %}</td>
+
                 <td>
-                    <ul>
-                        <li>
-                            <a href=\"{{ path('user_show', { 'id': user.id }) }}\">show</a>
-                        </li>
-                        <li>
-                            <a href=\"{{ path('user_edit', { 'id': user.id }) }}\">edit</a>
-                        </li>
-                    </ul>
+
+                    <a href=\"{{ path('user_show', { 'id': user.id }) }}\">
+
+                        {{ user.id }}
+
+                    </a>
+
                 </td>
+
+                <td>{{ user.email }}</td>
+
+                <td>{{ user.username }}</td>
+
+                <td>
+
+                    {% if user.isActive %}
+
+                        Yes
+
+                    {% else %}
+
+                        No
+
+                    {% endif %}
+
+                </td>
+                {% if is_granted('ROLE_ADMIN') %}
+
+                <td>
+
+                    <ul>
+
+                        <li>
+
+                            <a href=\"{{ path('user_show', { 'id': user.id }) }}\">show</a>
+
+                        </li>
+
+                        <li>
+
+                            <a href=\"{{ path('user_edit', { 'id': user.id }) }}\">edit</a>
+
+                        </li>
+
+                    </ul>
+
+                </td>
+
+                <td>
+                    {{ user.password }}
+                </td>
+
+
+                {% endif %}
+
             </tr>
+
         {% endfor %}
+
         </tbody>
+
     </table>
 
     <ul>

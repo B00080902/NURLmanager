@@ -8,6 +8,8 @@
 
     <h1>{{ app.user.username }}'s profile</h1>
 
+    <a href="{{ path('user_delete', { 'id': app.user.id }) }}">Delete Account</a>
+
     {{ dump() }}
 
     <div style="display: flex">

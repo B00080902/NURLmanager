@@ -20,7 +20,7 @@
             {% endfor %}
 
             {# Only Admins are able to CRUD any nurls #}
-            {% if is_granted('ROLE_ADMIN') %}
+            {% if is_granted('ROLE_MODERATOR') %}
 
                 <a href="{{ path('nurl_seeAll') }}">Review suggested nurls</a>
 
@@ -45,7 +45,7 @@
 
                 <th>Content</th>
 
-                {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_USER')%}
+                {% if app.user.username == nurl.user or is_granted('ROLE_ADMIN') %}
 
                 <th>Actions</th>
 
@@ -79,7 +79,7 @@
 
 
                     {# Anon and User CRUD options #}
-                    {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_USER')%}
+                    {% if app.user.username == nurl.user.username or is_granted('ROLE_ADMIN') %}
 
                     <td>
                         <ul>

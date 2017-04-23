@@ -26,11 +26,13 @@ class LoadUserData implements FixtureInterface, ContainerAwareInterface
         $userSuperAdmin = $this->createActiveUser('super', 'super@admin.com', 'super', ['ROLE_SUPER_ADMIN']);
         $userAdmin = $this->createActiveUser('admin', 'admin@admin.com', 'admin', ['ROLE_ADMIN']);
         $userMatt = $this->createActiveUser('matt', 'matt@matt.com', 'smith');
+        $userMod = $this->createActiveUser('mod', 'mod@mod.com', 'mod', ['ROLE_MODERATOR']);
 
         // store to DB
         $manager->persist($userSuperAdmin);
         $manager->persist($userAdmin);
         $manager->persist($userMatt);
+        $manager->persist($userMod);
         $manager->flush();
     }
 

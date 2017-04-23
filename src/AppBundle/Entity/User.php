@@ -410,8 +410,8 @@ class User implements UserInterface, \Serializable
 
 
 
-    public function __toString()
-    {
-        return (string) $this->getRoles();
-    }
+//    public function __toString()
+//    {
+//        return (string) $this->getRoles();
+//    }
 }

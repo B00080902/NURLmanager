@@ -8,7 +8,11 @@
 <h1>Your query results</h1>
 {#{{ type }}#}
 
+    {% for query in data %}
+
         {{ data }}
+
+    {% endfor %}
 
     {#{% for collection in collections %}#}
 

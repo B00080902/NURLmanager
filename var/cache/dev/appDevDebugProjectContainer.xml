@@ -150,6 +150,10 @@
     <parameter key="security.authentication.trust_resolver.anonymous_class">Symfony\Component\Security\Core\Authentication\Token\AnonymousToken</parameter>
     <parameter key="security.authentication.trust_resolver.rememberme_class">Symfony\Component\Security\Core\Authentication\Token\RememberMeToken</parameter>
     <parameter key="security.role_hierarchy.roles" type="collection">
+      <parameter key="ROLE_MODERATOR" type="collection">
+        <parameter>ROLE_ADMIN</parameter>
+        <parameter>ROLE_ALLOWED_TO_SWITCH</parameter>
+      </parameter>
       <parameter key="ROLE_ADMIN" type="collection">
         <parameter>ROLE_USER</parameter>
       </parameter>
@@ -469,7 +473,7 @@
                 <tag name="cache.pool" clearer="cache.default_clearer"/>
                 <argument>kHeHkxZhrh</argument>
                 <argument>0</argument>
-                <argument>768kQ+ZKN-x6k9nelMoKzE</argument>
+                <argument>t9Y-FzfQbcLbdfABywnmbs</argument>
                 <argument>C:\College\College\Third year\Second Semester\WFDassignment\NURLmanager\var\cache\dev/pools</argument>
                 <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                 <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -652,7 +656,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>fwq1gXSg+g</argument>
       <argument>0</argument>
-      <argument>768kQ+ZKN-x6k9nelMoKzE</argument>
+      <argument>t9Y-FzfQbcLbdfABywnmbs</argument>
       <argument>C:\College\College\Third year\Second Semester\WFDassignment\NURLmanager\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -662,7 +666,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>JGPynrDPEE</argument>
       <argument>0</argument>
-      <argument>768kQ+ZKN-x6k9nelMoKzE</argument>
+      <argument>t9Y-FzfQbcLbdfABywnmbs</argument>
       <argument>C:\College\College\Third year\Second Semester\WFDassignment\NURLmanager\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1666,7 +1670,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>58fcc4ac9a7b15.41093147</argument>
+            <argument>58fd26b3024021.60992934</argument>
           </service>
         </argument>
       </argument>
@@ -1684,6 +1688,10 @@
     </service>
     <service id="security.role_hierarchy" class="Symfony\Component\Security\Core\Role\RoleHierarchy" public="false">
       <argument type="collection">
+        <argument key="ROLE_MODERATOR" type="collection">
+          <argument>ROLE_ADMIN</argument>
+          <argument>ROLE_ALLOWED_TO_SWITCH</argument>
+        </argument>
         <argument key="ROLE_ADMIN" type="collection">
           <argument>ROLE_USER</argument>
         </argument>
@@ -1982,7 +1990,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>58fcc4ac9a7b15.41093147</argument>
+            <argument>58fd26b3024021.60992934</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
